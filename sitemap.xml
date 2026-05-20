@@ -513,4 +513,31 @@
     <priority>0.7</priority>
   </url>
 
+
+  <!-- Top Riders ranking pages -->
+  <url>
+    <loc>https://fantasyrunforamillion.com/top-riders</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/top-riders/reining</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/top-riders/cow-horse</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/top-riders/cutting</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
