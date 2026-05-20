@@ -62,12 +62,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://fantasyrunforamillion.com/top-riders</loc>
-    <lastmod>2025-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://fantasyrunforamillion.com/media</loc>
     <lastmod>2025-01-01</lastmod>
