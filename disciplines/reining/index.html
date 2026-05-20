@@ -150,6 +150,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="twitter:image" content="https://fantasyrunforamillion.com/og-image.jpg" />
   <script defer data-domain="fantasyrunforamillion.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <style id="xlink-css">
+    .xl-sect{padding:48px 0;border-top:1px solid rgba(201,168,76,.08);}
+    .xl-sect.xl-alt{background:var(--dark-mid);}
+    .xl-label{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;}
+    .xl-h{font-family:var(--font-display,'Playfair Display',Georgia,serif);font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:700;color:var(--white);margin-bottom:8px;}
+    .xl-div{width:28px;height:2px;background:var(--gold);margin:10px 0 24px;}
+    .xl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+    .xl-card{background:var(--dark-mid);border:1px solid rgba(201,168,76,.12);border-radius:10px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;}
+    .xl-cat{font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.75;}
+    .xl-title{font-size:.9rem;font-weight:600;color:var(--white);line-height:1.35;flex:1;}
+    .xl-excerpt{font-size:.8rem;color:var(--cream-dim);opacity:.7;line-height:1.5;margin:0;}
+    .xl-link{font-size:.78rem;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:5px;padding-top:6px;margin-top:auto;}
+    .xl-link::after{content:"→";}
+    .xl-more{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:20px;}
+    @media(max-width:600px){.xl-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
   <script type="application/ld+json">
   {
@@ -314,6 +330,15 @@
                 <a href="/top-riders" class="sidebar-link">Top Riders — All Disciplines</a>
               </div>
             </div>
+          
+            <div class="sidebar-card" id="xl-disc-strat-card">
+              <div class="sidebar-card-header"><p class="sidebar-card-title">Strategy Articles</p></div>
+              <div class="sidebar-links">
+            <a href="/news/understanding-reining-maneuver-scores" class="sidebar-link">Understanding Reining Maneuver Scores</a>
+            <a href="/news/the-sliding-stop-reinings-signature-maneuver" class="sidebar-link">The Sliding Stop: Reining's Signature Maneuver</a>
+            <a href="/news/top-reining-riders-run-for-a-million" class="sidebar-link">Top Reining Riders to Watch at The Run For A Million</a>
+              </div>
+            </div>
           </aside>
         </div>
       </div>
@@ -410,6 +435,15 @@
         </div>
       </div>
     </section>
+  
+  <section id="xl-disc-evts-sect" class="xl-sect" aria-labelledby="xl-de-reining">
+    <div class="container">
+      <span class="xl-label">Upcoming Competition</span>
+      <h2 class="xl-h" id="xl-de-reining">Related Events</h2>
+      <div class="xl-div" aria-hidden="true"></div>
+      <div class="xl-grid" role="list"><div class="xl-card"><p class="xl-cat">Reining · Cow Horse · Cutting</p><p class="xl-title">The Run For A Million 2025</p><p class="xl-excerpt" style="color:var(--gold);opacity:.85;font-weight:600;">Purse: $1,000,000+</p><a href="/events/run-for-a-million" class="xl-link">Event Overview</a></div><div class="xl-card"><p class="xl-cat">Reining</p><p class="xl-title">NRHA Futurity 2025</p><p class="xl-excerpt" style="color:var(--gold);opacity:.85;font-weight:600;">Purse: TBD</p><a href="/events/nrha-futurity" class="xl-link">Event Overview</a></div></div>
+    </div>
+  </section>
   </main>
   <footer class="site-footer">
     <div class="container">
