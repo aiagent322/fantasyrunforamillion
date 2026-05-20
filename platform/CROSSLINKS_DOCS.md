@@ -1090,3 +1090,58 @@ Placeholder card added to strategy hub grid.
 3. /about → /strategy — the about page is often the first page curious new users visit.
    A "Learn how to compete" link to /strategy in the about page content would capture
    early-funnel users before they start exploring.
+
+
+---
+
+## 10 Foundational Strategy Articles — 2026-05-20
+
+### Routes created
+
+| Route | Slug | Target Keyword |
+|-------|------|----------------|
+| /strategy/how-fantasy-reining-scoring-works | how-fantasy-reining-scoring-works | fantasy reining scoring |
+| /strategy/how-to-build-a-winning-fantasy-lineup | how-to-build-a-winning-fantasy-lineup | fantasy horse sports lineup strategy |
+| /strategy/beginner-guide-to-run-for-a-million-fantasy | beginner-guide-to-run-for-a-million-fantasy | Run For A Million fantasy guide |
+| /strategy/how-to-pick-sleeper-riders | how-to-pick-sleeper-riders | sleeper fantasy riders |
+| /strategy/reining-vs-cutting-vs-cow-horse-strategy | reining-vs-cutting-vs-cow-horse-strategy | reining vs cutting fantasy strategy |
+| /strategy/common-fantasy-roster-mistakes | common-fantasy-roster-mistakes | fantasy roster mistakes |
+| /strategy/how-leaderboard-scoring-changes-strategy | how-leaderboard-scoring-changes-strategy | leaderboard fantasy scoring |
+| /strategy/how-consistency-wins-fantasy-horse-sports | how-consistency-wins-fantasy-horse-sports | fantasy consistency strategy |
+| /strategy/how-event-format-affects-your-lineup | how-event-format-affects-your-lineup | event format fantasy strategy |
+| /strategy/how-to-research-riders-before-building-your-team | how-to-research-riders-before-building-your-team | fantasy rider research |
+
+### Page structure (each article)
+
+All 10 articles follow the existing strategy sub-page design system:
+  data-page-type="article" data-article-category="fantasy-tips"
+  BreadcrumbList JSON-LD (3-level: Home > Strategy > Article)
+  FAQPage JSON-LD schema (4 FAQ items per article)
+  article-header, article-layout, article-prose, article-sidebar
+  email-capture strip (data-variant="strategy")
+  related-articles section (3 cards each)
+  back-nav (4 links each)
+  cross-links.js, email-capture.js, analytics.js
+
+### Internal linking per article
+
+Each article links to:
+  - /strategy (hub, via breadcrumb and back-nav)
+  - /strategy/scoring and/or /strategy/team-building (body prose)
+  - At least one discipline strategy page (/strategy/reining, /cow-horse, /cutting)
+  - /pick-your-team (back-nav + body prose CTA)
+  - Rider profiles where mentioned in body prose
+  - /scoring-rules, /leaderboard, /top-riders where contextually appropriate
+
+### Hub grid update
+
+strategy/index.html hub grid expanded from 5 live cards to 15 live cards.
+Placeholder cards (event-prep, sleepers) removed and replaced by real article cards.
+
+Future placeholder strategy:
+  When /strategy/event-prep and /strategy/sleepers are created, add them to
+  the hub grid using the same card component pattern.
+
+### Sitemap
+
+10 new URLs added to sitemap.xml (priority 0.7, changefreq monthly, lastmod 2026-05-20).
