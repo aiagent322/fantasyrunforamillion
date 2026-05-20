@@ -757,6 +757,9 @@ def build_page(rider):
     }})();
   </script>
 
+  <script src="/engine/analytics.js" defer></script>
+  <script src="/engine/cross-links.js" defer></script>
+
 </body>
 </html>"""
 
