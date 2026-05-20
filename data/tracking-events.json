@@ -1,0 +1,206 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "schema": "tracking-events-v1",
+    "description": "Canonical event taxonomy for Fantasy Run For A Million analytics. All events defined here map to /engine/analytics.js EVENTS constant. Use these names consistently across all providers.",
+    "status": "debug — no production provider connected",
+    "engine_file": "/engine/analytics.js",
+    "docs_file": "/platform/ANALYTICS_DOCS.md"
+  },
+
+  "naming_convention": {
+    "format": "snake_case",
+    "pattern": "{context}_{action}",
+    "examples": ["rider_profile_view", "email_signup_submit", "discipline_page_view"],
+    "reserved_prefixes": ["page", "rider", "discipline", "leaderboard", "article", "email", "fantasy", "nav", "footer", "section", "team"]
+  },
+
+  "page_view_events": {
+    "description": "Fired automatically on DOMContentLoaded based on <body data-page-type>",
+    "events": {
+      "homepage_view": {
+        "trigger": "Homepage loads",
+        "body_attr": "data-page-type=\"homepage\"",
+        "properties": ["url", "page_type"]
+      },
+      "rider_profile_view": {
+        "trigger": "Individual rider profile page loads",
+        "body_attr": "data-page-type=\"rider_profile\" data-rider-slug=\"{slug}\" data-rider-discipline=\"{disc}\"",
+        "properties": ["url", "page_type", "rider_slug", "rider_discipline"],
+        "rider_interest_signal": true
+      },
+      "discipline_page_view": {
+        "trigger": "Discipline educational page loads (/disciplines/*)",
+        "body_attr": "data-page-type=\"discipline_page\" data-discipline=\"{reining|cow-horse|cutting}\"",
+        "properties": ["url", "page_type", "discipline"]
+      },
+      "leaderboard_view": {
+        "trigger": "Leaderboard page loads",
+        "body_attr": "data-page-type=\"leaderboard\"",
+        "properties": ["url", "page_type"],
+        "engagement_signal": true
+      },
+      "fantasy_team_builder_view": {
+        "trigger": "Pick Your Team page loads",
+        "body_attr": "data-page-type=\"fantasy_team_builder\"",
+        "properties": ["url", "page_type"],
+        "conversion_funnel": "step_1"
+      },
+      "scoring_rules_view": {
+        "trigger": "Scoring rules page loads",
+        "body_attr": "data-page-type=\"scoring_rules\"",
+        "properties": ["url", "page_type"],
+        "intent_signal": "high"
+      },
+      "article_view": {
+        "trigger": "Individual article/news page loads (/news/{slug})",
+        "body_attr": "data-page-type=\"article\" data-article-slug=\"{slug}\" data-article-category=\"{cat}\"",
+        "properties": ["url", "page_type", "article_slug", "article_category"],
+        "content_signal": true
+      },
+      "news_hub_view": {
+        "trigger": "News hub page loads (/news)",
+        "body_attr": "data-page-type=\"news_hub\"",
+        "properties": ["url", "page_type"]
+      },
+      "top_riders_view": {
+        "trigger": "/top-riders page loads",
+        "body_attr": "data-page-type=\"top_riders\"",
+        "properties": ["url", "page_type"],
+        "rider_interest_signal": true
+      },
+      "faq_view": {
+        "trigger": "FAQ page loads",
+        "body_attr": "data-page-type=\"faq\"",
+        "properties": ["url", "page_type"]
+      },
+      "signup_page_view": {
+        "trigger": "/signup dedicated page loads",
+        "body_attr": "data-page-type=\"signup\"",
+        "properties": ["url", "page_type"],
+        "conversion_funnel": "step_2"
+      },
+      "how_it_works_view": {
+        "trigger": "/how-it-works page loads",
+        "body_attr": "data-page-type=\"how_it_works\"",
+        "properties": ["url", "page_type"],
+        "intent_signal": "medium"
+      },
+      "events_page_view": {
+        "trigger": "Events hub or event detail page loads",
+        "body_attr": "data-page-type=\"events_page\" data-event-slug=\"{slug}\"",
+        "properties": ["url", "page_type", "event_slug"]
+      }
+    }
+  },
+
+  "engagement_events": {
+    "description": "Fired on user interactions — link clicks, form interactions",
+    "events": {
+      "rider_profile_click": {
+        "trigger": "Any link to /riders/{disc}/{slug} is clicked",
+        "auto_detected": true,
+        "pattern": "/riders/{discipline}/{rider_slug}",
+        "properties": ["rider_slug", "discipline", "source_page_type"],
+        "rider_interest_signal": true
+      },
+      "article_click": {
+        "trigger": "Any link to /news/{slug} is clicked from hub or discipline page",
+        "auto_detected": true,
+        "pattern": "/news/{slug}",
+        "properties": ["article_slug", "source_page_type"]
+      },
+      "fantasy_team_builder_click": {
+        "trigger": "Link to /pick-your-team is clicked anywhere on site",
+        "auto_detected": true,
+        "properties": ["source_page_type"],
+        "conversion_funnel": "step_1"
+      },
+      "leaderboard_click": {
+        "trigger": "Link to /leaderboard is clicked",
+        "auto_detected": true,
+        "properties": ["source_page_type"]
+      },
+      "signup_cta_click": {
+        "trigger": "Link to /signup is clicked",
+        "auto_detected": true,
+        "properties": ["source_page_type"],
+        "conversion_funnel": "step_2"
+      },
+      "discipline_click": {
+        "trigger": "Link to /disciplines/* is clicked",
+        "auto_detected": true,
+        "properties": ["discipline", "source_page_type"]
+      },
+      "nav_cta_click": {
+        "trigger": "\"Enter Now\" or \"Pick Your Team\" nav CTA is clicked",
+        "auto_detected": true,
+        "properties": ["label", "href", "source_page_type"],
+        "conversion_funnel": "step_1"
+      }
+    }
+  },
+
+  "conversion_events": {
+    "description": "High-value user actions — signup submissions, team builder engagement",
+    "events": {
+      "email_signup_submit": {
+        "trigger": "Email signup form successfully submitted (any page, any variant)",
+        "source": "Custom DOM event 'frfam:signup' from /engine/email-capture.js",
+        "properties": ["variant", "source"],
+        "variants": ["waitlist", "leaderboard", "contest", "news"],
+        "conversion_value": "high",
+        "use_for": ["subscriber growth", "funnel measurement", "channel attribution"]
+      },
+      "team_submission_attempt": {
+        "trigger": "User clicks 'Submit Your Team' on pick-your-team (demo or live)",
+        "source": "Custom DOM event 'frfam:team_submit'",
+        "properties": ["has_reining", "has_cow_horse", "has_cutting", "is_complete"],
+        "conversion_value": "highest",
+        "use_for": ["participation rate", "roster completion analysis"]
+      }
+    }
+  },
+
+  "future_events": {
+    "description": "Events not yet implemented but planned for future phases",
+    "events": {
+      "rider_watchlist_add":    "User adds rider to watchlist (future feature)",
+      "rider_comparison_view":  "User compares two riders side-by-side",
+      "scoring_calculator_use": "User uses interactive scoring calculator",
+      "social_share":           "User clicks social share button",
+      "content_filter_use":     "User filters news/riders by discipline",
+      "search_query":           "User uses site search",
+      "sponsor_banner_view":    "Sponsor content enters viewport",
+      "sponsor_banner_click":   "User clicks sponsor content"
+    }
+  },
+
+  "sponsor_and_reporting_readiness": {
+    "description": "Data points available for sponsor and engagement reporting once a live provider is connected",
+    "rider_popularity": {
+      "signal": "rider_profile_view count by rider_slug",
+      "breakout": "by discipline, by week, by source page"
+    },
+    "discipline_engagement": {
+      "signal": "discipline_page_view + rider_profile_view + article_view by discipline",
+      "breakout": "reining vs cow-horse vs cutting relative engagement"
+    },
+    "content_performance": {
+      "signal": "article_view count by article_slug + article_category",
+      "breakout": "top articles by views, by category, by traffic source"
+    },
+    "fantasy_funnel": {
+      "steps": [
+        "homepage_view → how_it_works_view",
+        "how_it_works_view → scoring_rules_view",
+        "scoring_rules_view → fantasy_team_builder_view",
+        "fantasy_team_builder_view → team_submission_attempt"
+      ]
+    },
+    "email_growth": {
+      "signal": "email_signup_submit by variant and source",
+      "breakout": "article vs leaderboard vs homepage vs pick-your-team"
+    }
+  }
+}

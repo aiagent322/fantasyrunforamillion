@@ -1,0 +1,10 @@
+# Fantasy Run For A Million — Cloudflare Pages redirect rules
+
+# Legacy /enter route → canonical pick-your-team
+/enter          /pick-your-team     301
+
+# Trailing slash normalisation (Cloudflare Pages handles natively)
+
+# 404 — Cloudflare Pages serves 404.html automatically when present
+# Uncomment below only if SPA-style client routing is ever needed:
+# /*             /index.html         200

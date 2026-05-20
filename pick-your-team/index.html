@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pick Your Fantasy Team | Fantasy Run For A Million</title>
+  <meta name="description" content="Build your Fantasy Run For A Million team. Select reining, cow horse, and cutting riders for your roster and get ready to compete on the fan leaderboard." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Pick Your Fantasy Team | Fantasy Run For A Million" />
+  <meta property="og:description" content="Build your Fantasy Run For A Million team. Select reining, cow horse, and cutting riders for your roster and get ready to compete on the fan leaderboard." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Tokens ─────────────────────────────────────────── */
+    :root {
+      --black:        #0e0b08;
+      --dark:         #1a1410;
+      --dark-mid:     #241c14;
+      --leather:      #8B5E3C;
+      --gold:         #C9A84C;
+      --gold-light:   #e8c96a;
+      --rust:         #C4622D;
+      --cream:        #F5EDD6;
+      --cream-dim:    #c8bc9e;
+      --white:        #ffffff;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+      --radius:       6px;
+      --radius-lg:    12px;
+      --max-w:        1160px;
+      --tr:           0.2s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); background: var(--dark); color: var(--cream); line-height: 1.6; font-size: 16px; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    /* ─── Nav ────────────────────────────────────────────── */
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(14,11,8,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.18); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 58px; max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--gold); line-height: 1.2; }
+    .nav-logo span { display: block; font-size: 0.65rem; color: var(--cream-dim); font-family: var(--font-body); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cream-dim); transition: color var(--tr); }
+    .nav-links a:hover, .nav-links a[aria-current] { color: var(--gold); }
+    .nav-links .nav-cta a { color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 5px 14px; border-radius: var(--radius); }
+    .nav-links .nav-cta a:hover { background: rgba(201,168,76,0.12); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--cream); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--black); border-top: 1px solid rgba(201,168,76,0.12); padding: 16px 20px 20px; gap: 4px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 0.9rem; font-weight: 500; color: var(--cream-dim); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-mobile a:last-child { border-bottom: none; }
+
+    /* ─── Page Header ────────────────────────────────────── */
+    .page-header {
+      padding: 120px 0 64px;
+      background: linear-gradient(160deg, #0e0b08 0%, #1a1410 55%, #1f1710 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 65% at 88% 25%, rgba(139,94,60,0.13) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 45% at 5% 85%, rgba(196,98,45,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--cream-dim); opacity: 0.65; margin-bottom: 20px; letter-spacing: 0.05em; flex-wrap: wrap; }
+    .breadcrumb a:hover { color: var(--gold); opacity: 1; }
+    .breadcrumb .sep { opacity: 0.35; }
+    .page-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .page-h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 900; color: var(--white); line-height: 1.08; letter-spacing: -0.01em; max-width: 760px; margin-bottom: 18px; }
+    .page-h1 em { font-style: normal; color: var(--gold); }
+    .page-lead { font-size: clamp(1rem, 2vw, 1.12rem); color: var(--cream-dim); max-width: 560px; line-height: 1.7; margin-bottom: 28px; }
+
+    /* ─── Demo alert bar ─────────────────────────────────── */
+    .demo-alert {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(196,98,45,0.1); border: 1px solid rgba(196,98,45,0.3);
+      border-radius: var(--radius-lg); padding: 16px 20px;
+      max-width: 680px;
+    }
+    .demo-alert-icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.5; }
+    .demo-alert p { font-size: 0.84rem; color: var(--cream-dim); line-height: 1.65; }
+    .demo-alert strong { color: #e8a070; font-weight: 600; }
+
+    /* ─── Section shared ─────────────────────────────────── */
+    .section { padding: 72px 0; }
+    .section-alt { background: var(--dark-mid); border-top: 1px solid rgba(201,168,76,0.08); border-bottom: 1px solid rgba(201,168,76,0.08); }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 12px; }
+    .section-lead { font-size: 0.95rem; color: var(--cream-dim); line-height: 1.7; max-width: 540px; }
+    .divider { width: 36px; height: 2px; background: var(--gold); margin: 14px 0 30px; }
+
+    /* ─── How it works strip ─────────────────────────────── */
+    .how-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.1); border-radius: var(--radius-lg); overflow: hidden; margin-top: 36px; }
+    .how-cell { background: var(--dark-mid); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
+    .how-num { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: rgba(201,168,76,0.18); line-height: 1; user-select: none; }
+    .how-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); }
+    .how-desc { font-size: 0.82rem; color: var(--cream-dim); line-height: 1.6; }
+
+    /* ─── Roster format cards ────────────────────────────── */
+    .roster-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+    .roster-cell { background: var(--dark); border: 1px solid rgba(201,168,76,0.12); border-radius: var(--radius-lg); padding: 24px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .roster-icon { font-size: 1.6rem; line-height: 1; }
+    .roster-count { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .roster-disc { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); }
+    .roster-note { font-size: 0.78rem; color: var(--cream-dim); opacity: 0.65; line-height: 1.5; }
+    .roster-cell.bonus { border-color: rgba(196,98,45,0.25); background: rgba(196,98,45,0.05); }
+    .roster-cell.bonus .roster-count { color: #e8a070; }
+
+    /* ─── Main builder layout ────────────────────────────── */
+    .builder-wrap { padding: 64px 0 80px; }
+    .builder-layout { display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: start; }
+
+    /* ─── Left: picker column ────────────────────────────── */
+    .picker-col { display: flex; flex-direction: column; gap: 28px; }
+
+    /* Team name field */
+    .field-block { display: flex; flex-direction: column; gap: 8px; }
+    .field-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .field-input {
+      width: 100%; padding: 12px 16px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius); color: var(--cream);
+      font-family: var(--font-body); font-size: 0.95rem;
+      outline: none; transition: border-color var(--tr);
+    }
+    .field-input::placeholder { color: var(--cream-dim); opacity: 0.35; }
+    .field-input:focus { border-color: rgba(201,168,76,0.45); }
+    .field-hint { font-size: 0.75rem; color: var(--cream-dim); opacity: 0.5; }
+
+    /* Discipline picker section */
+    .disc-picker { border: 1px solid rgba(201,168,76,0.12); border-radius: var(--radius-lg); overflow: hidden; }
+    .disc-picker-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; background: rgba(201,168,76,0.06);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .disc-picker-title-row { display: flex; align-items: center; gap: 10px; }
+    .disc-picker-icon { font-size: 1.2rem; }
+    .disc-picker-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--white); }
+    .disc-picker-quota {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 20px;
+      white-space: nowrap;
+    }
+    .quota-open { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); color: var(--gold); }
+    .quota-full { background: rgba(80,180,80,0.12); border: 1px solid rgba(80,180,80,0.3); color: #7ecf7e; }
+
+    /* Rider pick grid */
+    .rider-pick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(201,168,76,0.07); }
+    .rider-pick-btn {
+      background: var(--dark-mid);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px;
+      text-align: left; width: 100%;
+      transition: background var(--tr);
+      position: relative;
+    }
+    .rider-pick-btn:hover:not([disabled]) { background: #2a2018; }
+    .rider-pick-btn.selected { background: rgba(201,168,76,0.1); }
+    .rider-pick-btn.selected::after {
+      content: '✓';
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(201,168,76,0.2); border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 700; color: var(--gold);
+      line-height: 20px; text-align: center;
+    }
+    .rider-pick-btn.dimmed { opacity: 0.4; cursor: not-allowed; }
+    .pick-avatar {
+      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(139,94,60,0.4), rgba(201,168,76,0.15));
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 0.75rem; font-weight: 700;
+      color: var(--gold); transition: border-color var(--tr);
+    }
+    .rider-pick-btn.selected .pick-avatar { border-color: var(--gold); background: rgba(201,168,76,0.18); }
+    .pick-name { font-size: 0.86rem; font-weight: 600; color: var(--cream); line-height: 1.2; }
+    .pick-sub { font-size: 0.68rem; color: var(--cream-dim); opacity: 0.55; margin-top: 1px; }
+
+    /* Bonus discipline picker */
+    .bonus-picker-header { background: rgba(196,98,45,0.07); border-color: rgba(196,98,45,0.2); }
+    .bonus-picker-header .disc-picker-title { color: #e8b890; }
+    .bonus-quota-open { background: rgba(196,98,45,0.1); border: 1px solid rgba(196,98,45,0.3); color: #e8a070; }
+    .bonus-quota-full { background: rgba(80,180,80,0.12); border: 1px solid rgba(80,180,80,0.3); color: #7ecf7e; }
+
+    /* ─── Right: team summary sidebar ───────────────────── */
+    .summary-sidebar { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 16px; }
+    .summary-card { background: var(--dark-mid); border: 1px solid rgba(201,168,76,0.15); border-radius: var(--radius-lg); overflow: hidden; }
+    .summary-card-header { padding: 16px 20px; border-bottom: 1px solid rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: space-between; }
+    .summary-card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); }
+    .summary-count-badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 20px; padding: 3px 10px; color: var(--gold);
+    }
+    .summary-slots { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+    .summary-slot {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: var(--radius);
+      border: 1px solid rgba(201,168,76,0.08); background: rgba(0,0,0,0.15);
+      min-height: 48px; transition: background var(--tr), border-color var(--tr);
+    }
+    .summary-slot.filled { border-color: rgba(201,168,76,0.22); background: rgba(201,168,76,0.06); }
+    .summary-slot.bonus-slot { border-color: rgba(196,98,45,0.15); }
+    .summary-slot.bonus-slot.filled { border-color: rgba(196,98,45,0.3); background: rgba(196,98,45,0.06); }
+    .slot-disc-tag {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 2px 6px; border-radius: 3px; white-space: nowrap; flex-shrink: 0;
+    }
+    .tag-r { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .tag-c { background: rgba(196,98,45,0.12); color: #e8a070; }
+    .tag-cu { background: rgba(139,94,60,0.2); color: #c4a070; }
+    .tag-b { background: rgba(196,98,45,0.1); color: #e8b070; border: 1px solid rgba(196,98,45,0.2); }
+    .slot-name { font-size: 0.83rem; font-weight: 600; color: var(--white); flex: 1; }
+    .slot-empty { font-size: 0.78rem; color: var(--cream-dim); opacity: 0.3; font-style: italic; flex: 1; }
+    .slot-remove-btn {
+      background: none; border: none; cursor: pointer;
+      color: var(--cream-dim); opacity: 0.35; font-size: 0.9rem;
+      padding: 2px 4px; line-height: 1; transition: opacity var(--tr);
+      flex-shrink: 0;
+    }
+    .slot-remove-btn:hover { opacity: 0.8; color: #e87070; }
+
+    /* Summary progress bar */
+    .summary-progress { padding: 0 16px 14px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--cream-dim); opacity: 0.55; margin-bottom: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .progress-track { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 2px; transition: width 0.3s ease; }
+
+    /* Submit button area */
+    .submit-area { padding: 14px 16px; border-top: 1px solid rgba(201,168,76,0.08); display: flex; flex-direction: column; gap: 10px; }
+    .btn-submit {
+      display: block; width: 100%; text-align: center;
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 13px; border-radius: var(--radius); border: none;
+      cursor: not-allowed; opacity: 0.45;
+      background: var(--gold); color: var(--black);
+      transition: opacity var(--tr);
+    }
+    .btn-submit.ready { cursor: not-allowed; opacity: 0.55; }
+    .submit-notice { font-size: 0.72rem; color: var(--cream-dim); opacity: 0.45; text-align: center; line-height: 1.5; }
+
+    /* Mini links card */
+    .mini-links { background: var(--dark-mid); border: 1px solid rgba(201,168,76,0.1); border-radius: var(--radius-lg); padding: 18px 20px; }
+    .mini-links-title { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); opacity: 0.6; margin-bottom: 10px; }
+    .mini-link { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--cream-dim); padding: 7px 0; border-bottom: 1px solid rgba(201,168,76,0.07); transition: color var(--tr); }
+    .mini-link:last-child { border-bottom: none; }
+    .mini-link:hover { color: var(--gold); }
+    .mini-link::before { content: '→'; font-size: 0.68rem; color: var(--gold); opacity: 0.5; }
+
+    /* ─── Important notice section ───────────────────────── */
+    .notice-block {
+      background: rgba(196,98,45,0.07);
+      border: 1px solid rgba(196,98,45,0.2);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      display: grid; grid-template-columns: auto 1fr; gap: 24px;
+      align-items: start;
+    }
+    .notice-icon { font-size: 1.8rem; line-height: 1; padding-top: 4px; }
+    .notice-body {}
+    .notice-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .notice-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .notice-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: var(--cream-dim); line-height: 1.6; }
+    .notice-list li::before { content: '·'; color: #e8a070; font-size: 1.2rem; line-height: 1.4; flex-shrink: 0; }
+
+    /* ─── Related pages ──────────────────────────────────── */
+    .related-pages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+    .related-page-card { background: var(--dark-mid); border: 1px solid rgba(201,168,76,0.1); border-radius: var(--radius-lg); padding: 24px 22px; display: flex; align-items: flex-start; gap: 16px; transition: border-color var(--tr), transform var(--tr); }
+    .related-page-card:hover { border-color: rgba(201,168,76,0.28); transform: translateY(-2px); }
+    .rp-icon { width: 38px; height: 38px; flex-shrink: 0; border-radius: var(--radius); background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.14); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .rp-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .rp-desc { font-size: 0.8rem; color: var(--cream-dim); line-height: 1.55; opacity: 0.8; }
+    .rp-arrow { display: inline-block; color: var(--gold); font-size: 0.78rem; margin-top: 8px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; }
+
+    /* ─── Footer ─────────────────────────────────────────── */
+    .site-footer { background: var(--black); border-top: 1px solid rgba(201,168,76,0.1); padding: 36px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--gold); }
+    .footer-note { font-size: 0.78rem; color: var(--cream-dim); opacity: 0.6; }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--cream-dim); opacity: 0.6; transition: opacity var(--tr); }
+    .footer-links a:hover { opacity: 1; }
+
+    /* ─── Mobile ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .builder-layout { grid-template-columns: 1fr; }
+      .summary-sidebar { position: static; }
+      .summary-card { order: -1; }
+      .how-strip { grid-template-columns: 1fr 1fr; }
+      .roster-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 52px 0; }
+      .page-header { padding: 100px 0 52px; }
+      .rider-pick-grid { grid-template-columns: 1fr; }
+      .how-strip { grid-template-columns: 1fr; }
+      .roster-grid { grid-template-columns: 1fr 1fr; }
+      .related-pages-grid { grid-template-columns: 1fr; }
+      .notice-block { grid-template-columns: 1fr; gap: 12px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+    @media (max-width: 420px) {
+      .roster-grid { grid-template-columns: 1fr; }
+    }
+  
+    /* Skip to content */
+    .skip-link { position: absolute; top: -48px; left: 16px; z-index: 9999; background: var(--gold); color: var(--black); font-family: var(--font-body); font-size: 0.875rem; font-weight: 700; padding: 10px 18px; border-radius: 0 0 var(--radius) var(--radius); text-decoration: none; transition: top 0.15s; }
+    .skip-link:focus { top: 0; outline: 2px solid var(--gold-light); }
+  
+    /* ── FRFAM Email Capture Components ─────────────────────────────────────── */
+    .frfam-signup-section{padding:72px 0;background:var(--black);border-top:1px solid rgba(201,168,76,0.1);}
+    .frfam-signup-card{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--dark-mid);border:1px solid rgba(201,168,76,0.18);border-radius:var(--radius-lg);padding:48px;position:relative;overflow:hidden;}
+    .frfam-signup-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 10% 50%,rgba(139,94,60,0.1) 0%,transparent 65%);pointer-events:none;}
+    .fsc-left,.fsc-right{position:relative;z-index:1;}
+    .fsc-eyebrow{font-size:0.68rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .fsc-h{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:12px;}
+    .fsc-lead{font-size:0.9rem;color:var(--cream-dim);line-height:1.7;margin-bottom:16px;}
+    .fsc-perks{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .fsc-perks li{display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--cream-dim);}
+    .fsc-perks li::before{content:'✓';font-size:0.7rem;font-weight:700;color:var(--gold);flex-shrink:0;}
+    /* Form */
+    .fsc-form-label{font-size:0.78rem;font-weight:600;color:var(--cream-dim);display:block;margin-bottom:6px;}
+    .frfam-email-input{width:100%;background:var(--dark);border:1px solid rgba(201,168,76,0.22);border-radius:var(--radius);padding:13px 16px;font-family:var(--font-body);font-size:0.95rem;color:var(--cream);outline:none;transition:border-color var(--tr);}
+    .frfam-email-input::placeholder{color:var(--cream-dim);opacity:0.3;}
+    .frfam-email-input:focus{border-color:var(--gold);}
+    .frfam-submit-btn{margin-top:10px;width:100%;background:var(--gold);color:var(--black);font-family:var(--font-body);font-size:0.9rem;font-weight:700;letter-spacing:0.04em;border:none;border-radius:var(--radius);padding:13px 20px;cursor:pointer;transition:background var(--tr);display:flex;align-items:center;justify-content:center;gap:8px;}
+    .frfam-submit-btn:hover{background:var(--gold-light);}
+    .frfam-submit-btn:disabled{opacity:0.65;cursor:default;}
+    .fsc-privacy{font-size:0.7rem;color:var(--cream-dim);opacity:0.45;line-height:1.55;margin-top:10px;}
+    /* Success / error */
+    .signup-success{padding:12px 0;text-align:center;}
+    .signup-success .s-icon{font-size:1.8rem;margin-bottom:8px;}
+    .signup-success .s-h{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;}
+    .signup-success .s-body{font-size:0.84rem;color:var(--cream-dim);line-height:1.6;}
+    .signup-error{font-size:0.82rem;color:#e87070;margin-top:8px;}
+    /* Compact strip variant */
+    .frfam-strip{background:var(--dark-mid);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:36px 0;}
+    .frfam-strip-inner{display:flex;align-items:center;gap:40px;flex-wrap:wrap;}
+    .frfam-strip-text{flex:1;min-width:220px;}
+    .frfam-strip-h{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:4px;}
+    .frfam-strip-sub{font-size:0.84rem;color:var(--cream-dim);}
+    .frfam-strip-form{display:flex;gap:10px;flex:1;min-width:260px;max-width:420px;}
+    .frfam-strip-form .frfam-email-input{flex:1;}
+    .frfam-strip-btn{background:var(--gold);color:var(--black);font-family:var(--font-body);font-size:0.84rem;font-weight:700;letter-spacing:0.04em;border:none;border-radius:var(--radius);padding:13px 20px;cursor:pointer;white-space:nowrap;transition:background var(--tr);flex-shrink:0;}
+    .frfam-strip-btn:hover{background:var(--gold-light);}
+    .frfam-strip-btn:disabled{opacity:0.65;cursor:default;}
+    .frfam-strip .signup-success{text-align:left;padding:0;}
+    .frfam-strip .signup-success .s-h{font-size:0.95rem;margin-bottom:2px;}
+    .frfam-strip .signup-success .s-body{font-size:0.8rem;}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+    @media(max-width:900px){.frfam-signup-card{grid-template-columns:1fr;gap:28px;padding:32px 24px;}.frfam-strip-inner{flex-direction:column;gap:20px;}.frfam-strip-form{max-width:100%;width:100%;}}
+    @media(max-width:580px){.frfam-strip-form{flex-direction:column;}}
+    /* ── End FRFAM Email Capture ─────────────────────────────────────────────── */
+  </style>
+
+  <link rel="canonical" href="https://fantasyrunforamillion.com/pick-your-team" />
+  <meta property="og:url" content="https://fantasyrunforamillion.com/pick-your-team" />
+  <meta property="og:image" content="https://fantasyrunforamillion.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Fantasy Run For A Million — western performance horse fantasy sports" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Fantasy Run For A Million" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pick Your Fantasy Team | Fantasy Run For A Million" />
+  <meta name="twitter:description" content="Build your Fantasy Run For A Million team. Select reining, cow horse, and cutting riders for your roster and get ready to compete on the fan leaderboard." />
+  <meta name="twitter:image" content="https://fantasyrunforamillion.com/og-image.jpg" />
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://fantasyrunforamillion.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pick Your Team",
+      "item": "https://fantasyrunforamillion.com/pick-your-team"
+    }
+  ]
+}
+  </script>
+  <meta name="theme-color" content="#0e0b08" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐴</text></svg>" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script defer data-domain="fantasyrunforamillion.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+</head>
+<body data-page-type="fantasy_team_builder">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ─── Nav ──────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Fantasy Run For A Million<span>Western Horse Fantasy Sports</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/riders">Riders</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="/scoring-rules">Scoring</a></li>
+        <li class="nav-cta"><a href="/pick-your-team" aria-current="page">Enter Now</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="/how-it-works">How It Works</a>
+      <a href="/riders">Riders</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/scoring-rules">Scoring Rules</a>
+      <a href="/pick-your-team">Enter Now</a>
+    </nav>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ─── Hero ─────────────────────────────────────────────── -->
+    <header class="page-header">
+      <div class="container">
+        <div class="header-inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a><span class="sep">›</span><span>Pick Your Team</span>
+          </nav>
+          <p class="page-eyebrow">Free-to-Play Fantasy</p>
+          <h1 class="page-h1">Pick Your <em>Fantasy Team</em></h1>
+          <p class="page-lead">
+            Choose riders from reining, cow horse, and cutting to build your Fantasy Run For A Million team. Follow event results, earn fantasy points, and compete on the fan leaderboard.
+          </p>
+          <div class="demo-alert" role="note" aria-label="Demo notice">
+            <span class="demo-alert-icon">⚠️</span>
+            <p>
+              <strong>Demo builder — no submissions are being collected.</strong> This is a preview of the team selection interface. Explore the format, test your picks, and get ready for when contest entry officially opens. Nothing entered here is saved or submitted.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ─── How team selection works ─────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="how-heading">
+      <div class="container">
+        <p class="section-label">The Format</p>
+        <h2 class="section-title" id="how-heading">How Team Selection Works</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead">Fantasy Run For A Million uses a simple draft format. Pick the riders you believe will perform — then let the results score your team.</p>
+        <div class="how-strip" role="list">
+          <div class="how-cell" role="listitem">
+            <div class="how-num" aria-hidden="true">01</div>
+            <h3 class="how-title">Pick Riders</h3>
+            <p class="how-desc">Select riders from each discipline — reining, cow horse, and cutting — to fill your team roster.</p>
+          </div>
+          <div class="how-cell" role="listitem">
+            <div class="how-num" aria-hidden="true">02</div>
+            <h3 class="how-title">Follow Results</h3>
+            <p class="how-desc">As The Run For A Million results are posted, your team's points update automatically based on how your riders finish.</p>
+          </div>
+          <div class="how-cell" role="listitem">
+            <div class="how-num" aria-hidden="true">03</div>
+            <h3 class="how-title">Earn Points</h3>
+            <p class="how-desc">Top finishes earn the most points. Every qualified run earns something. <a href="/scoring-rules" style="color:var(--gold);">See the full scoring rules →</a></p>
+          </div>
+          <div class="how-cell" role="listitem">
+            <div class="how-num" aria-hidden="true">04</div>
+            <h3 class="how-title">Compete on the Leaderboard</h3>
+            <p class="how-desc">Your total points determine your rank on the <a href="/leaderboard" style="color:var(--gold);">fan leaderboard</a> among all participating fantasy teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Roster format ─────────────────────────────────────── -->
+    <section class="section" aria-labelledby="roster-heading">
+      <div class="container">
+        <p class="section-label">Your Roster</p>
+        <h2 class="section-title" id="roster-heading">Suggested Roster Format</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead">A standard fantasy team for Run For A Million includes seven rider slots across three disciplines plus one bonus pick.</p>
+        <div class="roster-grid" role="list">
+          <div class="roster-cell" role="listitem">
+            <div class="roster-icon" aria-hidden="true">🐴</div>
+            <div class="roster-count">2</div>
+            <div class="roster-disc">Reining Riders</div>
+            <p class="roster-note">Two reining competitors. Points based on final class placing. <a href="/riders/reining" style="color:var(--gold);font-size:0.78rem;">Browse reining →</a></p>
+          </div>
+          <div class="roster-cell" role="listitem">
+            <div class="roster-icon" aria-hidden="true">🤠</div>
+            <div class="roster-count">2</div>
+            <div class="roster-disc">Cow Horse Riders</div>
+            <p class="roster-note">Two cow horse competitors. Points based on composite placing across all phases. <a href="/riders/cow-horse" style="color:var(--gold);font-size:0.78rem;">Browse cow horse →</a></p>
+          </div>
+          <div class="roster-cell" role="listitem">
+            <div class="roster-icon" aria-hidden="true">🐂</div>
+            <div class="roster-count">2</div>
+            <div class="roster-disc">Cutting Riders</div>
+            <p class="roster-note">Two cutting competitors. Points based on final class placing. <a href="/riders/cutting" style="color:var(--gold);font-size:0.78rem;">Browse cutting →</a></p>
+          </div>
+          <div class="roster-cell bonus" role="listitem">
+            <div class="roster-icon" aria-hidden="true">⭐</div>
+            <div class="roster-count">1</div>
+            <div class="roster-disc">Bonus Rider</div>
+            <p class="roster-note">One bonus pick from any discipline. This rider's points count toward any bonus scoring events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Demo Team Builder ─────────────────────────────────── -->
+    <section class="builder-wrap section-alt" aria-labelledby="builder-heading">
+      <div class="container">
+        <p class="section-label">Demo Team Builder</p>
+        <h2 class="section-title" id="builder-heading">Build Your Sample Team</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead" style="margin-bottom:32px;">Explore how team selection will work. Pick riders below to preview your roster — nothing is saved or submitted in this demo.</p>
+
+        <div class="builder-layout">
+
+          <!-- ── Picker Column ── -->
+          <div class="picker-col" id="pickerCol">
+
+            <!-- Team name -->
+            <div class="field-block">
+              <label class="field-label" for="teamName">Team Name</label>
+              <input class="field-input" type="text" id="teamName" placeholder="Enter your fantasy team name…" maxlength="48" autocomplete="off" />
+              <p class="field-hint">You'll set your official team name when contest entry opens.</p>
+            </div>
+
+            <!-- Reining picker -->
+            <div class="disc-picker" id="picker-reining" aria-label="Reining rider selection">
+              <div class="disc-picker-header">
+                <div class="disc-picker-title-row">
+                  <span class="disc-picker-icon" aria-hidden="true">🐴</span>
+                  <h3 class="disc-picker-title">Reining Riders</h3>
+                </div>
+                <span class="disc-picker-quota quota-open" id="quota-reining">0 / 2 selected</span>
+              </div>
+              <div class="rider-pick-grid" id="grid-reining" role="group" aria-label="Select up to 2 reining riders">
+                <!-- JS rendered -->
+              </div>
+            </div>
+
+            <!-- Cow Horse picker -->
+            <div class="disc-picker" id="picker-cowhorse" aria-label="Cow horse rider selection">
+              <div class="disc-picker-header">
+                <div class="disc-picker-title-row">
+                  <span class="disc-picker-icon" aria-hidden="true">🤠</span>
+                  <h3 class="disc-picker-title">Cow Horse Riders</h3>
+                </div>
+                <span class="disc-picker-quota quota-open" id="quota-cowhorse">0 / 2 selected</span>
+              </div>
+              <div class="rider-pick-grid" id="grid-cowhorse" role="group" aria-label="Select up to 2 cow horse riders">
+                <!-- JS rendered -->
+              </div>
+            </div>
+
+            <!-- Cutting picker -->
+            <div class="disc-picker" id="picker-cutting" aria-label="Cutting rider selection">
+              <div class="disc-picker-header">
+                <div class="disc-picker-title-row">
+                  <span class="disc-picker-icon" aria-hidden="true">🐂</span>
+                  <h3 class="disc-picker-title">Cutting Riders</h3>
+                </div>
+                <span class="disc-picker-quota quota-open" id="quota-cutting">0 / 2 selected</span>
+              </div>
+              <div class="rider-pick-grid" id="grid-cutting" role="group" aria-label="Select up to 2 cutting riders">
+                <!-- JS rendered -->
+              </div>
+            </div>
+
+            <!-- Bonus pick -->
+            <div class="disc-picker" id="picker-bonus" aria-label="Bonus rider selection">
+              <div class="disc-picker-header bonus-picker-header">
+                <div class="disc-picker-title-row">
+                  <span class="disc-picker-icon" aria-hidden="true">⭐</span>
+                  <h3 class="disc-picker-title">Bonus Rider — Any Discipline</h3>
+                </div>
+                <span class="disc-picker-quota bonus-quota-open" id="quota-bonus">0 / 1 selected</span>
+              </div>
+              <div class="rider-pick-grid" id="grid-bonus" role="group" aria-label="Select 1 bonus rider from any discipline">
+                <!-- JS rendered -->
+              </div>
+            </div>
+
+          </div><!-- /picker-col -->
+
+          <!-- ── Summary Sidebar ── -->
+          <aside class="summary-sidebar" aria-label="Your fantasy team summary">
+
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <h3 class="summary-card-title">Your Team</h3>
+                <span class="summary-count-badge" id="totalCount">0 / 7</span>
+              </div>
+
+              <div class="summary-slots" id="summarySlots" aria-live="polite" aria-label="Selected riders">
+                <!-- JS rendered -->
+              </div>
+
+              <div class="summary-progress">
+                <div class="progress-label">
+                  <span>Roster completion</span>
+                  <span id="progressPct">0%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+                  <div class="progress-fill" id="progressFill" style="width:0%"></div>
+                </div>
+              </div>
+
+              <div class="submit-area">
+                <button class="btn-submit" id="submitBtn" disabled aria-label="Submit team — coming soon, demo only">
+                  Submit Your Team
+                </button>
+                <p class="submit-notice">Demo only — no entries are collected. Contest entry opens before The Run For A Million.</p>
+              </div>
+            </div>
+
+            <div class="mini-links" aria-label="Related pages">
+              <p class="mini-links-title">Explore More</p>
+              <a href="/riders" class="mini-link">All Riders</a>
+              <a href="/scoring-rules" class="mini-link">Scoring Rules</a>
+              <a href="/leaderboard" class="mini-link">Leaderboard</a>
+              <a href="/how-it-works" class="mini-link">How It Works</a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Important Notice ───────────────────────────────────── -->
+    <section class="section" aria-labelledby="notice-heading">
+      <div class="container">
+        <div class="notice-block" role="note">
+          <div class="notice-icon" aria-hidden="true">📋</div>
+          <div class="notice-body">
+            <h2 class="notice-title" id="notice-heading">About This Demo</h2>
+            <p style="font-size:0.9rem;color:var(--cream-dim);line-height:1.7;">This team builder is a preview of the contest entry interface for Fantasy Run For A Million. The following applies to everything on this page:</p>
+            <ul class="notice-list">
+              <li>No team submissions are being collected — this is a demo only</li>
+              <li>No user accounts, logins, or data storage are active</li>
+              <li>Fantasy Run For A Million is a free fan engagement game — no entry fees, no wagering, no cash prizes are involved</li>
+              <li>This platform is not affiliated with, sponsored by, or officially connected to The Run For A Million or its organizers</li>
+              <li>Final contest rules, roster limits, and scoring details will be published when official entry opens</li>
+              <li>All rider data and roster formats shown are proposed and subject to change</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Related Pages ─────────────────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="related-heading">
+      <div class="container">
+        <p class="section-label">Keep Exploring</p>
+        <h2 class="section-title" id="related-heading">Everything You Need to Prepare</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <div class="related-pages-grid" role="list">
+          <a href="/riders" class="related-page-card" role="listitem">
+            <div class="rp-icon" aria-hidden="true">🏇</div>
+            <div>
+              <p class="rp-title">Rider Database</p>
+              <p class="rp-desc">Browse all 24 eligible riders across reining, cow horse, and cutting. Study the field before contest entry opens.</p>
+              <span class="rp-arrow">Browse Riders →</span>
+            </div>
+          </a>
+          <a href="/scoring-rules" class="related-page-card" role="listitem">
+            <div class="rp-icon" aria-hidden="true">📊</div>
+            <div>
+              <p class="rp-title">Scoring Rules</p>
+              <p class="rp-desc">Understand how fantasy points are earned — placements, bonus events, and what each finishing position is worth.</p>
+              <span class="rp-arrow">View Scoring →</span>
+            </div>
+          </a>
+          <a href="/leaderboard" class="related-page-card" role="listitem">
+            <div class="rp-icon" aria-hidden="true">🥇</div>
+            <div>
+              <p class="rp-title">Leaderboard</p>
+              <p class="rp-desc">See the sample leaderboard format and understand how fan standings will be tracked during The Run For A Million.</p>
+              <span class="rp-arrow">View Leaderboard →</span>
+            </div>
+          </a>
+          <a href="/how-it-works" class="related-page-card" role="listitem">
+            <div class="rp-icon" aria-hidden="true">📖</div>
+            <div>
+              <p class="rp-title">How It Works</p>
+              <p class="rp-desc">New to the format? Get a complete walkthrough of the five-step fantasy process from rider selection to leaderboard.</p>
+              <span class="rp-arrow">Learn the Format →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  
+  <section class="frfam-signup-section" aria-labelledby="signup-h-contest">
+    <div class="container">
+      <div class="frfam-signup-card">
+        <div class="fsc-left">
+          <p class="fsc-eyebrow">Contest Launch Updates</p>
+          <h2 class="fsc-h" id="signup-h-contest">Know When Real Contest Entry Opens</h2>
+          <p class="fsc-lead">The team builder is in demo mode. When real contest entry opens before The Run For A Million, you'll be the first to know — and the first to lock in your picks.</p>
+          <ul class="fsc-perks" aria-label="Signup benefits">
+              <li>First notification when contest entry opens</li>
+              <li>Reminder before the entry deadline closes</li>
+              <li>Scoring rule updates and bonus event announcements</li>
+              <li>Your confirmation when your team is submitted</li>
+          </ul>
+        </div>
+        <div class="fsc-right">
+          <div class="signup-form-wrap">
+            <form class="frfam-signup-form" data-variant="contest" novalidate aria-label="Know When Real Contest Entry Opens">
+              <label for="emailContest" class="fsc-form-label">Email address</label>
+              <input type="email" id="emailContest" name="email" class="frfam-email-input"
+                     placeholder="you@example.com" autocomplete="email"
+                     required aria-required="true" />
+              <button type="submit" class="frfam-submit-btn">Get Contest Updates <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="fsc-privacy">Contest launch alerts and fantasy updates only. Unsubscribe anytime. No spam. Fan engagement platform.</p>
+            <div class="signup-success" hidden aria-live="polite" role="status">
+              <div class="s-icon" aria-hidden="true">🐴</div>
+              <p class="s-h">You're on the list!</p>
+              <p class="s-body">You'll hear from us before real contest entry opens. Your demo team is saved — when it's time, just come back and submit the real thing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────────── -->
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Fantasy Run For A Million</div>
+        <p class="footer-note">Free-to-play western performance horse fantasy sports.</p>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links" role="list">
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/riders">Riders</a></li>
+            <li><a href="/scoring-rules">Scoring</a></li>
+            <li><a href="/leaderboard">Leaderboard</a></li>
+            <li><a href="/pick-your-team">Enter</a></li>
+            <li><a href="/signup">Join Waitlist</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top:1px solid rgba(201,168,76,0.08);margin-top:20px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:0.72rem;color:var(--cream-dim);opacity:0.5;line-height:1.6;max-width:640px;">Fan engagement platform — not affiliated with, sponsored by, or officially connected to The Run For A Million or its organizers. No gambling, wagering, or financial transactions of any kind.</p>
+        <p style="font-size:0.72rem;color:var(--cream-dim);opacity:0.4;white-space:nowrap;">&copy; 2025 Fantasy Run For A Million</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Rider Data ───────────────────────────────────────────── */
+    const DISC_RIDERS = {
+      reining: [
+        {name:"Andrea Fappani",     town:"Scottsdale, AZ"},
+        {name:"Casey Deary",        town:"Dry Fork, VA"},
+        {name:"Cade McCutcheon",    town:"Aubrey, TX"},
+        {name:"Jason Vanlandingham",town:"Weatherford, TX"},
+        {name:"Craig Schmersal",    town:"Scottsdale, AZ"},
+        {name:"Kole Price",         town:"Lipan, TX"},
+        {name:"Matt Mills",         town:"Millsap, TX"},
+        {name:"Nathan Piper",       town:"Weatherford, TX"},
+      ],
+      cowhorse: [
+        {name:"Corey Cushing",  town:"Temecula, CA"},
+        {name:"Boyd Rice",      town:"Weatherford, TX"},
+        {name:"Chris Dawson",   town:"Scottsdale, AZ"},
+        {name:"Abbie Phillips", town:"Pilot Point, TX"},
+        {name:"Kyle Trahern",   town:"Weatherford, TX"},
+        {name:"Clayton Edsall", town:"Whitesboro, TX"},
+        {name:"Erin Taormino",  town:"Scottsdale, AZ"},
+        {name:"Zane Davis",     town:"Weatherford, TX"},
+      ],
+      cutting: [
+        {name:"Adan Banuelos",    town:"Weatherford, TX"},
+        {name:"Beau Galyean",     town:"Whitesboro, TX"},
+        {name:"Weslay Galyean",   town:"Whitesboro, TX"},
+        {name:"Austin Shepard",   town:"Summerfield, NC"},
+        {name:"Tarin Rice",       town:"Canadian, TX"},
+        {name:"Kody Porterfield", town:"Gainesville, TX"},
+        {name:"Kenny Platt",      town:"Weatherford, TX"},
+        {name:"Cullen Chartier",  town:"Millsap, TX"},
+      ],
+    };
+
+    /* ── State ────────────────────────────────────────────────── */
+    // selected: { reining: Set, cowhorse: Set, cutting: Set, bonus: Set }
+    // limits:   reining=2, cowhorse=2, cutting=2, bonus=1
+    const LIMITS = { reining: 2, cowhorse: 2, cutting: 2, bonus: 1 };
+    const selected = { reining: new Set(), cowhorse: new Set(), cutting: new Set(), bonus: new Set() };
+
+    /* ── Helpers ──────────────────────────────────────────────── */
+    function initials(name) {
+      const p = name.split(' ');
+      return (p[0][0] + p[p.length - 1][0]).toUpperCase();
+    }
+
+    function discLabel(disc) {
+      return {reining:'R', cowhorse:'CH', cutting:'C'}[disc] || disc;
+    }
+
+    function tagClass(disc) {
+      return {reining:'tag-r', cowhorse:'tag-c', cutting:'tag-cu'}[disc] || 'tag-r';
+    }
+
+    function discName(disc) {
+      return {reining:'Reining', cowhorse:'Cow Horse', cutting:'Cutting'}[disc] || disc;
+    }
+
+    function totalSelected() {
+      return selected.reining.size + selected.cowhorse.size + selected.cutting.size + selected.bonus.size;
+    }
+
+    /* ── Render picker grid ───────────────────────────────────── */
+    function renderGrid(disc, gridId, riders) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      riders.forEach((rider, i) => {
+        const key = `${disc}::${rider.name}`;
+        const isSelected = selected[disc].has(rider.name);
+        const atLimit = selected[disc].size >= LIMITS[disc];
+        const isDimmed = !isSelected && atLimit;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'rider-pick-btn' +
+          (isSelected ? ' selected' : '') +
+          (isDimmed ? ' dimmed' : '');
+        btn.setAttribute('aria-pressed', isSelected);
+        btn.setAttribute('aria-label', `${isSelected ? 'Deselect' : 'Select'} ${rider.name}`);
+        if (isDimmed) btn.setAttribute('disabled', '');
+
+        btn.innerHTML = `
+          <div class="pick-avatar">${initials(rider.name)}</div>
+          <div>
+            <div class="pick-name">${rider.name}</div>
+            <div class="pick-sub">${rider.town}</div>
+          </div>`;
+
+        btn.addEventListener('click', () => toggle(disc, rider.name));
+        grid.appendChild(btn);
+      });
+    }
+
+    /* ── Render bonus grid (all riders from all discs) ────────── */
+    function renderBonusGrid() {
+      const grid = document.getElementById('grid-bonus');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      const atLimit = selected.bonus.size >= LIMITS.bonus;
+
+      ['reining','cowhorse','cutting'].forEach(disc => {
+        DISC_RIDERS[disc].forEach(rider => {
+          const isSelected = selected.bonus.has(`${disc}::${rider.name}`);
+          const isDimmed = !isSelected && atLimit;
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'rider-pick-btn' +
+            (isSelected ? ' selected' : '') +
+            (isDimmed ? ' dimmed' : '');
+          btn.setAttribute('aria-pressed', isSelected);
+          btn.setAttribute('aria-label', `${isSelected ? 'Deselect' : 'Select'} ${rider.name} as bonus rider`);
+          if (isDimmed) btn.setAttribute('disabled', '');
+
+          btn.innerHTML = `
+            <div class="pick-avatar">${initials(rider.name)}</div>
+            <div>
+              <div class="pick-name">${rider.name}</div>
+              <div class="pick-sub">${discName(disc)} · ${rider.town}</div>
+            </div>`;
+
+          btn.addEventListener('click', () => toggleBonus(`${disc}::${rider.name}`));
+          grid.appendChild(btn);
+        });
+      });
+    }
+
+    /* ── Toggle selection ─────────────────────────────────────── */
+    function toggle(disc, name) {
+      if (selected[disc].has(name)) {
+        selected[disc].delete(name);
+        // also remove from bonus if present
+        selected.bonus.delete(`${disc}::${name}`);
+      } else {
+        if (selected[disc].size >= LIMITS[disc]) return;
+        selected[disc].add(name);
+      }
+      refresh();
+    }
+
+    function toggleBonus(key) {
+      if (selected.bonus.has(key)) {
+        selected.bonus.delete(key);
+      } else {
+        if (selected.bonus.size >= LIMITS.bonus) return;
+        selected.bonus.add(key);
+      }
+      refresh();
+    }
+
+    /* ── Refresh all UI ───────────────────────────────────────── */
+    function refresh() {
+      // Re-render pickers
+      renderGrid('reining',  'grid-reining',  DISC_RIDERS.reining);
+      renderGrid('cowhorse', 'grid-cowhorse', DISC_RIDERS.cowhorse);
+      renderGrid('cutting',  'grid-cutting',  DISC_RIDERS.cutting);
+      renderBonusGrid();
+
+      // Update quota badges
+      updateQuota('reining',  'quota-reining',  'quota-open', 'quota-full');
+      updateQuota('cowhorse', 'quota-cowhorse', 'quota-open', 'quota-full');
+      updateQuota('cutting',  'quota-cutting',  'quota-open', 'quota-full');
+      updateBonusQuota();
+
+      // Update summary
+      renderSummary();
+      updateProgress();
+    }
+
+    function updateQuota(disc, elId, openClass, fullClass) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      const n = selected[disc].size;
+      const lim = LIMITS[disc];
+      el.textContent = `${n} / ${lim} selected`;
+      el.className = 'disc-picker-quota ' + (n >= lim ? fullClass : openClass);
+    }
+
+    function updateBonusQuota() {
+      const el = document.getElementById('quota-bonus');
+      if (!el) return;
+      const n = selected.bonus.size;
+      el.textContent = `${n} / 1 selected`;
+      el.className = 'disc-picker-quota ' + (n >= 1 ? 'bonus-quota-full' : 'bonus-quota-open');
+    }
+
+    /* ── Summary panel ────────────────────────────────────────── */
+    const SLOT_DEFS = [
+      {disc:'reining',  label:'RN 1', tag:'tag-r',  idx:0},
+      {disc:'reining',  label:'RN 2', tag:'tag-r',  idx:1},
+      {disc:'cowhorse', label:'CH 1', tag:'tag-c',  idx:0},
+      {disc:'cowhorse', label:'CH 2', tag:'tag-c',  idx:1},
+      {disc:'cutting',  label:'CU 1', tag:'tag-cu', idx:0},
+      {disc:'cutting',  label:'CU 2', tag:'tag-cu', idx:1},
+      {disc:'bonus',    label:'★ Bonus', tag:'tag-b', idx:0},
+    ];
+
+    function renderSummary() {
+      const container = document.getElementById('summarySlots');
+      if (!container) return;
+      container.innerHTML = '';
+
+      SLOT_DEFS.forEach((slot, i) => {
+        const el = document.createElement('div');
+        const isBonus = slot.disc === 'bonus';
+
+        let filledName = null;
+        if (isBonus) {
+          const arr = [...selected.bonus];
+          if (arr[slot.idx]) {
+            // key format: "disc::name"
+            filledName = arr[slot.idx].split('::')[1];
+          }
+        } else {
+          const arr = [...selected[slot.disc]];
+          filledName = arr[slot.idx] || null;
+        }
+
+        el.className = 'summary-slot' + (filledName ? ' filled' : '') + (isBonus ? ' bonus-slot' : '');
+        el.innerHTML = `
+          <span class="slot-disc-tag ${slot.tag}">${slot.label}</span>
+          ${filledName
+            ? `<span class="slot-name">${filledName}</span>
+               <button class="slot-remove-btn" aria-label="Remove ${filledName}" data-disc="${slot.disc}" data-name="${filledName}" data-bonus-key="${isBonus ? [...selected.bonus][slot.idx] || '' : ''}">✕</button>`
+            : `<span class="slot-empty">Empty slot</span>`}`;
+
+        container.appendChild(el);
+      });
+
+      // Bind remove buttons
+      container.querySelectorAll('.slot-remove-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const disc = btn.dataset.disc;
+          const name = btn.dataset.name;
+          if (disc === 'bonus') {
+            const key = btn.dataset.bonusKey;
+            selected.bonus.delete(key);
+          } else {
+            selected[disc].delete(name);
+          }
+          refresh();
+        });
+      });
+
+      // Total count badge
+      const total = totalSelected();
+      document.getElementById('totalCount').textContent = `${total} / 7`;
+    }
+
+    function updateProgress() {
+      const total = totalSelected();
+      const pct = Math.round((total / 7) * 100);
+      document.getElementById('progressPct').textContent = pct + '%';
+      document.getElementById('progressFill').style.width = pct + '%';
+      const bar = document.getElementById('progressBar');
+      bar.setAttribute('aria-valuenow', pct);
+    }
+
+    /* ── Mobile nav ───────────────────────────────────────────── */
+    (function () {
+      const btn  = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        const open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
+    /* ── Init ─────────────────────────────────────────────────── */
+    refresh();
+
+    /* ── frfam:team_submit dispatch for analytics tracking ────────────────────
+       analytics.js listens for this event to fire team_submission_attempt.
+       Fires on submit button click regardless of roster completion state,
+       so analytics captures both complete and incomplete attempts.
+    ─────────────────────────────────────────────────────────────────────────── */
+    (function () {
+      var submitBtn = document.getElementById('submitBtn');
+      if (!submitBtn) return;
+
+      submitBtn.addEventListener('click', function () {
+        var r  = selected.reining.size;
+        var ch = selected['cow-horse'] ? selected['cow-horse'].size : 0;
+        var c  = selected.cutting.size;
+        var b  = selected.bonus.size;
+        var complete = (r >= 2 && ch >= 2 && c >= 2 && b >= 1);
+
+        try {
+          document.dispatchEvent(new CustomEvent('frfam:team_submit', {
+            detail: {
+              has_reining:   r  >= 2,
+              has_cow_horse: ch >= 2,
+              has_cutting:   c  >= 2,
+              has_bonus:     b  >= 1,
+              is_complete:   complete,
+              reining_count:   r,
+              cow_horse_count: ch,
+              cutting_count:   c,
+            }
+          }));
+        } catch (e) { /* non-critical */ }
+      });
+    })();
+  </script>
+
+  <script src="/engine/email-capture.js" defer></script>
+  <script src="/engine/analytics.js" defer></script>
+</body>
+</html>

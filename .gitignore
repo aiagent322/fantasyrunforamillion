@@ -1,0 +1,17 @@
+# Fantasy Run For A Million — .gitignore
+# ========================================
+
+# Supabase keys (never commit real anon key)
+engine/supabase-keys.js
+
+# Local environment overrides
+.env.local
+.env
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,1821 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "schema": "riders-v1",
+    "description": "Master rider database for Fantasy Run For A Million. Source of truth for all rider data across the platform. Future: replace static values with CMS or API feed.",
+    "last_updated": "2025-01-01",
+    "total_riders": 45,
+    "disciplines": [
+      "reining",
+      "cow-horse",
+      "cutting"
+    ],
+    "integration_notes": {
+      "cms": "Replace static file with Sanity/Contentful API call at build time",
+      "supabase": "Mirror to Supabase table 'riders' \u2014 ref: ptuuuishzwwgmaexneul",
+      "generator": "Run generate_profiles.py after updating this file to rebuild profile pages"
+    }
+  },
+  "riders": [
+    {
+      "id": "andrea-fappani",
+      "name": "Andrea Fappani",
+      "slug": "andrea-fappani",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/andrea-fappani",
+      "fantasy_eligible": true,
+      "roster_number": 1,
+      "fantasy_stats": {
+        "source": "placeholder \u2014 populate from event results",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "One of the most decorated reining professionals in the sport. Known for producing horses with exceptional athleticism and maneuver quality.",
+      "seo": {
+        "title": "Andrea Fappani | Reining | Fantasy Run For A Million",
+        "description": "Andrea Fappani fantasy rider profile for Fantasy Run For A Million. Premier reining pick for your western horse fantasy team."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Andrea Fappani reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "casey-deary",
+      "name": "Casey Deary",
+      "slug": "casey-deary",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Dry Fork, VA",
+      "state": "VA",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/casey-deary",
+      "fantasy_eligible": true,
+      "roster_number": 2,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Elite reining professional with consistent top placements at major open events across the country.",
+      "seo": {
+        "title": "Casey Deary | Reining | Fantasy Run For A Million",
+        "description": "Casey Deary fantasy rider profile for Fantasy Run For A Million. Elite reining competitor and strong western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Casey Deary reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "cade-mccutcheon",
+      "name": "Cade McCutcheon",
+      "slug": "cade-mccutcheon",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Aubrey, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/cade-mccutcheon",
+      "fantasy_eligible": true,
+      "roster_number": 3,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Multiple reining title holder from one of the sport's most accomplished families. Consistent top placer at the highest level of NRHA competition.",
+      "seo": {
+        "title": "Cade McCutcheon | Reining | Fantasy Run For A Million",
+        "description": "Cade McCutcheon fantasy rider profile for Fantasy Run For A Million. Multiple reining champion and top-tier fantasy reining selection."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Cade McCutcheon reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "jason-vanlandingham",
+      "name": "Jason Vanlandingham",
+      "slug": "jason-vanlandingham",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 4,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Premier NRHA open competitor known for bold pattern execution.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Jason Vanlandingham reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "craig-schmersal",
+      "name": "Craig Schmersal",
+      "slug": "craig-schmersal",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 5,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Experienced reining professional and consistent NRHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Craig Schmersal reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "kole-price",
+      "name": "Kole Price",
+      "slug": "kole-price",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Lipan, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 6,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Rising reining professional with strong Texas circuit credentials.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Kole Price reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "matt-mills",
+      "name": "Matt Mills",
+      "slug": "matt-mills",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Millsap, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/matt-mills",
+      "fantasy_eligible": true,
+      "roster_number": 7,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "NRHA open division competitor and accomplished trainer based in North Texas.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Matt Mills reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "nathan-piper",
+      "name": "Nathan Piper",
+      "slug": "nathan-piper",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/nathan-piper",
+      "fantasy_eligible": true,
+      "roster_number": 8,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Weatherford-based reining professional and NRHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Nathan Piper reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "corey-cushing",
+      "name": "Corey Cushing",
+      "slug": "corey-cushing",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Temecula, CA",
+      "state": "CA",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/corey-cushing",
+      "fantasy_eligible": true,
+      "roster_number": 9,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Premier cow horse professional with multiple major NRCHA titles. Elite across all three phases of cow horse competition.",
+      "seo": {
+        "title": "Corey Cushing | Cow Horse | Fantasy Run For A Million",
+        "description": "Corey Cushing fantasy rider profile for Fantasy Run For A Million. Premier cow horse professional and first-round fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Corey Cushing cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "boyd-rice",
+      "name": "Boyd Rice",
+      "slug": "boyd-rice",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/boyd-rice",
+      "fantasy_eligible": true,
+      "roster_number": 10,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Experienced cow horse competitor known for fence work and cow work athleticism.",
+      "seo": {
+        "title": "Boyd Rice | Cow Horse | Fantasy Run For A Million",
+        "description": "Boyd Rice fantasy rider profile for Fantasy Run For A Million. Experienced cow horse competitor and strong western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Boyd Rice cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "chris-dawson",
+      "name": "Chris Dawson",
+      "slug": "chris-dawson",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/chris-dawson",
+      "fantasy_eligible": true,
+      "roster_number": 11,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Versatile cow horse professional with multi-discipline experience and consistent open results.",
+      "seo": {
+        "title": "Chris Dawson | Cow Horse | Fantasy Run For A Million",
+        "description": "Chris Dawson fantasy rider profile for Fantasy Run For A Million. Versatile cow horse professional and consistent fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Chris Dawson cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "abbie-phillips",
+      "name": "Abbie Phillips",
+      "slug": "abbie-phillips",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Pilot Point, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 12,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "NRCHA open competitor based in North Texas.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Abbie Phillips cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "kyle-trahern",
+      "name": "Kyle Trahern",
+      "slug": "kyle-trahern",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 13,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Weatherford-based cow horse professional and NRCHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Kyle Trahern cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "clayton-edsall",
+      "name": "Clayton Edsall",
+      "slug": "clayton-edsall",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Whitesboro, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 14,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "North Texas cow horse professional with strong open division credentials.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Clayton Edsall cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "erin-taormino",
+      "name": "Erin Taormino",
+      "slug": "erin-taormino",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/erin-taormino",
+      "fantasy_eligible": true,
+      "roster_number": 15,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Arizona-based cow horse professional competing at premier NRCHA events.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Erin Taormino cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "zane-davis",
+      "name": "Zane Davis",
+      "slug": "zane-davis",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/zane-davis",
+      "fantasy_eligible": true,
+      "roster_number": 16,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Weatherford-based cow horse professional and NRCHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Zane Davis cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "adan-banuelos",
+      "name": "Adan Banuelos",
+      "slug": "adan-banuelos",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/adan-banuelos",
+      "fantasy_eligible": true,
+      "roster_number": 17,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "One of the most dominant cutting professionals of his generation. Multiple major NCHA title winner.",
+      "seo": {
+        "title": "Adan Banuelos | Cutting | Fantasy Run For A Million",
+        "description": "Adan Banuelos fantasy rider profile for Fantasy Run For A Million. Dominant cutting professional and benchmark fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Adan Banuelos cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "beau-galyean",
+      "name": "Beau Galyean",
+      "slug": "beau-galyean",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Whitesboro, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/beau-galyean",
+      "fantasy_eligible": true,
+      "roster_number": 18,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Multiple NCHA open title winner and consistent finals presence. Part of one of the most recognized cutting families in the sport.",
+      "seo": {
+        "title": "Beau Galyean | Cutting | Fantasy Run For A Million",
+        "description": "Beau Galyean fantasy rider profile for Fantasy Run For A Million. Multiple NCHA champion and premier western horse fantasy cutting pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Beau Galyean cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "austin-shepard",
+      "name": "Austin Shepard",
+      "slug": "austin-shepard",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Summerfield, NC",
+      "state": "NC",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/austin-shepard",
+      "fantasy_eligible": true,
+      "roster_number": 19,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Respected cutting professional known for horse development and natural cow sense. Consistent NCHA open competitor.",
+      "seo": {
+        "title": "Austin Shepard | Cutting | Fantasy Run For A Million",
+        "description": "Austin Shepard fantasy rider profile for Fantasy Run For A Million. Respected cutting professional and strong value fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Austin Shepard cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "weslay-galyean",
+      "name": "Weslay Galyean",
+      "slug": "weslay-galyean",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Whitesboro, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/weslay-galyean",
+      "fantasy_eligible": true,
+      "roster_number": 20,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "North Texas cutting professional and NCHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Weslay Galyean cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "tarin-rice",
+      "name": "Tarin Rice",
+      "slug": "tarin-rice",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Canadian, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 21,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Canadian, Texas cutting professional and NCHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Tarin Rice cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "kody-porterfield",
+      "name": "Kody Porterfield",
+      "slug": "kody-porterfield",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Gainesville, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/kody-porterfield",
+      "fantasy_eligible": true,
+      "roster_number": 22,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "North Texas cutting professional with NCHA open competition experience.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Kody Porterfield cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "kenny-platt",
+      "name": "Kenny Platt",
+      "slug": "kenny-platt",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/kenny-platt",
+      "fantasy_eligible": true,
+      "roster_number": 23,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Weatherford-based cutting professional and NCHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Kenny Platt cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "cullen-chartier",
+      "name": "Cullen Chartier",
+      "slug": "cullen-chartier",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Millsap, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": false,
+      "profile_url": null,
+      "fantasy_eligible": true,
+      "roster_number": 24,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "North Texas cutting professional and NCHA open competitor.",
+      "seo": {
+        "title": null,
+        "description": null
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Cullen Chartier cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "luca-fappani",
+      "name": "Luca Fappani",
+      "slug": "luca-fappani",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/luca-fappani",
+      "fantasy_eligible": true,
+      "roster_number": 25,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Luca Fappani is a Scottsdale-based reining professional trained within one of the sport's most accomplished programs. A ...",
+      "seo": {
+        "title": "Luca Fappani | Reining | Fantasy Run For A Million",
+        "description": "Luca Fappani fantasy rider profile for Fantasy Run For A Million. Scottsdale-based reining professional and western horse fantasy reining pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Luca Fappani reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "matt-mcauslan",
+      "name": "Matt McAuslan",
+      "slug": "matt-mcauslan",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/matt-mcauslan",
+      "fantasy_eligible": true,
+      "roster_number": 26,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Matt McAuslan is a professional reining competitor and trainer based in Weatherford, Texas. An accomplished open divisio...",
+      "seo": {
+        "title": "Matt McAuslan | Reining | Fantasy Run For A Million",
+        "description": "Matt McAuslan fantasy rider profile for Fantasy Run For A Million. Weatherford-based NRHA reining professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Matt McAuslan reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "wade-mcdonald",
+      "name": "Wade McDonald",
+      "slug": "wade-mcdonald",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/wade-mcdonald",
+      "fantasy_eligible": true,
+      "roster_number": 27,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Wade McDonald is a Scottsdale-based reining professional with a competitive open division record. Known for his technica...",
+      "seo": {
+        "title": "Wade McDonald | Reining | Fantasy Run For A Million",
+        "description": "Wade McDonald fantasy rider profile for Fantasy Run For A Million. Scottsdale-based NRHA reining professional and western horse fantasy reining pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Wade McDonald reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "marco-ricotta",
+      "name": "Marco Ricotta",
+      "slug": "marco-ricotta",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Las Vegas, NV",
+      "state": "NV",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/marco-ricotta",
+      "fantasy_eligible": true,
+      "roster_number": 28,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Marco Ricotta is an internationally recognized reining professional with competitive experience across both American and...",
+      "seo": {
+        "title": "Marco Ricotta | Reining | Fantasy Run For A Million",
+        "description": "Marco Ricotta fantasy rider profile for Fantasy Run For A Million. International reining professional and western horse fantasy reining pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Marco Ricotta reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "casey-hinton",
+      "name": "Casey Hinton",
+      "slug": "casey-hinton",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/reining/casey-hinton",
+      "fantasy_eligible": true,
+      "roster_number": 29,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Casey Hinton is a North Texas reining professional competing out of the Weatherford area \u2014 the epicenter of competitive ...",
+      "seo": {
+        "title": "Casey Hinton | Reining | Fantasy Run For A Million",
+        "description": "Casey Hinton fantasy rider profile for Fantasy Run For A Million. North Texas NRHA reining professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Casey Hinton reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "dany-tremblay",
+      "name": "Dany Tremblay",
+      "slug": "dany-tremblay",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Quebec, Canada",
+      "state": "Canada",
+      "country": "Canada",
+      "profiled": true,
+      "profile_url": "/riders/reining/dany-tremblay",
+      "fantasy_eligible": true,
+      "roster_number": 30,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Dany Tremblay is one of Canada's premier reining professionals, bringing a strong NRHA competitive record from his Quebe...",
+      "seo": {
+        "title": "Dany Tremblay | Reining | Fantasy Run For A Million",
+        "description": "Dany Tremblay fantasy rider profile for Fantasy Run For A Million. Canadian NRHA reining professional and western horse fantasy reining pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Dany Tremblay reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "arnaud-girinon",
+      "name": "Arnaud Girinon",
+      "slug": "arnaud-girinon",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "France",
+      "state": "France",
+      "country": "France",
+      "profiled": true,
+      "profile_url": "/riders/reining/arnaud-girinon",
+      "fantasy_eligible": true,
+      "roster_number": 31,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Arnaud Girinon is a top-ranked European reining professional from France with extensive NRHA international circuit exper...",
+      "seo": {
+        "title": "Arnaud Girinon | Reining | Fantasy Run For A Million",
+        "description": "Arnaud Girinon fantasy rider profile for Fantasy Run For A Million. French NRHA reining professional and international western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Arnaud Girinon reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "arno-honstetter",
+      "name": "Arno Honstetter",
+      "slug": "arno-honstetter",
+      "discipline": "reining",
+      "discipline_label": "Reining",
+      "discipline_num": "01",
+      "hometown": "Germany",
+      "state": "Germany",
+      "country": "Germany",
+      "profiled": true,
+      "profile_url": "/riders/reining/arno-honstetter",
+      "fantasy_eligible": true,
+      "roster_number": 32,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Arno Honstetter is a leading German reining professional with an established record in NRHA international competition. A...",
+      "seo": {
+        "title": "Arno Honstetter | Reining | Fantasy Run For A Million",
+        "description": "Arno Honstetter fantasy rider profile for Fantasy Run For A Million. German NRHA reining professional and international western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Arno Honstetter reining rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "shadd-parkinson",
+      "name": "Shadd Parkinson",
+      "slug": "shadd-parkinson",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/shadd-parkinson",
+      "fantasy_eligible": true,
+      "roster_number": 33,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Shadd Parkinson is an accomplished cow horse professional with strong NRCHA open division credentials. Known for produci...",
+      "seo": {
+        "title": "Shadd Parkinson | Cow Horse | Fantasy Run For A Million",
+        "description": "Shadd Parkinson fantasy rider profile for Fantasy Run For A Million. NRCHA cow horse professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Shadd Parkinson cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "shawn-hays",
+      "name": "Shawn Hays",
+      "slug": "shawn-hays",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Temecula, CA",
+      "state": "CA",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/shawn-hays",
+      "fantasy_eligible": true,
+      "roster_number": 34,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Shawn Hays is a California-based cow horse professional with a competitive NRCHA open division record. Operating from th...",
+      "seo": {
+        "title": "Shawn Hays | Cow Horse | Fantasy Run For A Million",
+        "description": "Shawn Hays fantasy rider profile for Fantasy Run For A Million. California-based NRCHA cow horse professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Shawn Hays cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "matt-koch",
+      "name": "Matt Koch",
+      "slug": "matt-koch",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Pilot Point, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/matt-koch",
+      "fantasy_eligible": true,
+      "roster_number": 35,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Matt Koch is a North Texas cow horse professional based in Pilot Point \u2014 a strong hub for competitive equestrian sports ...",
+      "seo": {
+        "title": "Matt Koch | Cow Horse | Fantasy Run For A Million",
+        "description": "Matt Koch fantasy rider profile for Fantasy Run For A Million. North Texas NRCHA cow horse professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Matt Koch cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "sarah-dawson",
+      "name": "Sarah Dawson",
+      "slug": "sarah-dawson",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/sarah-dawson",
+      "fantasy_eligible": true,
+      "roster_number": 36,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Sarah Dawson is a Scottsdale-based cow horse professional with NRCHA open division experience. Known for her versatility...",
+      "seo": {
+        "title": "Sarah Dawson | Cow Horse | Fantasy Run For A Million",
+        "description": "Sarah Dawson fantasy rider profile for Fantasy Run For A Million. Scottsdale-based NRCHA cow horse professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Sarah Dawson cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "brendan-clark",
+      "name": "Brendan Clark",
+      "slug": "brendan-clark",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Whitesboro, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/brendan-clark",
+      "fantasy_eligible": true,
+      "roster_number": 37,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Brendan Clark is a North Texas cow horse professional based in Whitesboro \u2014 a community with strong ties to the reined c...",
+      "seo": {
+        "title": "Brendan Clark | Cow Horse | Fantasy Run For A Million",
+        "description": "Brendan Clark fantasy rider profile for Fantasy Run For A Million. North Texas NRCHA cow horse professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Brendan Clark cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "clay-volmer",
+      "name": "Clay Volmer",
+      "slug": "clay-volmer",
+      "discipline": "cow-horse",
+      "discipline_label": "Cow Horse",
+      "discipline_num": "02",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cow-horse/clay-volmer",
+      "fantasy_eligible": true,
+      "roster_number": 38,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Clay Volmer is a Weatherford-based cow horse professional with NRCHA open division experience. Operating from the compet...",
+      "seo": {
+        "title": "Clay Volmer | Cow Horse | Fantasy Run For A Million",
+        "description": "Clay Volmer fantasy rider profile for Fantasy Run For A Million. Weatherford-based NRCHA cow horse professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Clay Volmer cow horse rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "monty-buntin",
+      "name": "Monty Buntin",
+      "slug": "monty-buntin",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Weatherford, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/monty-buntin",
+      "fantasy_eligible": true,
+      "roster_number": 39,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Monty Buntin is a Weatherford-based cutting professional with strong NCHA open division credentials. Known for strategic...",
+      "seo": {
+        "title": "Monty Buntin | Cutting | Fantasy Run For A Million",
+        "description": "Monty Buntin fantasy rider profile for Fantasy Run For A Million. Weatherford-based NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Monty Buntin cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "michael-cooper",
+      "name": "Michael Cooper",
+      "slug": "michael-cooper",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Fort Worth, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/michael-cooper",
+      "fantasy_eligible": true,
+      "roster_number": 40,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Michael Cooper is a Fort Worth-based cutting professional with NCHA open division experience. Operating from the cultura...",
+      "seo": {
+        "title": "Michael Cooper | Cutting | Fantasy Run For A Million",
+        "description": "Michael Cooper fantasy rider profile for Fantasy Run For A Million. Fort Worth-based NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Michael Cooper cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "bradey-davis",
+      "name": "Bradey Davis",
+      "slug": "bradey-davis",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Whitesboro, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/bradey-davis",
+      "fantasy_eligible": true,
+      "roster_number": 41,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Bradey Davis is a North Texas cutting professional based in Whitesboro with NCHA open division experience. A skilled exh...",
+      "seo": {
+        "title": "Bradey Davis | Cutting | Fantasy Run For A Million",
+        "description": "Bradey Davis fantasy rider profile for Fantasy Run For A Million. North Texas NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Bradey Davis cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "tosten-peterson",
+      "name": "Tosten Peterson",
+      "slug": "tosten-peterson",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Gainesville, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/tosten-peterson",
+      "fantasy_eligible": true,
+      "roster_number": 42,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Tosten Peterson is a Gainesville-based cutting professional with NCHA open division experience. A North Texas cutting co...",
+      "seo": {
+        "title": "Tosten Peterson | Cutting | Fantasy Run For A Million",
+        "description": "Tosten Peterson fantasy rider profile for Fantasy Run For A Million. North Texas NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Tosten Peterson cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "kory-pounds",
+      "name": "Kory Pounds",
+      "slug": "kory-pounds",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Scottsdale, AZ",
+      "state": "AZ",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/kory-pounds",
+      "fantasy_eligible": true,
+      "roster_number": 43,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Kory Pounds is a Scottsdale-based cutting professional with NCHA open division credentials. An Arizona cutting competito...",
+      "seo": {
+        "title": "Kory Pounds | Cutting | Fantasy Run For A Million",
+        "description": "Kory Pounds fantasy rider profile for Fantasy Run For A Million. Scottsdale-based NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Kory Pounds cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "spud-sheehan",
+      "name": "Spud Sheehan",
+      "slug": "spud-sheehan",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Canadian, TX",
+      "state": "TX",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/spud-sheehan",
+      "fantasy_eligible": true,
+      "roster_number": 44,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Spud Sheehan is a cutting professional from Canadian, Texas \u2014 a Panhandle community with deep western heritage and stron...",
+      "seo": {
+        "title": "Spud Sheehan | Cutting | Fantasy Run For A Million",
+        "description": "Spud Sheehan fantasy rider profile for Fantasy Run For A Million. Panhandle Texas NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Spud Sheehan cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    },
+    {
+      "id": "cade-shepard",
+      "name": "Cade Shepard",
+      "slug": "cade-shepard",
+      "discipline": "cutting",
+      "discipline_label": "Cutting",
+      "discipline_num": "03",
+      "hometown": "Summerfield, NC",
+      "state": "NC",
+      "country": "USA",
+      "profiled": true,
+      "profile_url": "/riders/cutting/cade-shepard",
+      "fantasy_eligible": true,
+      "roster_number": 45,
+      "fantasy_stats": {
+        "source": "placeholder",
+        "events_entered": null,
+        "top_10_finishes": null,
+        "discipline_points": null,
+        "fantasy_rank": null,
+        "average_finish": null,
+        "qualified_runs": null,
+        "wins": null
+      },
+      "career_bio": "Cade Shepard is a cutting professional from Summerfield, North Carolina \u2014 one of the East Coast's most competitive cutti...",
+      "seo": {
+        "title": "Cade Shepard | Cutting | Fantasy Run For A Million",
+        "description": "Cade Shepard fantasy rider profile for Fantasy Run For A Million. East Coast NCHA cutting professional and western horse fantasy pick."
+      },
+      "image": {
+        "placeholder": true,
+        "cloudflare_image_id": null,
+        "alt": "Cade Shepard cutting rider"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": null,
+        "website": null
+      }
+    }
+  ]
+}

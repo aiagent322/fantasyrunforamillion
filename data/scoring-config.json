@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "schema": "scoring-config-v1",
+    "status": "proposed",
+    "description": "Fantasy scoring configuration for Fantasy Run For A Million. All point values defined here — never hardcoded in page HTML. Future: load from Supabase config table or CMS.",
+    "change_policy": "Any changes to scoring values must be published to /scoring-rules before contest entry opens. Version this file on every change.",
+    "integration": {
+      "engine_file": "/engine/fantasy-scoring.js",
+      "supabase_table": "scoring_config",
+      "applies_to_events": ["run-for-a-million-2025"]
+    }
+  },
+
+  "scoring_version": "v1",
+  "event_id": "run-for-a-million-2025",
+
+  "base_placement_points": {
+    "description": "Points awarded based on final placing in a discipline class",
+    "source": "official event results",
+    "values": {
+      "1": 100,
+      "2": 80,
+      "3": 65,
+      "4": 50,
+      "5": 40,
+      "6": 25,
+      "7": 25,
+      "8": 25,
+      "9": 25,
+      "10": 25,
+      "qualified": 10
+    },
+    "notes": "Positions 6-10 all earn 25 points. Any qualified completed run outside top 10 earns 10 points."
+  },
+
+  "bonus_events": {
+    "description": "Additional point events on top of base placement",
+    "status": "proposed — confirm before contest opens",
+    "events": {
+      "discipline_winner": {
+        "label": "Discipline Winner Bonus",
+        "points": 25,
+        "description": "Rider wins their discipline class outright",
+        "trigger": "auto — on 1st place result",
+        "per_discipline": true
+      },
+      "highest_composite": {
+        "label": "Highest Composite Score",
+        "points": 20,
+        "description": "Rider posts highest composite score across all classes in their discipline",
+        "trigger": "auto — on final results",
+        "per_discipline": true
+      },
+      "comeback_rider": {
+        "label": "Comeback Rider Bonus",
+        "points": 15,
+        "description": "Rider finishes significantly higher in a final class than preliminary suggested",
+        "trigger": "manual — requires human review",
+        "per_discipline": true
+      },
+      "rookie_underdog": {
+        "label": "Rookie or Underdog Bonus",
+        "points": 15,
+        "description": "First-time or lower-seeded rider finishes top 5",
+        "trigger": "manual — requires human review",
+        "per_discipline": true
+      },
+      "fan_favorite": {
+        "label": "Fan Favorite Bonus",
+        "points": 10,
+        "description": "Designated fan favorite rider per discipline earns a flat bonus for teams that selected them",
+        "trigger": "manual — designated before event",
+        "per_discipline": true
+      }
+    }
+  },
+
+  "roster_rules": {
+    "description": "Team roster slot configuration",
+    "total_slots": 7,
+    "slots": {
+      "reining": { "count": 2, "label": "Reining Riders", "discipline": "reining" },
+      "cow_horse": { "count": 2, "label": "Cow Horse Riders", "discipline": "cow-horse" },
+      "cutting": { "count": 2, "label": "Cutting Riders", "discipline": "cutting" },
+      "bonus": { "count": 1, "label": "Bonus Rider", "discipline": "any" }
+    },
+    "change_window": {
+      "allowed": false,
+      "notes": "Finalize change policy before entry opens"
+    }
+  },
+
+  "tiebreaker_rules": {
+    "description": "Rules for breaking ties in fantasy standings",
+    "status": "TBD — define before contest opens",
+    "proposed_order": [
+      "Most discipline winner bonuses",
+      "Highest single-class score across all selected riders",
+      "Earliest entry submission timestamp"
+    ]
+  },
+
+  "discipline_scoring_notes": {
+    "reining": "Points based on final placing in the open class. Composite scoring not applicable.",
+    "cow-horse": "Points based on composite placing across reined work, fence work, and cow work. Riders must complete all phases.",
+    "cutting": "Points based on final placing in the open class. Qualified run = completed run without disqualification."
+  }
+}

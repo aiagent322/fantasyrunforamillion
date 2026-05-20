@@ -1,0 +1,139 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "schema": "events-v1",
+    "description": "Master event database. Current event: Run For A Million. Expansion events planned. Future: integrate with results API or Supabase.",
+    "integration_notes": {
+      "results_feed": "Future: POST results to /api/events/{event_id}/results — triggers scoring recalculation",
+      "supabase_table": "events",
+      "cms_field": "event_pages in Sanity/Contentful"
+    }
+  },
+
+  "events": [
+
+    {
+      "id": "run-for-a-million-2025",
+      "slug": "run-for-a-million",
+      "name": "The Run For A Million",
+      "short_name": "RFM",
+      "year": 2025,
+      "status": "active",
+      "is_fantasy_anchor": true,
+      "page_url": "/events/run-for-a-million",
+      "disciplines": ["reining", "cow-horse", "cutting"],
+      "governing_bodies": ["NRHA", "NRCHA", "NCHA"],
+      "purse_display": "$1,000,000+",
+      "location": {
+        "venue": "TBD",
+        "city": "TBD",
+        "state": "TX",
+        "country": "USA"
+      },
+      "dates": {
+        "start": null,
+        "end": null,
+        "entry_deadline": null,
+        "fantasy_entry_deadline": null
+      },
+      "fantasy_config": {
+        "scoring_version": "v1",
+        "active": true,
+        "results_posted": false,
+        "leaderboard_live": false
+      },
+      "affiliation_disclaimer": "Not an official source. Fantasy Run For A Million is not affiliated with The Run For A Million or its organizers.",
+      "seo": {
+        "title": "The Run For A Million | Event Guide | Fantasy Run For A Million",
+        "description": "Educational overview of The Run For A Million for Fantasy Run For A Million fans. Reining, cow horse, and cutting disciplines explained."
+      }
+    },
+
+    {
+      "id": "nrha-futurity-2025",
+      "slug": "nrha-futurity",
+      "name": "NRHA Futurity",
+      "short_name": "NRHA Futurity",
+      "year": 2025,
+      "status": "planned",
+      "is_fantasy_anchor": false,
+      "page_url": "/events/nrha-futurity",
+      "disciplines": ["reining"],
+      "governing_bodies": ["NRHA"],
+      "purse_display": "TBD",
+      "location": {
+        "venue": "State Fair Park",
+        "city": "Oklahoma City",
+        "state": "OK",
+        "country": "USA"
+      },
+      "dates": { "start": null, "end": null, "entry_deadline": null, "fantasy_entry_deadline": null },
+      "fantasy_config": {
+        "scoring_version": null,
+        "active": false,
+        "results_posted": false,
+        "leaderboard_live": false
+      },
+      "affiliation_disclaimer": "Not an official source. Fantasy coverage is fan-created content.",
+      "seo": {
+        "title": "NRHA Futurity | Reining Event Guide | Fantasy Run For A Million",
+        "description": "Educational overview of the NRHA Futurity for western horse fantasy fans. The premier reining futurity event explained."
+      }
+    },
+
+    {
+      "id": "ncha-futurity-2025",
+      "slug": "ncha-futurity",
+      "name": "NCHA Futurity",
+      "short_name": "NCHA Futurity",
+      "year": 2025,
+      "status": "planned",
+      "is_fantasy_anchor": false,
+      "page_url": "/events/ncha-futurity",
+      "disciplines": ["cutting"],
+      "governing_bodies": ["NCHA"],
+      "purse_display": "TBD",
+      "location": {
+        "venue": "Will Rogers Memorial Center",
+        "city": "Fort Worth",
+        "state": "TX",
+        "country": "USA"
+      },
+      "dates": { "start": null, "end": null, "entry_deadline": null, "fantasy_entry_deadline": null },
+      "fantasy_config": { "scoring_version": null, "active": false, "results_posted": false, "leaderboard_live": false },
+      "affiliation_disclaimer": "Not an official source. Fantasy coverage is fan-created content.",
+      "seo": {
+        "title": "NCHA Futurity | Cutting Event Guide | Fantasy Run For A Million",
+        "description": "Educational overview of the NCHA Futurity for cutting fantasy fans. The premier cutting futurity event explained."
+      }
+    },
+
+    {
+      "id": "nrcha-snaffle-bit-2025",
+      "slug": "nrcha-snaffle-bit",
+      "name": "NRCHA Snaffle Bit Futurity",
+      "short_name": "Snaffle Bit",
+      "year": 2025,
+      "status": "planned",
+      "is_fantasy_anchor": false,
+      "page_url": "/events/nrcha-snaffle-bit",
+      "disciplines": ["cow-horse"],
+      "governing_bodies": ["NRCHA"],
+      "purse_display": "TBD",
+      "location": {
+        "venue": "Reno-Sparks Livestock Events Center",
+        "city": "Reno",
+        "state": "NV",
+        "country": "USA"
+      },
+      "dates": { "start": null, "end": null, "entry_deadline": null, "fantasy_entry_deadline": null },
+      "fantasy_config": { "scoring_version": null, "active": false, "results_posted": false, "leaderboard_live": false },
+      "affiliation_disclaimer": "Not an official source. Fantasy coverage is fan-created content.",
+      "seo": {
+        "title": "NRCHA Snaffle Bit Futurity | Cow Horse Event Guide | Fantasy Run For A Million",
+        "description": "Educational overview of the NRCHA Snaffle Bit Futurity for cow horse fantasy fans."
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fantasy Scoring Rules | Fantasy Run For A Million</title>
+  <meta name="description" content="View the complete fantasy scoring rules for Fantasy Run For A Million. Points system for reining, cow horse, and cutting — from 1st place (100 pts) to" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Fantasy Scoring Rules | Fantasy Run For A Million" />
+  <meta property="og:description" content="View the complete fantasy scoring rules for Fantasy Run For A Million. Points system for reining, cow horse, and cutting — from 1st place (100 pts) to" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Tokens ─────────────────────────────────────────── */
+    :root {
+      --black:        #0e0b08;
+      --dark:         #1a1410;
+      --dark-mid:     #241c14;
+      --leather:      #8B5E3C;
+      --gold:         #C9A84C;
+      --gold-light:   #e8c96a;
+      --rust:         #C4622D;
+      --cream:        #F5EDD6;
+      --cream-dim:    #c8bc9e;
+      --white:        #ffffff;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+      --radius:       6px;
+      --radius-lg:    12px;
+      --max-w:        1100px;
+      --tr:           0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); background: var(--dark); color: var(--cream); line-height: 1.6; font-size: 16px; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    /* ─── Nav ────────────────────────────────────────────── */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(14,11,8,0.92); backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; max-width: var(--max-w); margin: 0 auto; padding: 0 20px;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--gold); line-height: 1.2; }
+    .nav-logo span { display: block; font-size: 0.65rem; color: var(--cream-dim); font-family: var(--font-body); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cream-dim); transition: color var(--tr); }
+    .nav-links a:hover, .nav-links a[aria-current] { color: var(--gold); }
+    .nav-links .nav-cta a { color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 5px 14px; border-radius: var(--radius); }
+    .nav-links .nav-cta a:hover { background: rgba(201,168,76,0.12); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--cream); border-radius: 2px; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--black); border-top: 1px solid rgba(201,168,76,0.12); padding: 16px 20px 20px; gap: 4px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 0.9rem; font-weight: 500; color: var(--cream-dim); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-mobile a:last-child { border-bottom: none; }
+
+    /* ─── Page Header ────────────────────────────────────── */
+    .page-header {
+      padding: 128px 0 72px;
+      background: linear-gradient(160deg, #0e0b08 0%, #1a1410 55%, #1f1710 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 65% at 88% 25%, rgba(139,94,60,0.13) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 45% at 5% 85%, rgba(196,98,45,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; color: var(--cream-dim); opacity: 0.65;
+      margin-bottom: 20px; letter-spacing: 0.05em;
+    }
+    .breadcrumb a { transition: color var(--tr), opacity var(--tr); }
+    .breadcrumb a:hover { color: var(--gold); opacity: 1; }
+    .breadcrumb .sep { opacity: 0.35; }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    }
+    .page-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .page-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.08; letter-spacing: -0.01em;
+      max-width: 760px; margin-bottom: 20px;
+    }
+    .page-h1 em { font-style: normal; color: var(--gold); }
+    .page-lead {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--cream-dim); max-width: 560px;
+      line-height: 1.7; margin-bottom: 36px;
+    }
+    .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; font-family: var(--font-body);
+      font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 13px 26px; border-radius: var(--radius);
+      transition: var(--tr); white-space: nowrap;
+    }
+    .btn-primary { background: var(--gold); color: var(--black); }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline { background: transparent; color: var(--cream); border: 1px solid rgba(245,237,214,0.3); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── Proposed notice banner ─────────────────────────── */
+    .proposed-banner {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: var(--radius-lg);
+      padding: 16px 22px;
+      display: flex; align-items: flex-start; gap: 14px;
+      margin-top: 32px; max-width: 640px;
+    }
+    .proposed-banner-icon { font-size: 1.1rem; line-height: 1.5; flex-shrink: 0; }
+    .proposed-banner p { font-size: 0.84rem; color: var(--cream-dim); line-height: 1.6; }
+    .proposed-banner strong { color: var(--gold); font-weight: 600; }
+
+    /* ─── Section Shared ─────────────────────────────────── */
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--dark-mid); border-top: 1px solid rgba(201,168,76,0.08); border-bottom: 1px solid rgba(201,168,76,0.08); }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.7rem, 3.8vw, 2.6rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 12px; }
+    .section-lead { font-size: 1rem; color: var(--cream-dim); line-height: 1.7; max-width: 560px; }
+    .divider { width: 36px; height: 2px; background: var(--gold); margin: 16px 0 36px; }
+
+    /* ─── Points Table ───────────────────────────────────── */
+    .points-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .points-table-wrap {
+      border: 1px solid rgba(201,168,76,0.14);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .points-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .points-table thead tr {
+      background: rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .points-table th {
+      padding: 12px 20px;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); text-align: left;
+    }
+    .points-table th:last-child { text-align: right; }
+    .points-table tbody tr {
+      border-bottom: 1px solid rgba(201,168,76,0.07);
+      transition: background var(--tr);
+    }
+    .points-table tbody tr:last-child { border-bottom: none; }
+    .points-table tbody tr:hover { background: rgba(201,168,76,0.04); }
+    .points-table td {
+      padding: 14px 20px;
+      font-size: 0.9rem; color: var(--cream-dim);
+      vertical-align: middle;
+    }
+    .points-table td:last-child {
+      text-align: right;
+    }
+    /* Place rank cell */
+    .place-cell {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .place-medal {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 700;
+    }
+    .medal-1 { background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.5); color: var(--gold); }
+    .medal-2 { background: rgba(192,192,192,0.12); border: 1px solid rgba(192,192,192,0.3); color: #ccc; }
+    .medal-3 { background: rgba(180,100,50,0.15); border: 1px solid rgba(180,100,50,0.35); color: #c87040; }
+    .medal-n { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--cream-dim); }
+    .place-label { font-size: 0.88rem; color: var(--cream); }
+    /* Points value cell */
+    .pts-value {
+      font-family: var(--font-display); font-size: 1.15rem;
+      font-weight: 700; color: var(--gold);
+    }
+    .pts-value.dim { font-size: 1rem; color: var(--cream-dim); opacity: 0.7; }
+    /* Qualified row — visually distinct */
+    .row-qualified td { background: rgba(201,168,76,0.03); }
+    .row-qualified .place-label { font-style: italic; font-size: 0.84rem; color: var(--cream-dim); }
+
+    /* Side callout cards */
+    .callout-stack { display: flex; flex-direction: column; gap: 16px; }
+    .callout-card {
+      background: var(--dark-mid);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+    }
+    .callout-card-title {
+      font-family: var(--font-display); font-size: 1rem;
+      font-weight: 700; color: var(--white); margin-bottom: 8px;
+    }
+    .callout-card p { font-size: 0.86rem; color: var(--cream-dim); line-height: 1.65; }
+    .callout-card-num {
+      font-family: var(--font-display); font-size: 2rem;
+      font-weight: 900; color: var(--gold); line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    /* ─── Bonus Points ───────────────────────────────────── */
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .bonus-card {
+      background: var(--dark);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: border-color var(--tr), transform var(--tr);
+      position: relative; overflow: hidden;
+    }
+    .bonus-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0; transition: opacity var(--tr);
+    }
+    .bonus-card:hover { border-color: rgba(201,168,76,0.28); transform: translateY(-2px); }
+    .bonus-card:hover::before { opacity: 1; }
+    .bonus-icon { font-size: 1.6rem; line-height: 1; }
+    .bonus-pts {
+      font-family: var(--font-display); font-size: 1.5rem;
+      font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .bonus-pts span { font-size: 0.75rem; font-weight: 500; font-family: var(--font-body); color: var(--cream-dim); vertical-align: middle; margin-left: 3px; }
+    .bonus-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.2; }
+    .bonus-desc { font-size: 0.83rem; color: var(--cream-dim); line-height: 1.6; }
+    .bonus-status {
+      display: inline-block; width: fit-content;
+      background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.18);
+      border-radius: 3px; font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); padding: 3px 8px; margin-top: auto;
+    }
+
+    /* ─── Discipline Notes ───────────────────────────────── */
+    .disc-notes-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin-top: 40px;
+    }
+    .disc-note-cell {
+      background: var(--dark-mid); padding: 36px 28px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .disc-note-icon { font-size: 2rem; line-height: 1; }
+    .disc-note-name {
+      font-family: var(--font-display); font-size: 1.2rem;
+      font-weight: 700; color: var(--white);
+    }
+    .disc-note-tag {
+      display: inline-block; width: fit-content;
+      background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 3px; font-size: 0.63rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);
+      padding: 2px 8px;
+    }
+    .disc-note-body { font-size: 0.875rem; color: var(--cream-dim); line-height: 1.68; }
+    .disc-note-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--gold); margin-top: 4px;
+      transition: gap var(--tr);
+    }
+    .disc-note-link:hover { gap: 10px; }
+    .disc-note-link::after { content: '→'; }
+
+    /* ─── Free-to-play ───────────────────────────────────── */
+    .freeplay-block {
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(139,94,60,0.06) 100%);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: center;
+    }
+    .freeplay-text {}
+    .freeplay-list {
+      list-style: none; display: flex; flex-direction: column; gap: 14px;
+      margin-top: 24px;
+    }
+    .freeplay-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.9rem; color: var(--cream-dim); line-height: 1.55;
+    }
+    .freeplay-list li::before {
+      content: '✓';
+      display: flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; flex-shrink: 0;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%; font-size: 0.65rem; font-weight: 700; color: var(--gold);
+      margin-top: 1px;
+    }
+    .freeplay-disclaimer {
+      padding: 24px;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+    }
+    .freeplay-disclaimer p {
+      font-size: 0.82rem; color: var(--cream-dim); line-height: 1.7; opacity: 0.7;
+    }
+    .freeplay-disclaimer p + p { margin-top: 10px; }
+
+    /* ─── Coming Next ────────────────────────────────────── */
+    .coming-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      margin-top: 40px;
+    }
+    .coming-card {
+      background: var(--dark);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      display: flex; align-items: flex-start; gap: 18px;
+    }
+    .coming-icon {
+      width: 40px; height: 40px; flex-shrink: 0; border-radius: var(--radius);
+      background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.15);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .coming-status {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--cream-dim); opacity: 0.45; margin-bottom: 4px;
+    }
+    .coming-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .coming-desc { font-size: 0.82rem; color: var(--cream-dim); line-height: 1.6; opacity: 0.8; }
+
+    /* ─── CTA Banner ─────────────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(139,94,60,0.08) 100%);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 32px; flex-wrap: wrap; margin-top: 56px;
+    }
+    .cta-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .cta-title { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .cta-sub { font-size: 0.9rem; color: var(--cream-dim); max-width: 420px; line-height: 1.6; }
+    .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+
+    /* ─── Footer ─────────────────────────────────────────── */
+    .site-footer { background: var(--black); border-top: 1px solid rgba(201,168,76,0.1); padding: 36px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--gold); }
+    .footer-note { font-size: 0.78rem; color: var(--cream-dim); opacity: 0.6; }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--cream-dim); opacity: 0.6; transition: opacity var(--tr); }
+    .footer-links a:hover { opacity: 1; }
+
+    /* ─── Mobile ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .points-layout { grid-template-columns: 1fr; gap: 32px; }
+      .bonus-grid { grid-template-columns: 1fr 1fr; }
+      .disc-notes-grid { grid-template-columns: 1fr; }
+      .freeplay-block { grid-template-columns: 1fr; gap: 28px; padding: 36px 28px; }
+      .coming-grid { grid-template-columns: 1fr; }
+      .cta-banner { flex-direction: column; padding: 36px 28px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 56px 0; }
+      .page-header { padding: 100px 0 56px; }
+      .bonus-grid { grid-template-columns: 1fr; }
+      .hero-cta-row { flex-direction: column; }
+      .hero-cta-row .btn { text-align: center; }
+      .cta-actions { flex-direction: column; width: 100%; }
+      .cta-actions .btn { text-align: center; }
+    }
+  
+    /* Skip to content */
+    .skip-link { position: absolute; top: -48px; left: 16px; z-index: 9999; background: var(--gold); color: var(--black); font-family: var(--font-body); font-size: 0.875rem; font-weight: 700; padding: 10px 18px; border-radius: 0 0 var(--radius) var(--radius); text-decoration: none; transition: top 0.15s; }
+    .skip-link:focus { top: 0; outline: 2px solid var(--gold-light); }
+  </style>
+
+  <link rel="canonical" href="https://fantasyrunforamillion.com/scoring-rules" />
+  <meta property="og:url" content="https://fantasyrunforamillion.com/scoring-rules" />
+  <meta property="og:image" content="https://fantasyrunforamillion.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Fantasy Run For A Million — western performance horse fantasy sports" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Fantasy Run For A Million" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fantasy Scoring Rules | Fantasy Run For A Million" />
+  <meta name="twitter:description" content="View the complete fantasy scoring rules for Fantasy Run For A Million. Points system for reining, cow horse, and cutting — from 1st place (100 pts) to" />
+  <meta name="twitter:image" content="https://fantasyrunforamillion.com/og-image.jpg" />
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://fantasyrunforamillion.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Scoring Rules",
+      "item": "https://fantasyrunforamillion.com/scoring-rules"
+    }
+  ]
+}
+  </script>
+  <meta name="theme-color" content="#0e0b08" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐴</text></svg>" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script defer data-domain="fantasyrunforamillion.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+</head>
+<body data-page-type="scoring_rules">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ─── Nav ──────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        Fantasy Run For A Million
+        <span>Western Horse Fantasy Sports</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/riders">Riders</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="/scoring-rules" aria-current="page">Scoring</a></li>
+        <li class="nav-cta"><a href="/pick-your-team">Enter Now</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="/how-it-works">How It Works</a>
+      <a href="/riders">Riders</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/scoring-rules">Scoring Rules</a>
+      <a href="/pick-your-team">Enter Now</a>
+    </nav>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ─── Hero ────────────────────────────────────────────── -->
+    <header class="page-header">
+      <div class="container">
+        <div class="header-inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="sep">›</span>
+            <span>Scoring Rules</span>
+          </nav>
+          <p class="page-eyebrow">Fantasy Points System</p>
+          <h1 class="page-h1">
+            <em>Fantasy</em> Scoring Rules
+          </h1>
+          <p class="page-lead">
+            A simple points system for following reining, cow horse, and cutting riders at The Run For A Million. The better your riders finish, the more fantasy points your team earns.
+          </p>
+          <div class="hero-cta-row">
+            <a href="/riders" class="btn btn-primary">Browse the Riders</a>
+            <a href="/how-it-works" class="btn btn-outline">How It Works</a>
+          </div>
+
+          <div class="proposed-banner" role="note" aria-label="Important notice">
+            <span class="proposed-banner-icon">📋</span>
+            <p>
+              <strong>Proposed scoring model.</strong> The rules below represent the current design for the fantasy points system and are subject to change before the contest opens. Final scoring rules will be published when entry opens.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ─── Core Scoring Table ───────────────────────────── -->
+    <section class="section" aria-labelledby="scoring-heading">
+      <div class="container">
+        <p class="section-label">Core Points Model</p>
+        <h2 class="section-title" id="scoring-heading">How Points Are Earned</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead">
+          Fantasy points are assigned based on how your selected riders finish in their discipline at The Run For A Million. Every qualified completed run earns your team points — top finishes earn the most.
+        </p>
+
+        <div class="points-layout">
+
+          <!-- Table -->
+          <div>
+            <div class="points-table-wrap" role="region" aria-label="Fantasy points by finish position">
+              <table class="points-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Finish Position</th>
+                    <th scope="col">Fantasy Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-1" aria-hidden="true">1st</div>
+                        <span class="place-label">1st Place</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value">100</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-2" aria-hidden="true">2nd</div>
+                        <span class="place-label">2nd Place</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value">80</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-3" aria-hidden="true">3rd</div>
+                        <span class="place-label">3rd Place</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value">65</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-n" aria-hidden="true">4th</div>
+                        <span class="place-label">4th Place</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value">50</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-n" aria-hidden="true">5th</div>
+                        <span class="place-label">5th Place</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value">40</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-n" aria-hidden="true">6–10</div>
+                        <span class="place-label">6th – 10th Place</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value dim">25</span></td>
+                  </tr>
+                  <tr class="row-qualified">
+                    <td>
+                      <div class="place-cell">
+                        <div class="place-medal medal-n" aria-hidden="true" style="font-size:0.55rem;">QFD</div>
+                        <span class="place-label">Any qualified completed run</span>
+                      </div>
+                    </td>
+                    <td><span class="pts-value dim">10</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Side callouts -->
+          <div class="callout-stack" aria-label="Scoring highlights">
+            <div class="callout-card">
+              <div class="callout-card-num">100</div>
+              <h3 class="callout-card-title">Maximum Points Per Rider</h3>
+              <p>A rider who wins their class earns your team 100 fantasy points — the highest possible base score for a single result. Bonus events may award additional points on top of base placement.</p>
+            </div>
+            <div class="callout-card">
+              <div class="callout-card-num">10</div>
+              <h3 class="callout-card-title">Points for Every Qualified Run</h3>
+              <p>Any rider on your team who completes a qualified run — even outside the top 10 — earns your team 10 points. Depth in your roster still counts.</p>
+            </div>
+            <div class="callout-card">
+              <p style="font-size:0.78rem; color:var(--cream-dim); opacity:0.7; line-height:1.65;">
+                Points apply once per rider per event class. A rider competing across multiple classes may earn points in each. Discipline-specific rules are outlined below.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Bonus Points ──────────────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="bonus-heading">
+      <div class="container">
+        <p class="section-label">Extra Points Opportunities</p>
+        <h2 class="section-title" id="bonus-heading">Bonus Point Events</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead">
+          Beyond base placement, bonus point events are being designed to reward teams built around standout performances. These are proposed categories — final values will be confirmed before contest entry opens.
+        </p>
+
+        <div class="bonus-grid" role="list">
+
+          <article class="bonus-card" role="listitem">
+            <div class="bonus-icon" aria-hidden="true">🏆</div>
+            <div class="bonus-pts">+25 <span>pts</span></div>
+            <h3 class="bonus-title">Discipline Winner Bonus</h3>
+            <p class="bonus-desc">
+              If your selected rider wins their discipline outright at The Run For A Million, your team earns an additional bonus on top of the 1st place base points. Reward for backing the right winner.
+            </p>
+            <span class="bonus-status">Proposed</span>
+          </article>
+
+          <article class="bonus-card" role="listitem">
+            <div class="bonus-icon" aria-hidden="true">📈</div>
+            <div class="bonus-pts">+20 <span>pts</span></div>
+            <h3 class="bonus-title">Highest Composite Score</h3>
+            <p class="bonus-desc">
+              Awarded to the rider who posts the highest composite score across all classes within their discipline. Recognizes consistent excellence throughout the full event, not just a single strong run.
+            </p>
+            <span class="bonus-status">Proposed</span>
+          </article>
+
+          <article class="bonus-card" role="listitem">
+            <div class="bonus-icon" aria-hidden="true">⬆️</div>
+            <div class="bonus-pts">+15 <span>pts</span></div>
+            <h3 class="bonus-title">Comeback Rider Bonus</h3>
+            <p class="bonus-desc">
+              A rider who places significantly higher in a final class than their preliminary round suggested earns a bonus for their team. Rewards fans who recognized form before the field did.
+            </p>
+            <span class="bonus-status">Proposed</span>
+          </article>
+
+          <article class="bonus-card" role="listitem">
+            <div class="bonus-icon" aria-hidden="true">⭐</div>
+            <div class="bonus-pts">+15 <span>pts</span></div>
+            <h3 class="bonus-title">Rookie or Underdog Bonus</h3>
+            <p class="bonus-desc">
+              If a first-time Run For A Million competitor or a lower-seeded rider on your team finishes in the top 5 of their class, your team picks up an underdog bonus. The knowledgeable fan's edge.
+            </p>
+            <span class="bonus-status">Proposed</span>
+          </article>
+
+          <article class="bonus-card" role="listitem">
+            <div class="bonus-icon" aria-hidden="true">❤️</div>
+            <div class="bonus-pts">+10 <span>pts</span></div>
+            <h3 class="bonus-title">Fan Favorite Bonus</h3>
+            <p class="bonus-desc">
+              One rider per discipline may be designated a fan favorite based on community engagement during the event period. If your team includes that rider, you earn a flat bonus regardless of their finishing position.
+            </p>
+            <span class="bonus-status">Proposed</span>
+          </article>
+
+          <article class="bonus-card" role="listitem" style="border-style: dashed; opacity: 0.55;">
+            <div class="bonus-icon" aria-hidden="true">➕</div>
+            <div class="bonus-pts" style="color:var(--cream-dim);">TBD</div>
+            <h3 class="bonus-title">Additional Bonus Events</h3>
+            <p class="bonus-desc">
+              Additional bonus scoring opportunities may be added as the event format is finalized. All bonus categories will be published in full before contest entry opens.
+            </p>
+            <span class="bonus-status" style="opacity:0.5;">Coming</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Discipline Notes ──────────────────────────────── -->
+    <section class="section" aria-labelledby="disc-notes-heading">
+      <div class="container">
+        <p class="section-label">Per-Discipline Rules</p>
+        <h2 class="section-title" id="disc-notes-heading">How Scoring Works by Discipline</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead">
+          Each discipline at The Run For A Million has a different competitive format. Fantasy scoring reflects how each discipline determines its results.
+        </p>
+
+        <div class="disc-notes-grid" role="list">
+
+          <article class="disc-note-cell" role="listitem">
+            <div class="disc-note-icon" aria-hidden="true">🐴</div>
+            <span class="disc-note-tag">Discipline 01</span>
+            <h3 class="disc-note-name">Reining</h3>
+            <p class="disc-note-body">
+              Reining is scored on a single pattern. Judges score each maneuver individually and the sum determines final placing. Fantasy points for reining riders are assigned based on their final placing in the class. A rider who completes their pattern and qualifies earns at minimum the 10-point completion credit, with placement points added on top for top-10 finishes.
+            </p>
+            <a href="/riders/reining" class="disc-note-link">View Reining Riders</a>
+          </article>
+
+          <article class="disc-note-cell" role="listitem">
+            <div class="disc-note-icon" aria-hidden="true">🤠</div>
+            <span class="disc-note-tag">Discipline 02</span>
+            <h3 class="disc-note-name">Cow Horse</h3>
+            <p class="disc-note-body">
+              Cow horse competition involves multiple phases — reined work, fence work, and cow work — with scores compiled into a composite result. Fantasy points for cow horse riders are based on their final composite placing across all phases. Riders who complete all phases of competition earn the base completion credit. The composite placing determines placement points.
+            </p>
+            <a href="/riders/cow-horse" class="disc-note-link">View Cow Horse Riders</a>
+          </article>
+
+          <article class="disc-note-cell" role="listitem">
+            <div class="disc-note-icon" aria-hidden="true">🐂</div>
+            <span class="disc-note-tag">Discipline 03</span>
+            <h3 class="disc-note-name">Cutting</h3>
+            <p class="disc-note-body">
+              Cutting runs are scored by a panel of judges on degree of difficulty, control of the cow, and the horse's athleticism and cow sense. Fantasy points for cutting riders are assigned based on final placing in their class. Any rider who completes a qualified run — regardless of placing — earns the 10-point completion credit for their fantasy team.
+            </p>
+            <a href="/riders/cutting" class="disc-note-link">View Cutting Riders</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Free-to-Play ─────────────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="freeplay-heading">
+      <div class="container">
+        <p class="section-label">About The Contest Format</p>
+        <h2 class="section-title" id="freeplay-heading">Free-to-Play Fan Engagement</h2>
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="freeplay-block">
+          <div class="freeplay-text">
+            <p class="section-lead" style="max-width:100%;">
+              Fantasy Run For A Million is designed as a free-to-play fan engagement game — the same fantasy sports format fans of other professional sports already know, applied to western performance horse competition.
+            </p>
+            <ul class="freeplay-list" aria-label="What this game is">
+              <li>A points-based fantasy competition between fans</li>
+              <li>Free to enter with no fees or subscriptions required to play</li>
+              <li>Scored on publicly available competition results</li>
+              <li>An educational platform for learning western performance horse sport</li>
+              <li>A way to follow The Run For A Million more closely as a fan</li>
+            </ul>
+          </div>
+
+          <div class="freeplay-disclaimer" role="note">
+            <p>
+              Fantasy Run For A Million does not involve gambling, wagering, or financial betting of any kind. No money is exchanged between participants. This is a fan knowledge competition scored on real event results.
+            </p>
+            <p>
+              This platform is not affiliated with, sponsored by, or officially connected to The Run For A Million or its organizers. All competition result data used to calculate fantasy points is sourced from publicly available sources.
+            </p>
+            <p>
+              Final scoring rules, bonus point values, and contest terms will be published in full before the contest entry period opens.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Coming Next ───────────────────────────────────── -->
+    <section class="section" aria-labelledby="coming-heading">
+      <div class="container">
+        <p class="section-label">What's Next</p>
+        <h2 class="section-title" id="coming-heading">Coming to the Fantasy Game</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-lead">
+          The scoring system will be implemented progressively as the platform builds toward the event. Here is what is in development.
+        </p>
+
+        <div class="coming-grid" role="list">
+
+          <div class="coming-card" role="listitem">
+            <div class="coming-icon" aria-hidden="true">⚙️</div>
+            <div>
+              <p class="coming-status">In Development</p>
+              <h3 class="coming-title">Automated Scoring Engine</h3>
+              <p class="coming-desc">
+                Once competition results are available, the fantasy scoring engine will automatically calculate points for every team based on their selected riders' results. No manual entry required from participants.
+              </p>
+            </div>
+          </div>
+
+          <div class="coming-card" role="listitem">
+            <div class="coming-icon" aria-hidden="true">👤</div>
+            <div>
+              <p class="coming-status">In Development</p>
+              <h3 class="coming-title">Individual Rider Profiles</h3>
+              <p class="coming-desc">
+                Each eligible rider will have a dedicated profile page with competitive background and history at The Run For A Million — helping you make more informed team selections.
+              </p>
+            </div>
+          </div>
+
+          <div class="coming-card" role="listitem">
+            <div class="coming-icon" aria-hidden="true">🥇</div>
+            <div>
+              <p class="coming-status">Coming Soon</p>
+              <h3 class="coming-title">Fan Leaderboard</h3>
+              <p class="coming-desc">
+                The live leaderboard will rank all participating fan entries by total fantasy points earned. Updates as official competition results are posted throughout The Run For A Million.
+              </p>
+            </div>
+          </div>
+
+          <div class="coming-card" role="listitem">
+            <div class="coming-icon" aria-hidden="true">📝</div>
+            <div>
+              <p class="coming-status">Coming Soon</p>
+              <h3 class="coming-title">Contest Entry Form</h3>
+              <p class="coming-desc">
+                The team selection and entry form — where you officially submit your fantasy roster — will open before The Run For A Million begins. Entry is free.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+          <div>
+            <p class="cta-label">Start Here</p>
+            <h3 class="cta-title">Know the Rules. Know the Riders.</h3>
+            <p class="cta-sub">
+              Now that you understand how points are earned, start building your knowledge of the field. All 24 eligible riders are already in the database.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="/riders" class="btn btn-primary">Browse All Riders</a>
+            <a href="/how-it-works" class="btn btn-outline">How It Works</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────── -->
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Fantasy Run For A Million</div>
+        <p class="footer-note">Free-to-play western performance horse fantasy sports.</p>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links" role="list">
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/riders">Riders</a></li>
+            <li><a href="/scoring-rules">Scoring</a></li>
+            <li><a href="/leaderboard">Leaderboard</a></li>
+            <li><a href="/pick-your-team">Enter</a></li>
+            <li><a href="/signup">Join Waitlist</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top:1px solid rgba(201,168,76,0.08);margin-top:20px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:0.72rem;color:var(--cream-dim);opacity:0.5;line-height:1.6;max-width:640px;">Fan engagement platform — not affiliated with, sponsored by, or officially connected to The Run For A Million or its organizers. No gambling, wagering, or financial transactions of any kind.</p>
+        <p style="font-size:0.72rem;color:var(--cream-dim);opacity:0.4;white-space:nowrap;">&copy; 2025 Fantasy Run For A Million</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const btn  = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        const open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
+  <script src="/engine/analytics.js" defer></script>
+</body>
+</html>

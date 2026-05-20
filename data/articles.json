@@ -1,0 +1,813 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "schema": "articles-v1",
+    "description": "Content schema for Fantasy Run For A Million editorial articles. Currently placeholder structure. Future: replace with Sanity CMS, Contentful, or markdown files in /content/articles/.",
+    "cms_readiness": {
+      "markdown_path": "/content/articles/{slug}.md",
+      "sanity_type": "article",
+      "contentful_type": "article",
+      "front_matter_fields": [
+        "title",
+        "slug",
+        "category",
+        "discipline",
+        "excerpt",
+        "author",
+        "published_date",
+        "updated_date",
+        "seo_title",
+        "seo_description",
+        "featured_image",
+        "rider_references",
+        "related_articles",
+        "tags"
+      ]
+    },
+    "total_riders": 18
+  },
+  "categories": [
+    {
+      "id": "fantasy-tips",
+      "label": "Fantasy Tips",
+      "slug": "fantasy-tips",
+      "discipline": null
+    },
+    {
+      "id": "reining",
+      "label": "Reining",
+      "slug": "reining",
+      "discipline": "reining"
+    },
+    {
+      "id": "cow-horse",
+      "label": "Cow Horse",
+      "slug": "cow-horse",
+      "discipline": "cow-horse"
+    },
+    {
+      "id": "cutting",
+      "label": "Cutting",
+      "slug": "cutting",
+      "discipline": "cutting"
+    },
+    {
+      "id": "event-coverage",
+      "label": "Event Coverage",
+      "slug": "event-coverage",
+      "discipline": null
+    },
+    {
+      "id": "rider-spotlight",
+      "label": "Rider Spotlight",
+      "slug": "rider-spotlight",
+      "discipline": null
+    },
+    {
+      "id": "western-sports",
+      "label": "Western Sports",
+      "slug": "western-sports",
+      "discipline": null
+    }
+  ],
+  "article_schema": {
+    "description": "Schema for a single article \u2014 every field here maps to a CMS field or markdown front matter key",
+    "fields": {
+      "id": "string \u2014 unique article identifier, e.g. 'understanding-reining-scoring-2025'",
+      "slug": "string \u2014 URL-safe path segment, e.g. 'understanding-reining-scoring'",
+      "title": "string \u2014 full display title",
+      "seo_title": "string \u2014 optimized for search (often same as title, max 60 chars)",
+      "category": "string \u2014 matches category id above",
+      "discipline": "string | null \u2014 reining, cow-horse, cutting, or null for cross-discipline",
+      "excerpt": "string \u2014 1-2 sentence description for cards and meta description",
+      "body": "string \u2014 markdown content (future: stored in CMS or .md file)",
+      "author": "string \u2014 byline",
+      "published_date": "ISO 8601 date string",
+      "updated_date": "ISO 8601 date string | null",
+      "featured_image": {
+        "cloudflare_image_id": "string | null",
+        "alt": "string",
+        "caption": "string | null"
+      },
+      "rider_references": [
+        "array of rider id strings \u2014 enables internal linking"
+      ],
+      "event_references": [
+        "array of event id strings"
+      ],
+      "related_articles": [
+        "array of article id strings"
+      ],
+      "tags": [
+        "array of keyword strings for SEO and filtering"
+      ],
+      "status": "draft | published | archived",
+      "seo_description": "string \u2014 meta description, max 160 chars"
+    }
+  },
+  "placeholder_articles": [
+    {
+      "id": "understanding-reining-maneuver-scores",
+      "slug": "understanding-reining-maneuver-scores",
+      "title": "Understanding Reining Maneuver Scores",
+      "seo_title": "Reining Maneuver Scoring Explained | Fantasy Run For A Million",
+      "category": "reining",
+      "discipline": "reining",
+      "excerpt": "Reining judges score every maneuver individually on a scale from -1.5 to +1.5. Understanding which elements carry the most weight helps fantasy fans identify riders with the highest scoring potential.",
+      "body": "Full article available at /news/understanding-reining-maneuver-scores",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "Understanding Reining Maneuver Scores",
+        "caption": null
+      },
+      "rider_references": [
+        "andrea-fappani",
+        "casey-deary",
+        "cade-mccutcheon"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "the-sliding-stop-reinings-signature-maneuver",
+        "how-to-build-balanced-fantasy-roster",
+        "run-for-a-million-format-fantasy-guide"
+      ],
+      "tags": [
+        "reining",
+        "maneuver scoring",
+        "NRHA",
+        "fantasy strategy",
+        "sliding stop"
+      ],
+      "status": "published",
+      "seo_description": "Learn how reining maneuver scores work and how they translate to fantasy points. A guide to NRHA pattern scoring for western horse fantasy fans.",
+      "url": "/news/understanding-reining-maneuver-scores",
+      "read_time": "6 min read"
+    },
+    {
+      "id": "cow-horse-composite-scoring-explained",
+      "slug": "cow-horse-composite-scoring-explained",
+      "title": "Cow Horse Composite Scoring Explained",
+      "seo_title": "Cow Horse Composite Scoring | Fantasy Run For A Million",
+      "category": "cow-horse",
+      "discipline": "cow-horse",
+      "excerpt": "Cow horse competition is scored across three distinct phases \u2014 reined work, fence work, and cow work \u2014 with scores compiled into a composite result. Fantasy teams should prioritize all-around ability over single-phase specialists.",
+      "body": "Full article available at /news/cow-horse-composite-scoring-explained",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "Cow Horse Composite Scoring Explained",
+        "caption": null
+      },
+      "rider_references": [
+        "corey-cushing",
+        "boyd-rice",
+        "chris-dawson"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "how-to-build-balanced-fantasy-roster",
+        "fantasy-cow-horse-strategy-all-three-phases",
+        "run-for-a-million-format-fantasy-guide"
+      ],
+      "tags": [
+        "cow horse",
+        "NRCHA",
+        "composite scoring",
+        "fence work",
+        "fantasy strategy"
+      ],
+      "status": "published",
+      "seo_description": "How cow horse composite scoring works across reined work, fence work, and cow work \u2014 and what three-phase competition means for your fantasy team picks.",
+      "url": "/news/cow-horse-composite-scoring-explained",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "how-to-build-balanced-fantasy-roster",
+      "slug": "how-to-build-balanced-fantasy-roster",
+      "title": "How to Build a Balanced Fantasy Roster",
+      "seo_title": "Building a Balanced Western Horse Fantasy Team | Fantasy Run For A Million",
+      "category": "fantasy-tips",
+      "discipline": null,
+      "excerpt": "The strongest Fantasy Run For A Million teams don't simply concentrate picks on a single marquee discipline \u2014 they balance point potential across reining, cow horse, and cutting based on roster slot structure and scoring upside.",
+      "body": "Full article available at /news/how-to-build-balanced-fantasy-roster",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "How to Build a Balanced Fantasy Roster",
+        "caption": null
+      },
+      "rider_references": [
+        "andrea-fappani",
+        "adan-banuelos",
+        "corey-cushing"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "understanding-reining-maneuver-scores",
+        "cow-horse-composite-scoring-explained",
+        "cutting-judging-criteria-explained"
+      ],
+      "tags": [
+        "fantasy strategy",
+        "roster building",
+        "reining",
+        "cow horse",
+        "cutting",
+        "fantasy tips"
+      ],
+      "status": "published",
+      "seo_description": "Strategy guide for building a balanced reining, cow horse, and cutting fantasy team for Fantasy Run For A Million. How to allocate picks across three disciplines.",
+      "url": "/news/how-to-build-balanced-fantasy-roster",
+      "read_time": "8 min read"
+    },
+    {
+      "id": "the-sliding-stop-reinings-signature-maneuver",
+      "slug": "the-sliding-stop-reinings-signature-maneuver",
+      "title": "The Sliding Stop: Reining's Signature Maneuver",
+      "seo_title": "The Sliding Stop Explained | Reining's Signature Maneuver | Fantasy Run For A Million",
+      "category": "reining",
+      "discipline": "reining",
+      "excerpt": "No maneuver in western performance horse sports commands attention like the reining sliding stop. Understanding how judges evaluate stops \u2014 length, straightness, willingness \u2014 helps fans predict which riders will score at the top.",
+      "body": "Full article available at /news/the-sliding-stop-reinings-signature-maneuver",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "The Sliding Stop: Reining's Signature Maneuver",
+        "caption": null
+      },
+      "rider_references": [
+        "andrea-fappani",
+        "matt-mills",
+        "jason-vanlandingham"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "understanding-reining-maneuver-scores",
+        "run-for-a-million-format-fantasy-guide",
+        "how-to-build-balanced-fantasy-roster"
+      ],
+      "tags": [
+        "reining",
+        "sliding stop",
+        "NRHA",
+        "maneuver scoring",
+        "western sports"
+      ],
+      "status": "published",
+      "seo_description": "Everything western horse fans need to know about the reining sliding stop \u2014 how it's judged, what separates great stops from good ones, and what it means for fantasy scoring.",
+      "url": "/news/the-sliding-stop-reinings-signature-maneuver",
+      "read_time": "5 min read"
+    },
+    {
+      "id": "cutting-judging-criteria-explained",
+      "slug": "cutting-judging-criteria-explained",
+      "title": "Cutting Judging Criteria Explained",
+      "seo_title": "Cutting Horse Judging Criteria | Fantasy Run For A Million",
+      "category": "cutting",
+      "discipline": "cutting",
+      "excerpt": "Cutting judges evaluate four primary factors: degree of difficulty of cattle worked, degree of control the horse demonstrates, the horse's athleticism and quickness, and how effectively the run uses the 2.5-minute time limit.",
+      "body": "Full article available at /news/cutting-judging-criteria-explained",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "Cutting Judging Criteria Explained",
+        "caption": null
+      },
+      "rider_references": [
+        "adan-banuelos",
+        "beau-galyean",
+        "monty-buntin"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "how-to-build-balanced-fantasy-roster",
+        "run-for-a-million-format-fantasy-guide",
+        "western-performance-horse-disciplines-guide"
+      ],
+      "tags": [
+        "cutting",
+        "NCHA",
+        "judging criteria",
+        "cattle selection",
+        "fantasy strategy"
+      ],
+      "status": "published",
+      "seo_description": "How cutting horse competition is judged \u2014 degree of difficulty, control, athleticism, and time management explained for western horse fantasy fans.",
+      "url": "/news/cutting-judging-criteria-explained",
+      "read_time": "6 min read"
+    },
+    {
+      "id": "run-for-a-million-format-fantasy-guide",
+      "slug": "run-for-a-million-format-fantasy-guide",
+      "title": "The Run For A Million: A Fantasy Player's Guide",
+      "seo_title": "Run For A Million Fantasy Guide | Fantasy Run For A Million",
+      "category": "event-coverage",
+      "discipline": null,
+      "excerpt": "The Run For A Million brings together elite competitors across reining, cow horse, and cutting in a premier western performance horse event. Here's everything fantasy players need to understand about how the event works and what it means for your team.",
+      "body": "Full article available at /news/run-for-a-million-format-fantasy-guide",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "The Run For A Million: A Fantasy Player's Guide",
+        "caption": null
+      },
+      "rider_references": [
+        "andrea-fappani",
+        "corey-cushing",
+        "adan-banuelos"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "how-to-build-balanced-fantasy-roster",
+        "understanding-reining-maneuver-scores",
+        "cow-horse-composite-scoring-explained"
+      ],
+      "tags": [
+        "Run For A Million",
+        "event coverage",
+        "reining",
+        "cow horse",
+        "cutting",
+        "fantasy strategy"
+      ],
+      "status": "published",
+      "seo_description": "An educational overview of The Run For A Million western performance horse event for fantasy players \u2014 reining, cow horse, and cutting divisions explained.",
+      "url": "/news/run-for-a-million-format-fantasy-guide",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "western-performance-horse-disciplines-guide",
+      "slug": "western-performance-horse-disciplines-guide",
+      "title": "Western Performance Horse Disciplines: A Fan's Guide",
+      "seo_title": "Western Performance Horse Disciplines Guide | Fantasy Run For A Million",
+      "category": "western-sports",
+      "discipline": null,
+      "excerpt": "Western performance horse sports encompass three distinct disciplines \u2014 reining, cow horse, and cutting \u2014 each testing different aspects of horse training and rider horsemanship. This guide explains what makes each discipline unique.",
+      "body": "Full article available at /news/western-performance-horse-disciplines-guide",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "Western Performance Horse Disciplines: A Fan's Guide",
+        "caption": null
+      },
+      "rider_references": [
+        "andrea-fappani",
+        "corey-cushing",
+        "adan-banuelos"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "understanding-reining-maneuver-scores",
+        "cow-horse-composite-scoring-explained",
+        "cutting-judging-criteria-explained"
+      ],
+      "tags": [
+        "western sports",
+        "reining",
+        "cow horse",
+        "cutting",
+        "horse sports education",
+        "NRHA",
+        "NRCHA",
+        "NCHA"
+      ],
+      "status": "published",
+      "seo_description": "A complete guide to western performance horse disciplines \u2014 reining, cow horse, and cutting explained for new and experienced fans of western horse sports.",
+      "url": "/news/western-performance-horse-disciplines-guide",
+      "read_time": "9 min read"
+    },
+    {
+      "id": "fantasy-cow-horse-strategy-all-three-phases",
+      "slug": "fantasy-cow-horse-strategy-all-three-phases",
+      "title": "Fantasy Cow Horse Strategy: All Three Phases Matter",
+      "seo_title": "Fantasy Cow Horse Strategy Guide | Fantasy Run For A Million",
+      "category": "fantasy-tips",
+      "discipline": null,
+      "excerpt": "Fantasy cow horse success comes from identifying riders whose horses score competitively across all three phases \u2014 not just specialists in one class. Here's how to evaluate composite performance for your roster picks.",
+      "body": "Full article available at /news/fantasy-cow-horse-strategy-all-three-phases",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "featured_image": {
+        "cloudflare_image_id": null,
+        "alt": "Fantasy Cow Horse Strategy: All Three Phases Matter",
+        "caption": null
+      },
+      "rider_references": [
+        "corey-cushing",
+        "boyd-rice",
+        "shawn-hays"
+      ],
+      "event_references": [
+        "run-for-a-million-2025"
+      ],
+      "related_articles": [
+        "cow-horse-composite-scoring-explained",
+        "how-to-build-balanced-fantasy-roster",
+        "run-for-a-million-format-fantasy-guide"
+      ],
+      "tags": [
+        "cow horse",
+        "fantasy strategy",
+        "NRCHA",
+        "composite scoring",
+        "fence work",
+        "reined work"
+      ],
+      "status": "published",
+      "seo_description": "How to build a winning fantasy cow horse roster for Fantasy Run For A Million. Strategy for evaluating all-around performance across reined work, fence work, and cow work.",
+      "url": "/news/fantasy-cow-horse-strategy-all-three-phases",
+      "read_time": "6 min read"
+    },
+    {
+      "id": "top-reining-riders-run-for-a-million",
+      "slug": "top-reining-riders-run-for-a-million",
+      "title": "Top Reining Riders to Watch at The Run For A Million",
+      "seo_title": "Top Reining Riders | Fantasy Run For A Million",
+      "category": "reining",
+      "excerpt": "The reining field at The Run For A Million draws some of the most accomplished open division competitors in the world. Here's who to watch and who to pick for your fantasy reining slots.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "reining",
+        "top riders",
+        "NRHA",
+        "Run For A Million",
+        "fantasy picks",
+        "reining competition"
+      ],
+      "rider_references": [
+        "andrea-fappani",
+        "casey-deary",
+        "cade-mccutcheon"
+      ],
+      "related_articles": [
+        "beginners-guide-reining-competition",
+        "understanding-reining-maneuver-scores",
+        "how-to-build-balanced-fantasy-roster"
+      ],
+      "status": "published",
+      "seo_description": "The top reining riders to watch at The Run For A Million \u2014 and which names deserve the first picks in your Fantasy Run For A Million reining roster slots.",
+      "url": "/news/top-reining-riders-run-for-a-million",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "understanding-cow-horse-competition-fantasy-fans",
+      "slug": "understanding-cow-horse-competition-fantasy-fans",
+      "title": "Understanding Cow Horse Competition for Fantasy Fans",
+      "seo_title": "Understanding Cow Horse Competition | Fantasy Run For A Million",
+      "category": "cow-horse",
+      "excerpt": "Cow horse competition spans three distinct phases \u2014 reined work, fence work, and cow work \u2014 each scored separately and compiled into a composite result. Understanding this format is the foundation of smart cow horse fantasy selection.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "cow horse",
+        "NRCHA",
+        "three-phase competition",
+        "reined work",
+        "fence work",
+        "cow work",
+        "fantasy strategy"
+      ],
+      "rider_references": [
+        "corey-cushing",
+        "boyd-rice",
+        "shadd-parkinson"
+      ],
+      "related_articles": [
+        "cow-horse-composite-scoring-explained",
+        "cow-horse-vs-reining-fantasy-players-guide",
+        "fantasy-cow-horse-strategy-all-three-phases"
+      ],
+      "status": "published",
+      "seo_description": "A complete guide to cow horse competition for Fantasy Run For A Million fans \u2014 how the three-phase format works and what it means for fantasy team selection.",
+      "url": "/news/understanding-cow-horse-competition-fantasy-fans",
+      "read_time": "8 min read"
+    },
+    {
+      "id": "best-cutting-riders-fantasy-run-for-a-million",
+      "slug": "best-cutting-riders-fantasy-run-for-a-million",
+      "title": "Best Cutting Riders in Fantasy Run For A Million",
+      "seo_title": "Best Cutting Riders | Fantasy Run For A Million",
+      "category": "cutting",
+      "excerpt": "The cutting roster in Fantasy Run For A Million spans some of the most accomplished NCHA open division professionals in the sport. Here's how to evaluate the field and build your cutting fantasy picks.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "cutting",
+        "NCHA",
+        "cutting riders",
+        "fantasy picks",
+        "Run For A Million",
+        "cutting horse"
+      ],
+      "rider_references": [
+        "adan-banuelos",
+        "beau-galyean",
+        "austin-shepard"
+      ],
+      "related_articles": [
+        "why-cutting-horse-creates-great-fantasy-strategy",
+        "cutting-judging-criteria-explained",
+        "how-to-build-balanced-fantasy-roster"
+      ],
+      "status": "published",
+      "seo_description": "The best cutting horse riders in Fantasy Run For A Million \u2014 how to evaluate the cutting field and which competitors offer the best fantasy value across different roster strategies.",
+      "url": "/news/best-cutting-riders-fantasy-run-for-a-million",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "how-fantasy-scoring-works-western-horse-sports",
+      "slug": "how-fantasy-scoring-works-western-horse-sports",
+      "title": "How Fantasy Scoring Works in Western Horse Sports",
+      "seo_title": "How Fantasy Scoring Works | Fantasy Run For A Million",
+      "category": "fantasy-tips",
+      "excerpt": "Fantasy scoring in western horse sports works through a combination of placement points from official event results and bonus events that reward exceptional performances. Here's the complete breakdown.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "fantasy scoring",
+        "points system",
+        "placement points",
+        "bonus events",
+        "how it works",
+        "fantasy strategy"
+      ],
+      "rider_references": [
+        "andrea-fappani",
+        "corey-cushing",
+        "adan-banuelos"
+      ],
+      "related_articles": [
+        "how-to-build-balanced-fantasy-roster",
+        "run-for-a-million-format-fantasy-guide",
+        "rise-of-fantasy-western-sports"
+      ],
+      "status": "published",
+      "seo_description": "A complete guide to how fantasy scoring works in Fantasy Run For A Million \u2014 placement points, bonus events, roster rules, and how to maximize your team's total score.",
+      "url": "/news/how-fantasy-scoring-works-western-horse-sports",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "beginners-guide-reining-competition",
+      "slug": "beginners-guide-reining-competition",
+      "title": "A Beginner's Guide to Reining Competition",
+      "seo_title": "Beginner's Guide to Reining Competition | Fantasy Run For A Million",
+      "category": "reining",
+      "excerpt": "Reining is one of the most visually spectacular western performance horse disciplines \u2014 precision patterns, sliding stops, and spinning maneuvers judged on boldness and athleticism. Here's everything a new fan needs to know.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "reining",
+        "what is reining",
+        "reining basics",
+        "NRHA",
+        "western sports education",
+        "sliding stop",
+        "reining maneuvers"
+      ],
+      "rider_references": [
+        "andrea-fappani",
+        "casey-deary",
+        "nathan-piper"
+      ],
+      "related_articles": [
+        "understanding-reining-maneuver-scores",
+        "the-sliding-stop-reinings-signature-maneuver",
+        "top-reining-riders-run-for-a-million"
+      ],
+      "status": "published",
+      "seo_description": "New to reining? This beginner's guide explains what reining competition is, how it's scored, what the maneuvers mean, and how it connects to western horse fantasy sports.",
+      "url": "/news/beginners-guide-reining-competition",
+      "read_time": "8 min read"
+    },
+    {
+      "id": "cow-horse-vs-reining-fantasy-players-guide",
+      "slug": "cow-horse-vs-reining-fantasy-players-guide",
+      "title": "Cow Horse vs Reining: What Fantasy Players Should Know",
+      "seo_title": "Cow Horse vs Reining | Fantasy Run For A Million Guide",
+      "category": "fantasy-tips",
+      "excerpt": "Reining and cow horse share common roots and overlapping skills, but their competition structures, scoring systems, and fantasy dynamics are meaningfully different. Here's what every fantasy player needs to know about both.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "cow horse vs reining",
+        "reining",
+        "cow horse",
+        "NRHA",
+        "NRCHA",
+        "fantasy strategy",
+        "discipline comparison"
+      ],
+      "rider_references": [
+        "corey-cushing",
+        "boyd-rice",
+        "casey-deary"
+      ],
+      "related_articles": [
+        "understanding-cow-horse-competition-fantasy-fans",
+        "beginners-guide-reining-competition",
+        "how-to-build-balanced-fantasy-roster"
+      ],
+      "status": "published",
+      "seo_description": "Cow horse vs reining \u2014 the key differences every Fantasy Run For A Million player needs to understand to make informed roster picks in both disciplines.",
+      "url": "/news/cow-horse-vs-reining-fantasy-players-guide",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "fantasy-sleeper-picks-run-for-a-million",
+      "slug": "fantasy-sleeper-picks-run-for-a-million",
+      "title": "Fantasy Sleeper Picks for The Run For A Million",
+      "seo_title": "Fantasy Sleeper Picks | Run For A Million | Fantasy Run For A Million",
+      "category": "fantasy-tips",
+      "excerpt": "Every winning fantasy team includes at least one pick that others missed. Here's how to identify sleeper value in the Fantasy Run For A Million field \u2014 across reining, cow horse, and cutting.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "fantasy sleepers",
+        "value picks",
+        "reining sleepers",
+        "cutting sleepers",
+        "cow horse value",
+        "fantasy strategy",
+        "Run For A Million"
+      ],
+      "rider_references": [
+        "arnaud-girinon",
+        "shawn-hays",
+        "spud-sheehan"
+      ],
+      "related_articles": [
+        "how-to-build-balanced-fantasy-roster",
+        "top-reining-riders-run-for-a-million",
+        "best-cutting-riders-fantasy-run-for-a-million"
+      ],
+      "status": "published",
+      "seo_description": "Fantasy sleeper picks for The Run For A Million \u2014 less obvious rider selections across reining, cow horse, and cutting that offer value beyond the first-round names.",
+      "url": "/news/fantasy-sleeper-picks-run-for-a-million",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "why-cutting-horse-creates-great-fantasy-strategy",
+      "slug": "why-cutting-horse-creates-great-fantasy-strategy",
+      "title": "Why Cutting Horse Creates Great Fantasy Strategy",
+      "seo_title": "Why Cutting Horse Is Great Fantasy Strategy | Fantasy Run For A Million",
+      "category": "cutting",
+      "excerpt": "Cutting horse competition introduces the most strategic complexity of the three Fantasy Run For A Million disciplines \u2014 cattle draw variance, degree-of-difficulty selection, and the independent-horse rule all create fantasy dynamics that reward deep knowledge.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "cutting",
+        "cutting strategy",
+        "NCHA",
+        "cutting fantasy",
+        "cattle variance",
+        "fantasy strategy",
+        "degree of difficulty"
+      ],
+      "rider_references": [
+        "adan-banuelos",
+        "monty-buntin",
+        "weslay-galyean"
+      ],
+      "related_articles": [
+        "cutting-judging-criteria-explained",
+        "best-cutting-riders-fantasy-run-for-a-million",
+        "how-to-build-balanced-fantasy-roster"
+      ],
+      "status": "published",
+      "seo_description": "Why cutting horse competition creates uniquely compelling fantasy strategy \u2014 the variance, the cattle factor, and what separates consistent performers from boom-or-bust competitors.",
+      "url": "/news/why-cutting-horse-creates-great-fantasy-strategy",
+      "read_time": "7 min read"
+    },
+    {
+      "id": "meet-the-riders-fantasy-run-for-a-million",
+      "slug": "meet-the-riders-fantasy-run-for-a-million",
+      "title": "Meet the Riders of Fantasy Run For A Million",
+      "seo_title": "Meet the Riders | Fantasy Run For A Million",
+      "category": "rider-profiles",
+      "excerpt": "Fantasy Run For A Million features 45 riders across reining, cow horse, and cutting \u2014 from world-renowned professionals to emerging open division competitors. Here's your introduction to the full field.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "rider profiles",
+        "reining riders",
+        "cow horse riders",
+        "cutting riders",
+        "Run For A Million",
+        "meet the riders"
+      ],
+      "rider_references": [
+        "andrea-fappani",
+        "corey-cushing",
+        "adan-banuelos"
+      ],
+      "related_articles": [
+        "top-reining-riders-run-for-a-million",
+        "best-cutting-riders-fantasy-run-for-a-million",
+        "how-to-build-balanced-fantasy-roster"
+      ],
+      "status": "published",
+      "seo_description": "Meet all the riders in Fantasy Run For A Million \u2014 an introduction to the reining, cow horse, and cutting professionals competing across three disciplines.",
+      "url": "/news/meet-the-riders-fantasy-run-for-a-million",
+      "read_time": "9 min read"
+    },
+    {
+      "id": "rise-of-fantasy-western-sports",
+      "slug": "rise-of-fantasy-western-sports",
+      "title": "The Rise of Fantasy Western Sports",
+      "seo_title": "The Rise of Fantasy Western Sports | Fantasy Run For A Million",
+      "category": "western-sports",
+      "excerpt": "Fantasy sports have transformed fan engagement across professional sports for decades. Fantasy Run For A Million brings that same model to western performance horse sports \u2014 creating a new way for fans to engage with reining, cow horse, and cutting.",
+      "author": "Fantasy Run For A Million Editorial",
+      "published_date": "2025-01-01",
+      "tags": [
+        "fantasy western sports",
+        "western sports media",
+        "fan engagement",
+        "horse show fantasy",
+        "fantasy sports",
+        "western horse sports"
+      ],
+      "rider_references": [
+        "andrea-fappani",
+        "corey-cushing",
+        "adan-banuelos"
+      ],
+      "related_articles": [
+        "how-fantasy-scoring-works-western-horse-sports",
+        "meet-the-riders-fantasy-run-for-a-million",
+        "western-performance-horse-disciplines-guide"
+      ],
+      "status": "published",
+      "seo_description": "How fantasy sports are changing fan engagement in western performance horse sports \u2014 and why Fantasy Run For A Million brings a new dimension to reining, cow horse, and cutting fandom.",
+      "url": "/news/rise-of-fantasy-western-sports",
+      "read_time": "8 min read"
+    }
+  ],
+  "cms_readiness": {
+    "markdown_path": "/content/articles/{slug}.md",
+    "sanity_type": "article",
+    "contentful_type": "article",
+    "generator_script": "/home/claude/generate_articles.py",
+    "add_article_steps": [
+      "1. Add article dict to ARTICLES list in generate_articles.py",
+      "2. Run: python3 generate_articles.py",
+      "3. Update sitemap.xml if not auto-added",
+      "4. Update relevant news hub page if category-filtered"
+    ],
+    "future_cms_steps": [
+      "Replace ARTICLES list with Sanity/Contentful API fetch at build time",
+      "Replace static HTML writes with template render + file write pipeline",
+      "Add markdown body field support via python-markdown or similar",
+      "Wire data/articles.json to Supabase 'articles' table for CMS admin"
+    ],
+    "front_matter_spec": {
+      "required": [
+        "slug",
+        "title",
+        "category",
+        "excerpt",
+        "status"
+      ],
+      "optional": [
+        "seo_title",
+        "meta_desc",
+        "author",
+        "published_date",
+        "tags",
+        "rider_references",
+        "related_articles"
+      ]
+    }
+  }
+}

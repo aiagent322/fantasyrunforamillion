@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Non-public paths — disallow if/when created
+Disallow: /api/
+Disallow: /admin/
+Disallow: /platform/
+
+# Static assets — crawlable and allowed
+# /data/, /engine/ contain JS/JSON support files, not HTML pages
+
+Sitemap: https://fantasyrunforamillion.com/sitemap.xml
