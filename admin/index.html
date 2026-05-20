@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Fantasy Run For A Million [INTERNAL]</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--black:#0e0b08;--dark:#1a1410;--dark-mid:#241c14;--gold:#C9A84C;--gold-light:#e8c96a;--cream:#F5EDD6;--cream-dim:#c8bc9e;--white:#fff;--rust:#C4622D;--amber:#d97706;--green:#16a34a;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',sans-serif;--radius:6px;--radius-lg:12px;--max-w:960px;--tr:.22s ease;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--font-body);background:var(--dark);color:var(--cream);line-height:1.6;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 20px;}
+    /* Admin bar */
+    .admin-bar{background:#1c1007;border-bottom:2px solid var(--amber);padding:10px 20px;display:flex;align-items:center;gap:12px;}
+    .admin-badge{background:var(--amber);color:#000;font-size:0.65rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:3px 10px;border-radius:3px;}
+    .admin-bar-text{font-size:0.8rem;color:var(--cream-dim);opacity:0.7;}
+    .admin-bar-links{margin-left:auto;display:flex;gap:20px;}
+    .admin-bar-links a{font-size:0.78rem;color:var(--cream-dim);opacity:0.6;transition:opacity var(--tr);}
+    .admin-bar-links a:hover{opacity:1;color:var(--gold);}
+    /* Page header */
+    .page-header{padding:40px 0 32px;border-bottom:1px solid rgba(201,168,76,0.1);}
+    .page-header h1{font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--white);margin-bottom:6px;}
+    .page-header p{font-size:0.9rem;color:var(--cream-dim);}
+    /* Status banner */
+    .status-banner{margin:24px 0;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.3);border-radius:var(--radius-lg);padding:16px 20px;}
+    .status-banner strong{color:var(--amber);}
+    /* Cards grid */
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+    .admin-card{background:var(--dark-mid);border:1px solid rgba(201,168,76,0.12);border-radius:var(--radius-lg);padding:24px 20px;display:flex;flex-direction:column;gap:10px;transition:border-color var(--tr);}
+    .admin-card:hover{border-color:rgba(201,168,76,0.3);}
+    .card-icon{font-size:1.6rem;}
+    .card-label{font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+    .card-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--white);}
+    .card-desc{font-size:0.82rem;color:var(--cream-dim);line-height:1.55;flex:1;}
+    .card-status{font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:3px;}
+    .status-ready{background:rgba(22,163,74,0.15);color:#4ade80;border:1px solid rgba(22,163,74,0.3);}
+    .status-pending{background:rgba(217,119,6,0.15);color:#fbbf24;border:1px solid rgba(217,119,6,0.3);}
+    .status-blocked{background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2);}
+    .card-link{display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold);margin-top:4px;}
+    .card-link:hover{text-decoration:underline;}
+    .card-link::after{content:'→';}
+    /* Checklist */
+    .checklist{background:var(--dark-mid);border:1px solid rgba(201,168,76,0.1);border-radius:var(--radius-lg);padding:24px 20px;margin-bottom:24px;}
+    .checklist h2{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:16px;}
+    .check-item{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(201,168,76,0.06);}
+    .check-item:last-child{border-bottom:none;}
+    .check-icon{font-size:1rem;flex-shrink:0;margin-top:1px;}
+    .check-label{font-size:0.84rem;color:var(--cream-dim);line-height:1.5;}
+    .check-label strong{color:var(--cream);}
+    /* Footer */
+    .admin-footer{border-top:1px solid rgba(201,168,76,0.08);padding:20px 0;margin-top:48px;}
+    .admin-footer p{font-size:0.72rem;color:var(--cream-dim);opacity:0.4;text-align:center;}
+    @media(max-width:700px){.cards-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <div class="admin-bar">
+    <span class="admin-badge">Admin</span>
+    <span class="admin-bar-text">Fantasy Run For A Million — Internal</span>
+    <nav class="admin-bar-links">
+      <a href="/admin/results">Results</a>
+      <a href="/admin/leaderboard">Leaderboard</a>
+      <a href="/">← Public Site</a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <header class="page-header">
+        <h1>Admin Control Center</h1>
+        <p>Internal scoring management — Fantasy Run For A Million / aiagent322</p>
+      </header>
+
+      <div class="status-banner">
+        <strong>⚠ Pre-Launch Status</strong> — Event results not yet entered. Contest submissions are live.
+        Run <code>003_scoring_tables.sql</code> in Supabase before entering results.
+        Admin writes require Cloudflare Worker proxy (service key — never in browser).
+      </div>
+
+      <!-- Main section cards -->
+      <div class="cards-grid">
+        <div class="admin-card">
+          <span class="card-icon">📊</span>
+          <span class="card-label">Scoring</span>
+          <h2 class="card-title">Event Results</h2>
+          <p class="card-desc">Enter official discipline placings and scores. Triggers fantasy point calculation for all teams.</p>
+          <span class="card-status status-pending">Awaiting SQL Migration</span>
+          <a href="/admin/results" class="card-link">Open Results Form</a>
+        </div>
+        <div class="admin-card">
+          <span class="card-icon">🏆</span>
+          <span class="card-label">Rankings</span>
+          <h2 class="card-title">Leaderboard</h2>
+          <p class="card-desc">View computed team standings, trigger leaderboard recalculation, and push snapshot to public DB.</p>
+          <span class="card-status status-pending">Demo Data Only</span>
+          <a href="/admin/leaderboard" class="card-link">View Leaderboard</a>
+        </div>
+        <div class="admin-card">
+          <span class="card-icon">👥</span>
+          <span class="card-label">Teams</span>
+          <h2 class="card-title">Team Submissions</h2>
+          <p class="card-desc">Review submitted fantasy teams. Access via Supabase dashboard — service role required.</p>
+          <span class="card-status status-ready">Live via Dashboard</span>
+          <a href="https://supabase.com/dashboard/project/ptuuuishzwwgmaexneul/editor" class="card-link" target="_blank" rel="noopener">Open Supabase</a>
+        </div>
+      </div>
+
+      <!-- Go-live checklist -->
+      <div class="checklist">
+        <h2>Scoring Go-Live Checklist</h2>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Run 003_scoring_tables.sql</strong> — creates event_results and leaderboard_snapshots with RLS</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Deploy Cloudflare Worker for admin writes</strong> — Worker proxies service key to Supabase (key never in browser)</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Set FRFAM_ADMIN_ENDPOINT</strong> in admin pages — points to Worker URL</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Enter official event results</strong> after The Run For A Million discipline classes complete</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Trigger scoring run</strong> via /admin/leaderboard → runs calculateLeaderboard() → writes snapshot</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Verify leaderboard_snapshots</strong> in Supabase dashboard — confirm anon SELECT returns correct rankings</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">☐</span>
+          <p class="check-label"><strong>Update public /leaderboard page</strong> to read from Supabase leaderboard_snapshots (replace demo data)</p>
+        </div>
+      </div>
+
+      <!-- Database links -->
+      <div class="checklist">
+        <h2>Supabase Quick Links — Project: ptuuuishzwwgmaexneul</h2>
+        <div class="check-item">
+          <span class="check-icon">🗄</span>
+          <p class="check-label"><a href="https://supabase.com/dashboard/project/ptuuuishzwwgmaexneul/sql" target="_blank" rel="noopener" style="color:var(--gold);">SQL Editor</a> — run migrations</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">📋</span>
+          <p class="check-label"><a href="https://supabase.com/dashboard/project/ptuuuishzwwgmaexneul/editor" target="_blank" rel="noopener" style="color:var(--gold);">Table Editor</a> — browse submissions</p>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">🔑</span>
+          <p class="check-label"><a href="https://supabase.com/dashboard/project/ptuuuishzwwgmaexneul/settings/api" target="_blank" rel="noopener" style="color:var(--gold);">API Settings</a> — anon key + service role key</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="admin-footer">
+    <div class="container">
+      <p>Internal admin — not affiliated with The Run For A Million. Not indexed. Not publicly linked.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
