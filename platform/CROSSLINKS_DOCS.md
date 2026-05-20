@@ -958,3 +958,135 @@ Steps: same as event-prep. Consider linking from /strategy/team-building closing
    would be the natural next page.
 3. /top-riders/{disc} → /strategy/{disc} — already has sidebar links but could
    benefit from a body-text reference in the intro paragraph.
+
+
+---
+
+## Onboarding Funnel & Strategy Pathway Pass — 2026-05-20
+
+### Objective
+
+Strengthen the educational-to-participation conversion path across the four highest-intent
+pages that sit between a new fan discovering the game and actually submitting their fantasy team.
+
+### Funnel map (before → after)
+
+```
+Before:
+  /how-it-works  →  /pick-your-team  (single hard CTA, no strategy bridge)
+  /leaderboard   →  (no scoring education link)
+  /top-riders/{disc} → (no strategy link in intro)
+
+After:
+  /how-it-works  →  /strategy  →  /strategy/{disc}  →  /pick-your-team
+  /leaderboard   →  /strategy/scoring  →  /scoring-rules  →  /pick-your-team
+  /top-riders/{disc} → /strategy/{disc} → /disciplines/{disc} → /pick-your-team
+```
+
+### /how-it-works strategy bridge (section added)
+
+A new section (`id="hiw-strategy-bridge"`) was inserted between the
+"How the Fantasy Format Is Structured" section and the "Coming Next" section.
+
+Content: "Ready to go deeper? Explore the strategy guides."
+CTAs: "Strategy Guide →" (secondary, gold outline) + "Build Your Team →" (primary, gold fill)
+Rationale: User has just read how the game works. This is the highest-intent moment
+to introduce strategy content — before they see "Coming Next" which signals the game
+isn't live yet and risks reducing conversion momentum.
+
+### /leaderboard scoring callout (section added)
+
+A new callout section (`id="lb-scoring-callout"`) was inserted before the
+"Coming to the Leaderboard" section.
+
+Content: "Want to understand how fantasy points are calculated?"
+Style: Gold left-border callout (matches article-page callout component style).
+Links: /strategy/scoring + /scoring-rules
+Rationale: Users looking at the leaderboard demo have a natural question about how
+points work. Surfacing this before "Coming Soon" prevents dead-end friction.
+
+### /top-riders/{disc} strategy links (3 pages)
+
+The third paragraph of each discipline intro now includes a strategy link:
+
+| Page | Old closing link | New strategy link added |
+|------|-----------------|------------------------|
+| /top-riders/reining | Learn how reining scoring works → | reining strategy guide |
+| /top-riders/cow-horse | Learn how cow horse composite scoring works → | cow horse strategy guide |
+| /top-riders/cutting | Learn how cutting judging works → | cutting strategy guide |
+
+Pattern: "For the full rider evaluation framework, see the [disc] strategy guide."
+This creates a natural academic progression: see the riders → learn how to evaluate them.
+
+### strategy/index.html future-route cards (2 placeholder cards added)
+
+Two "Coming Soon" placeholder cards (`id="strategy-event-prep-placeholder"` and
+`id="strategy-sleepers-placeholder"`) were added to the strategy hub grid.
+
+Cards are visually subdued (65% opacity, dashed border) to signal "not yet available"
+without breaking the grid layout. Each card includes:
+- Icon + title + description of what the guide will cover
+- Badge indicating when it will be available
+- No link (cards are not clickable until the pages exist)
+
+These cards signal to users that more strategy content is coming and give search engines
+a crawlable indication of future topical depth.
+
+### Onboarding funnel strategy
+
+The complete onboarding funnel now has natural link bridges at every stage:
+
+```
+Discovery (homepage, nav, news) → Education → Strategy → Entry
+     ↓                               ↓           ↓         ↓
+  /how-it-works              /strategy/{disc}  /top-riders  /pick-your-team
+  /faq                       /strategy/scoring /leaderboard /scoring-rules
+  /disciplines/{disc}        /strategy/team-building
+```
+
+Every page in the funnel now links forward toward the next stage and back toward
+the educational content a user might need. No dead ends.
+
+### Leaderboard → scoring education flow
+
+The leaderboard is a natural "curiosity loop" page — users who arrive after the event
+will want to understand why their team scored as it did. The callout creates a bridge:
+
+  Leaderboard (see your score) → /strategy/scoring (understand the point structure)
+  → /scoring-rules (see exact point values) → /pick-your-team (adjust for next season)
+
+### Future planned routes
+
+**`/strategy/event-prep`**
+Create when: event dates are publicly confirmed + competitive field is announced.
+Content focus: How to finalize picks in the last 2-7 days before the event.
+Sections: last-minute rider news, field size confirmation, injury/withdrawal monitoring,
+bonus slot finalization. Placeholder card added to strategy hub grid.
+
+**`/strategy/sleepers`**
+Create when: competitive field is finalized, within 30 days of the event.
+Content focus: Value riders whose upside is underappreciated relative to their roster cost.
+Update cadence: once per season minimum; ideally within 2 weeks of event.
+Placeholder card added to strategy hub grid.
+
+**Steps to create either route:**
+1. Copy existing strategy sub-page template (e.g., strategy/reining/index.html)
+2. Update: title, meta_desc, canonical, slug data-attr, bc_json, h1, content
+3. Replace placeholder card with live card in strategy/index.html
+4. Add URL to sitemap.xml with appropriate lastmod
+5. Commit + Cloudflare auto-deploys
+
+### Additional funnel improvements (not yet done)
+
+1. /scoring-rules → /strategy/scoring link — the scoring rules page ends with no
+   "what to do with this information" bridge. A closing sentence: "For how the point
+   structure should inform your roster picks, see the scoring strategy guide" would
+   complete the education → entry loop.
+
+2. /riders/{disc} → /top-riders/{disc} → /strategy/{disc} chain — the riders hub pages
+   currently end with a pick-your-team CTA. Adding a secondary "Not sure who to pick?
+   Read the [disc] strategy guide" line would capture users in research mode.
+
+3. /about → /strategy — the about page is often the first page curious new users visit.
+   A "Learn how to compete" link to /strategy in the about page content would capture
+   early-funnel users before they start exploring.
