@@ -8,3 +8,6 @@
 # 404 — Cloudflare Pages serves 404.html automatically when present
 # Uncomment below only if SPA-style client routing is ever needed:
 # /*             /index.html         200
+
+# /disciplines hub → riders (no standalone disciplines hub page)
+/disciplines        /riders           301
