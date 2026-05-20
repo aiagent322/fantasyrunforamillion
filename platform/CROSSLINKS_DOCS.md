@@ -316,3 +316,56 @@ See `platform/CROSSLINKS_DOCS.md#future` (appended below):
 - **External link equity**: pursue links from NRHA, NRCHA, NCHA news sections
   and western sports publications to rider profile pages — these have existing
   SEO authority and rider names as natural anchor text targets.
+
+
+---
+
+## v2.0 Changes (Static Baking Added)
+
+### What changed
+
+**`engine/cross-links.js` → v2.0**
+- Fixed critical ID placement bug: `sidebarCard()` now puts the `id` attribute on the root
+  element so `alreadyInjected()` checks work correctly for static+dynamic hybrid pages
+- Added "Discipline Guides" sidebar injection for all article pages
+- `discLinksForArticle()` helper: picks specific discipline or all 3 based on article context
+- All sidebar card calls now pass explicit IDs for idempotency
+
+**`generate_cross_links.py` (new — build-time static baking)**
+- Reads `data/*.json` and patches HTML files with static cross-link sections
+- Idempotent: checks for existing element IDs before injecting (safe to re-run)
+- Output: static HTML with cross-links baked in at build time (no JS required for SEO)
+- Pages modified: all profiled rider pages, article pages, discipline pages, event pages
+
+### Hybrid architecture
+
+```
+Static HTML (generate_cross_links.py)       JS layer (cross-links.js)
+────────────────────────────────────         ─────────────────────────────────
+Baked at build time                          Runs at runtime (deferred)
+No JS required — works with JS off           Covers pages not yet statically baked
+Full SEO benefit (content in source HTML)    alreadyInjected() prevents duplication
+Cloudflare serves instantly from cache       3 JSON fetches, cached in-memory
+```
+
+### Re-running the generator
+
+Run after any change to `data/*.json`:
+
+```bash
+export GITHUB_TOKEN=your_token_here
+python3 generate_cross_links.py
+```
+
+The generator will skip pages already patched and only update pages with
+stale or missing cross-links.
+
+### Pages patched in v2.0 run
+
+| Page type       | Count patched | Count skipped (already done) |
+|-----------------|---------------|------------------------------|
+| Rider profiles  | 41            | 0                            |
+| Articles        | 7             | 12 (had existing disc links) |
+| Discipline      | 3             | 0                            |
+| Events          | 4             | 0                            |
+| **Total**       | **55**        | **12**                       |
