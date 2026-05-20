@@ -636,4 +636,24 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Archive event pages -->
+  <url>
+    <loc>https://fantasyrunforamillion.com/events/run-for-a-million-archive</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/events/run-for-a-million-2026</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/events/run-for-a-million-2025</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
