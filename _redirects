@@ -11,3 +11,6 @@
 
 # /disciplines hub → riders (no standalone disciplines hub page)
 /disciplines        /riders           301
+
+# Top riders sub-pages (Cloudflare Pages serves these natively)
+# No redirects needed — static files at top-riders/{disc}/index.html
