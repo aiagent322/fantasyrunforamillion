@@ -454,3 +454,91 @@ To regenerate the sitemap, update `LAUNCH` / `CROSS_LINKS_DATE` / `TODAY` consta
 4. **Video/media schema** — if `media/` section adds video content, add `VideoObject` schema
 5. **FAQ schema on /faq** — `FAQPage` schema is straightforward and often generates rich results
    in western sports / sports fantasy adjacent queries
+
+
+---
+
+## Discipline Educational Hub System — 2026-05-20
+
+### Overview
+
+All three discipline hub pages have been expanded into full educational content hubs.
+Each page is a complete replacement — same design system, significantly expanded content.
+
+### Page structure (all three disciplines)
+
+```
+<header>           Eyebrow · H1 · Page lead paragraph
+<section>          Intro + Scoring + What to Watch + Fantasy Strategy + Event Connections
+                   Two-column layout: disc-prose (left) + disc-sidebar (right)
+<section alt>      Discipline Terminology — glossary-grid with 8 terms per discipline
+<section>          Eligible Riders — rider-mini-grid with all profiled + coming-soon riders
+<section>          Related Articles — disc-article-cards (4 cards per discipline)
+```
+
+### Content added per page
+
+| Section | Reining | Cow Horse | Cutting |
+|---------|---------|-----------|---------|
+| Intro paragraphs | 3 | 3 | 3 |
+| Scoring explanation | Full maneuver table + scale table + penalties | 3-phase breakdown + phase table + variance note | Holistic scoring + factors table + penalty list |
+| What to Watch | 4 items | 4 items | 4 items |
+| Fantasy Strategy | 3-paragraph fv-card | 3-paragraph fv-card | 3-paragraph fv-card |
+| Event connections | 2 events + scoring link | 2 events + scoring link | 2 events + scoring link |
+| Glossary | 8 terms | 8 terms | 8 terms |
+| Riders shown | 16 (13 profiled) | 14 (11 profiled) | 15 (13 profiled) |
+| Article cards | 4 | 4 | 4 |
+
+### SEO improvements
+
+- Titles updated: `[Discipline] Discipline Guide | Fantasy Run For A Million`
+- Meta descriptions updated: comprehensive, keyword-rich, 155–160 chars
+- `<link rel="canonical">` added to each page
+- BreadcrumbList JSON-LD: 2-item structure (Home → Discipline Guide) — matches SEO pass fix
+- H2 IDs added: `disc-intro-heading`, `how-scoring-works`, `what-to-watch`, `fantasy-strategy`, `at-the-run-for-a-million`
+- Glossary section adds natural long-tail keyword coverage for discipline terminology
+- New section IDs: `disc-glossary-heading`, `featured-riders-heading`, `art-strip-{disc}`
+
+### Internal links per page
+
+Each discipline hub now links to:
+- Rider profiles (via rider-mini-grid)
+- Rider discipline hub (/riders/{disc})
+- News category hub (/news/{disc})
+- Pick-your-team page
+- Scoring rules page
+- Leaderboard
+- Two event pages
+- Four article pages
+- Both other discipline hubs
+- Top riders page
+
+### Topical authority approach
+
+Each hub page is structured as the authoritative fan-facing reference for that discipline.
+Content is educational and beginner-friendly without relying on fake statistics or rules.
+Terminology sections create natural long-tail keyword coverage for:
+- "[discipline] scoring explained"
+- "[discipline] rules for beginners"
+- "[discipline] fantasy strategy"
+- "what to watch [discipline]"
+- "[maneuver term] definition"
+
+### Future schema opportunities
+
+Pages are structured to support future additions:
+
+1. **FAQPage schema** — the glossary section can be converted to FAQ schema with
+   minimal effort: each `.glossary-item` maps to a Question/Answer pair. Anchor IDs
+   are already in place for `#disc-glossary-heading`.
+
+2. **VideoObject schema** — if video embeds are added to discipline pages (e.g., NRHA
+   or NCHA official highlight clips via YouTube), a VideoObject block can be appended
+   to the existing JSON-LD script without restructuring the page.
+
+3. **SportsEvent schema** — event cards in the "At The Run For A Million" section
+   can be backed by SportsEvent schema once event dates are confirmed.
+
+4. **EducationalOccupationalCredential / Course schema** — not applicable; however,
+   the discipline hub content could feed a future `/learn` hub if a structured
+   educational section is added.
