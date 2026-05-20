@@ -1145,3 +1145,64 @@ Future placeholder strategy:
 ### Sitemap
 
 10 new URLs added to sitemap.xml (priority 0.7, changefreq monthly, lastmod 2026-05-20).
+
+
+---
+
+## Event Archive & Evergreen Framework — 2026-05-20
+
+### Indexed routes (sitemap + robots: index)
+
+  /events/run-for-a-million-archive       Archive hub: yearly timeline
+  /events/run-for-a-million-2026          2026 active season hub
+  /events/run-for-a-million-2025          2025 historical archive
+
+### Noindex placeholder routes (excluded from sitemap until populated)
+
+  /events/run-for-a-million-2026/results         Results page: noindex until post-event
+  /events/run-for-a-million-2026/leaderboard     Leaderboard: noindex until post-event
+  /events/run-for-a-million-2026/fantasy-recap   Recap: noindex until post-event
+
+### Design system components added (ARCHIVE_CSS)
+
+  archive-timeline      Timeline layout with gold dot indicators
+  archive-year-card     Yearly entry with status badge and action links
+  event-meta-bar        Season / discipline / status metadata strip
+  event-section-grid    1fr + 280px main+sidebar layout
+  event-sidebar-card    Sidebar navigation component
+  results-placeholder   Coming soon placeholder with dashed border
+  result-table          Pre-built results table (hidden until data)
+  sponsor-zone          Reserved sponsor placement div
+  disc-tabs             Section navigation tabs (Overview/Results/Leaderboard/Recap)
+  disclaimer-banner     Editorial disclaimer on every archive page
+
+### Schema markup
+
+  BreadcrumbList JSON-LD on all 6 pages (3-5 breadcrumb levels)
+  SportsEvent JSON-LD on 2026 hub and 2025 hub
+  Placeholder pages carry no schema
+
+### Placeholder activation checklist (post-event)
+
+  1. Change robots: noindex,nofollow -> index,follow
+  2. Populate result-table with actual class standings
+  3. Remove aria-hidden + opacity:0.3 from template table
+  4. Add pages to sitemap.xml
+  5. Update placeholder text to actual content
+
+### Sitemap additions
+
+  3 URLs added: /archive, /2026, /2025 (priority 0.7-0.8)
+  3 placeholder URLs intentionally excluded until populated
+
+### Events hub update
+
+  events/index.html: two new cards added pointing to /2026 and /archive
+
+### Future expansion
+
+  Add /events/run-for-a-million-2027 before 2027 season
+  Add /events/run-for-a-million-archive/top-fantasy-scores (historical scores)
+  Add /events/run-for-a-million-archive/winning-lineups (historical rosters)
+  Add /riders/{slug}/event-history (per-rider event performance pages)
+  Flip 3 noindex placeholders to indexed after 2026 event completes
