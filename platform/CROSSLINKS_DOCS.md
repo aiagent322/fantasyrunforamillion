@@ -369,3 +369,88 @@ stale or missing cross-links.
 | Discipline      | 3             | 0                            |
 | Events          | 4             | 0                            |
 | **Total**       | **55**        | **12**                       |
+
+
+---
+
+## Short-Term SEO Pass — 2026-05-20
+
+### Changes made
+
+**sitemap.xml — fully regenerated**
+- All 82 URLs now include `<lastmod>` dates
+- `<changefreq>` and `<priority>` calibrated by content type
+- Dates:
+  - Dynamic pages (homepage, leaderboard, pick-your-team): `2026-05-20`
+  - Cross-link-enhanced pages: `2025-05-01`
+  - Original content: `2025-01-01`
+- sitemap.xml is declared in `robots.txt` at `Sitemap: https://fantasyrunforamillion.com/sitemap.xml`
+
+**BreadcrumbList JSON-LD — discipline pages fixed**
+- Issue: item 2 of discipline page breadcrumbs referenced `/disciplines` which has no index.html (404)
+- Fix: simplified to 2-item breadcrumb (Home → Discipline Guide)
+- Fix applied to: `disciplines/reining`, `disciplines/cow-horse`, `disciplines/cutting`
+- _redirects updated: `/disciplines` → `/riders` (301) to handle any inbound links
+
+**Category hub `data-page-type` standardised**
+- Changed from `news_hub` + `data-discipline` to `category_hub` + `data-category`
+- Pages updated: `news/reining`, `news/cow-horse`, `news/cutting`, `news/index`
+- Schema: attribute values map to discipline names (reining, cow-horse, cutting)
+
+**cross-links.js — `category_hub` handler added**
+- New `handleCategoryHub()` function handles pages with `data-page-type="category_hub"`
+- Injects: related events section + featured riders sidebar card per discipline
+- Fires when `data-category` is set (discipline hubs); silent for bare news index
+
+### BreadcrumbList status — full site
+
+| Page type            | BreadcrumbList | Structure | Issues |
+|----------------------|----------------|-----------|--------|
+| Homepage             | N/A            | —         | None   |
+| Rider profiles       | ✅ Present      | 4-level   | None   |
+| Rider discipline hub | ✅ Present      | 3-level   | None   |
+| Rider hub            | ✅ Present      | 2-level   | None   |
+| Article pages        | ✅ Present      | 3-level   | None   |
+| News hubs            | ✅ Present      | 3-level   | None   |
+| Discipline pages     | ✅ Fixed        | 2-level   | Fixed (was 3-level with dead /disciplines URL) |
+| Event pages          | ✅ Present      | 3-level   | None   |
+| How it works         | ✅ Present      | 2-level   | None   |
+| Scoring rules        | ✅ Present      | 2-level   | None   |
+| FAQ                  | ✅ Present      | 2-level   | None   |
+| Leaderboard          | ✅ Present      | 2-level   | None   |
+| Pick your team       | ✅ Present      | 2-level   | None   |
+
+### Sitemap lastmod approach
+
+`lastmod` values follow this logic:
+- **Homepage, leaderboard, pick-your-team**: today's date (changes reflect live game state)
+- **Cross-link-enhanced pages**: `2025-05-01` (date cross-links were deployed, last structural change)
+- **Original editorial content**: `2025-01-01` (launch date — no edits since original publish)
+- **Future**: run sitemap generator after any content update to refresh `lastmod` accurately
+
+To regenerate the sitemap, update `LAUNCH` / `CROSS_LINKS_DATE` / `TODAY` constants in
+`generate_cross_links.py` (or a standalone sitemap generator) and push the output.
+
+### Medium-term SEO recommendations
+
+1. **`Article` JSON-LD on news pages** — add `datePublished`, `headline`, `description`
+   to each article page's `<script type="application/ld+json">` block (already has BreadcrumbList)
+2. **`Person`/`Athlete` JSON-LD on rider profiles** — add name, discipline, url; no image required
+3. **Sitemap auto-generation** — tie sitemap rebuild to a GitHub Action that runs when
+   `data/riders.json` or `data/articles.json` changes; eliminates manual updates
+4. **Submit sitemap to Google Search Console** — register `fantasyrunforamillion.com` property,
+   submit `/sitemap.xml`, monitor coverage and rich result status
+5. **Rider discipline hubs breadcrumb** — `riders/reining`, `riders/cow-horse`, `riders/cutting`
+   use `riders_discipline` body type; confirm engine handles those for cross-linking completeness
+
+### Long-term SEO recommendations
+
+1. **Site speed audit** — Cloudflare Pages static delivery is fast; verify no render-blocking
+   resources from Google Fonts loading (consider `font-display: swap` or self-hosting)
+2. **Core Web Vitals** — run PageSpeed Insights on rider profile pages (most content-heavy);
+   target LCP < 2.5s, CLS = 0
+3. **Canonical tag audit** — confirm `<link rel="canonical">` on every page; check that
+   trailing-slash variants resolve to the same canonical
+4. **Video/media schema** — if `media/` section adds video content, add `VideoObject` schema
+5. **FAQ schema on /faq** — `FAQPage` schema is straightforward and often generates rich results
+   in western sports / sports fantasy adjacent queries
