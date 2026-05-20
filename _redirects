@@ -14,3 +14,6 @@
 
 # Top riders sub-pages (Cloudflare Pages serves these natively)
 # No redirects needed — static files at top-riders/{disc}/index.html
+
+# Strategy cluster (static HTML pages)
+# Cloudflare Pages serves these natively from strategy/{page}/index.html
