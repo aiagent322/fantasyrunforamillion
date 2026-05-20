@@ -506,6 +506,52 @@
       });
   }
 
+
+  // ─── CATEGORY HUB (news/reining, news/cow-horse, news/cutting) ────────────
+  function handleCategoryHub(body) {
+    var cat = body.dataset.category;  // 'reining' | 'cow-horse' | 'cutting' | undefined
+    if (!cat) return;                 // news index handled separately
+
+    Promise.all([getRiders(), getArticles(), getEvents()])
+      .then(function(res) {
+        var rids = res[0], arts = res[1], evts = res[2];
+        var mainEl = document.querySelector('main');
+        if (!mainEl) return;
+
+        // ── Related riders sidebar card (if sidebar present) ────────────
+        var sidebar = document.querySelector('.disc-sidebar, .article-sidebar, aside');
+        if (sidebar && !alreadyInjected('xl-hub-riders-card')) {
+          var hubRiders = profiledRiders(rids, cat, null).slice(0, 5);
+          if (hubRiders.length) {
+            var links = hubRiders.map(function(r) {
+              return { url: r.profile_url, label: r.name };
+            });
+            links.push({ url: '/riders/' + cat, label: 'All ' + discLabel(cat) + ' Riders' });
+            appendTo(sidebar, sidebarCard('Featured Riders', links, 'xl-hub-riders-card'));
+          }
+        }
+
+        // ── Related events section ────────────────────────────────────
+        if (!alreadyInjected('xl-hub-evts-sect')) {
+          var hubEvts = eventsByDisc(evts, cat);
+          if (hubEvts.length) {
+            appendTo(mainEl, xlSection(
+              'xl-hub-evts-sect', 'Upcoming Competition', 'Related Events', 'xl-he-' + cat,
+              hubEvts.map(function(e) {
+                var discs = (e.disciplines || []).map(discLabel).join(' \u00b7 ');
+                return '<div class="xl-card"><p class="xl-cat">' + discs + '</p>'
+                  + '<p class="xl-title">' + e.name + (e.year ? ' ' + e.year : '') + '</p>'
+                  + (e.purse_display ? '<p class="xl-excerpt" style="color:var(--gold);font-weight:600;">Purse: '
+                     + e.purse_display + '</p>' : '')
+                  + '<a href="' + e.page_url + '" class="xl-link">Event Overview</a></div>';
+              }).join(''),
+              null, null, true
+            ));
+          }
+        }
+      });
+  }
+
   // ─── Router ────────────────────────────────────────────────────────────────
   function init() {
     var body = document.body;
@@ -517,6 +563,7 @@
       case 'article':         handleArticle(body);    break;
       case 'discipline_page': handleDiscipline(body); break;
       case 'events_page':     handleEvent(body);      break;
+      case 'category_hub':   handleCategoryHub(body); break;
     }
   }
 
