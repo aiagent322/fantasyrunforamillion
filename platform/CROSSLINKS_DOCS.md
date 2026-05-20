@@ -745,3 +745,115 @@ Every strategy page links to:
   Rider profiles mentioned in body text
   Related articles from /news/ (related-articles section)
   /events/run-for-a-million (body text references)
+
+
+---
+
+## Strategy Cluster Visibility Pass — 2026-05-20
+
+### Changes made
+
+**Main navigation (90 files patched)**
+
+Added `Strategy` between `Riders` and `Leaderboard` in the desktop nav-links
+and the mobile nav-mobile on every non-admin HTML page.
+
+Before:
+  How It Works · Riders · Leaderboard · Scoring · [Enter Now CTA]
+
+After:
+  How It Works · Riders · Strategy · Leaderboard · Scoring · [Enter Now CTA]
+
+Mobile nav mirrors desktop order.
+
+**Footer navigation (90 files patched)**
+
+Added `Strategy`, `News`, and `Events` to the footer link list.
+
+Before:  How It Works · Riders · Scoring · Leaderboard · Enter · Join Waitlist · About · Contact
+After:   How It Works · Riders · Strategy · News · Events · Scoring · Leaderboard · Enter · Join Waitlist · About · Contact
+
+**News category hub callouts (4 files)**
+
+Each news hub now ends with a strategy callout section before </main>:
+
+  news/index.html         → "Ready to Build Your Fantasy Team?" → /strategy + /pick-your-team
+  news/reining/index.html → "How to Pick Your Fantasy Reining Riders" → /strategy/reining + /strategy
+  news/cow-horse/index.html → "How to Evaluate Cow Horse Riders" → /strategy/cow-horse + /strategy
+  news/cutting/index.html → "Cutting Horse Fantasy Strategy" → /strategy/cutting + /strategy
+
+These are inline styled sections using existing design tokens. No new CSS classes.
+
+**Homepage strategy callout (index.html)**
+
+A new "Fantasy Strategy Hub" section was inserted between the how-it-works
+section and the featured-event section. It includes:
+  - H2: "How to Pick the Right Riders"
+  - Two primary CTAs: /strategy and /strategy/team-building
+  - Four discipline quick-links: /strategy/reining, /strategy/cow-horse,
+    /strategy/cutting, /strategy/scoring
+
+### Nav anchor text
+
+Desktop: "Strategy" (short, uppercase, consistent with other nav items)
+Mobile:  "Strategy" (identical)
+Footer:  "Strategy" (identical)
+News callout CTAs: "Fantasy Strategy Guide →", "[Discipline] Strategy →", "All Strategy →"
+Homepage CTAs: "Fantasy Strategy Guide →", "Team Building Guide →"
+
+### Internal linking impact
+
+Before this pass, /strategy had zero inbound links from existing pages.
+After this pass:
+  - 90 pages link to /strategy via nav (primary navigation)
+  - 90 pages link to /strategy via footer
+  - 4 news hub pages link to /strategy + relevant sub-pages via callout sections
+  - Homepage links to /strategy, /strategy/team-building, and 4 sub-pages
+  - Total new inbound links to strategy cluster: ~200+
+
+### Future routes planned
+
+The following routes are documented for future creation:
+  /strategy/event-prep  — Pre-event rider evaluation guide; created when event
+                          dates are confirmed and the competitive field is set.
+  /strategy/sleepers    — Value picks guide; updated before each major event.
+
+When created, these pages:
+  1. Follow the existing article page design system exactly
+  2. Use data-page-type="article" data-article-category="fantasy-tips"
+  3. Include 3-level BreadcrumbList JSON-LD
+  4. Link back to /strategy hub via breadcrumb and back-nav
+  5. Are added to strategy/index.html topic card grid
+  6. Are added to sitemap.xml
+
+### News-to-strategy linking pattern
+
+All news category hubs (news/reining, news/cow-horse, news/cutting, news/index)
+now end with a discipline-specific strategy callout. The pattern for future
+category hubs:
+
+  1. Match callout headline to the hub discipline
+  2. Primary CTA → /strategy/{disc}
+  3. Secondary CTA → /strategy (hub)
+  4. Use aria-labelledby for accessibility
+  5. No new CSS classes — inline styles use existing design tokens only
+
+### Remaining recommendations
+
+1. Add /strategy to the news/index.html sidebar "Quick Navigation" card
+   if one exists, or add a dedicated "Strategy" card to the news hub sidebar.
+
+2. Link from /pick-your-team to /strategy — the entry form page is where users
+   have the highest intent; a "Need help picking?" link to /strategy would be
+   the highest-converting internal link possible.
+
+3. Add /strategy to the /faq page where relevant questions about roster-building
+   appear — natural contextual link.
+
+4. Create /strategy/event-prep and /strategy/sleepers once the competitive season
+   timeline is confirmed. Both routes are high-intent searches tied to event dates.
+
+5. Internal links from article body text: existing fantasy-tips articles already
+   link to scoring-rules and pick-your-team but not to /strategy. A light editorial
+   pass adding "See the fantasy strategy guide" links to 3-5 of the most-trafficked
+   articles would increase strategy cluster crawl depth further.
