@@ -574,4 +574,66 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- New strategy articles -->
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-fantasy-reining-scoring-works</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-to-build-a-winning-fantasy-lineup</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/beginner-guide-to-run-for-a-million-fantasy</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-to-pick-sleeper-riders</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/reining-vs-cutting-vs-cow-horse-strategy</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/common-fantasy-roster-mistakes</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-leaderboard-scoring-changes-strategy</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-consistency-wins-fantasy-horse-sports</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-event-format-affects-your-lineup</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fantasyrunforamillion.com/strategy/how-to-research-riders-before-building-your-team</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
