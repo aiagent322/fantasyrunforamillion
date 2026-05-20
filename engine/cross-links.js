@@ -320,8 +320,10 @@
         if (sidebar && cat !== 'fantasy-tips' && !alreadyInjected('xl-art-tools-card')) {
           appendTo(sidebar, articleSidebarCard('Fantasy Tools', [
             { url: '/pick-your-team', label: 'Build Your Team' },
+            { url: '/strategy', label: 'Strategy Hub' },
             { url: '/scoring-rules', label: 'How Scoring Works' },
-            { url: '/leaderboard', label: 'Fantasy Leaderboard' }
+            { url: '/leaderboard', label: 'Fantasy Leaderboard' },
+            { url: '/top-riders', label: 'Top Riders by Discipline' }
           ], 'xl-art-tools-card'));
         }
 
