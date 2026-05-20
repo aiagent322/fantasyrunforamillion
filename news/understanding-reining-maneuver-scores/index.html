@@ -419,6 +419,7 @@
   <script>
     (function(){var btn=document.getElementById('navToggle'),menu=document.getElementById('mobileMenu');if(!btn||!menu)return;btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
   </script>
+  <script src="/engine/supabase-keys.js" onerror="void(0)"></script>
   <script src="/engine/email-capture.js" defer></script>
   <script src="/engine/analytics.js" defer></script>
 </body>
