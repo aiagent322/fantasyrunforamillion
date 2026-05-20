@@ -300,6 +300,22 @@
   <meta name="format-detection" content="telephone=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <script defer data-domain="fantasyrunforamillion.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <style id="xlink-css">
+    .xl-sect{padding:48px 0;border-top:1px solid rgba(201,168,76,.08);}
+    .xl-sect.xl-alt{background:var(--dark-mid);}
+    .xl-label{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;}
+    .xl-h{font-family:var(--font-display,'Playfair Display',Georgia,serif);font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:700;color:var(--white);margin-bottom:8px;}
+    .xl-div{width:28px;height:2px;background:var(--gold);margin:10px 0 24px;}
+    .xl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+    .xl-card{background:var(--dark-mid);border:1px solid rgba(201,168,76,.12);border-radius:10px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;}
+    .xl-cat{font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.75;}
+    .xl-title{font-size:.9rem;font-weight:600;color:var(--white);line-height:1.35;flex:1;}
+    .xl-excerpt{font-size:.8rem;color:var(--cream-dim);opacity:.7;line-height:1.5;margin:0;}
+    .xl-link{font-size:.78rem;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:5px;padding-top:6px;margin-top:auto;}
+    .xl-link::after{content:"→";}
+    .xl-more{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:20px;}
+    @media(max-width:600px){.xl-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
 <body data-page-type="rider_profile" data-rider-slug="cade-mccutcheon" data-rider-discipline="reining">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -468,11 +484,36 @@
               <a href="/how-it-works" class="sidebar-link">How It Works</a>
             </div>
 
+          
+            <div class="links-card" id="xl-rider-arts-card" aria-label="Related strategy articles">
+              <p class="links-card-title">Strategy Articles</p>
+              <a href="/news/understanding-reining-maneuver-scores" class="sidebar-link">Understanding Reining Maneuver Scores</a>
+              <a href="/news/top-reining-riders-run-for-a-million" class="sidebar-link">Top Reining Riders to Watch at The Run For A Million</a>
+              <a href="/news/the-sliding-stop-reinings-signature-maneuver" class="sidebar-link">The Sliding Stop: Reining's Signature Maneuver</a>
+              <a href="/news/beginners-guide-reining-competition" class="sidebar-link">A Beginner's Guide to Reining Competition</a>
+            </div>
+            <div class="links-card" id="xl-rider-evts-card">
+              <p class="links-card-title">Related Events</p>
+              <a href="/events/run-for-a-million" class="sidebar-link">The Run For A Million</a>
+              <a href="/events/nrha-futurity" class="sidebar-link">NRHA Futurity</a>
+              <a href="/events" class="sidebar-link">All Events</a>
+            </div>
           </aside>
 
         </div>
       </div>
     </div>
+
+    
+    <section id="xl-rider-arts-sect" class="related-section content-section alt" aria-labelledby="xl-ra-cade-mccutcheon">
+      <div class="container">
+        <p class="section-label">Fantasy Strategy &amp; Analysis</p>
+        <h2 class="section-title" id="xl-ra-cade-mccutcheon">Related Articles</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <div class="xl-grid" role="list"><div class="xl-card"><p class="xl-cat">Reining</p><p class="xl-title">Understanding Reining Maneuver Scores</p><p class="xl-excerpt">Reining judges score every maneuver individually on a scale from -1.5 to +1.5. Understanding which elements carry t…</p><a href="/news/understanding-reining-maneuver-scores" class="xl-link">Read Article</a></div><div class="xl-card"><p class="xl-cat">Reining</p><p class="xl-title">Top Reining Riders to Watch at The Run For A Million</p><p class="xl-excerpt">The reining field at The Run For A Million draws some of the most accomplished open division competitors in the wor…</p><a href="/news/top-reining-riders-run-for-a-million" class="xl-link">Read Article</a></div><div class="xl-card"><p class="xl-cat">Reining</p><p class="xl-title">The Sliding Stop: Reining's Signature Maneuver</p><p class="xl-excerpt">No maneuver in western performance horse sports commands attention like the reining sliding stop. Understanding how…</p><a href="/news/the-sliding-stop-reinings-signature-maneuver" class="xl-link">Read Article</a></div></div>
+      <div style="margin-top:24px;"><a href="/news" style="display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);">All Articles →</a></div>
+      </div>
+    </section>
 
     <!-- Related Riders -->
     <section class="related-section content-section alt" aria-labelledby="related-heading">
