@@ -372,6 +372,22 @@
     @media(max-width:900px){.frfam-signup-card{grid-template-columns:1fr;gap:28px;padding:32px 24px;}.frfam-strip-inner{flex-direction:column;gap:20px;}.frfam-strip-form{max-width:100%;width:100%;}}
     @media(max-width:580px){.frfam-strip-form{flex-direction:column;}}
     /* ── End FRFAM Email Capture ─────────────────────────────────────────────── */
+  
+    /* ── Team Submission Form ─────────────────────────────────────────────── */
+    .team-field-group{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+    .team-field-label{font-size:0.78rem;font-weight:600;color:var(--cream-dim);}
+    .team-input{width:100%;background:var(--dark);border:1px solid rgba(201,168,76,0.22);border-radius:var(--radius);padding:11px 14px;font-family:var(--font-body);font-size:0.9rem;color:var(--cream);outline:none;transition:border-color var(--tr);}
+    .team-input::placeholder{color:var(--cream-dim);opacity:0.3;}
+    .team-input:focus{border-color:var(--gold);}
+    .submit-error{font-size:0.82rem;color:#e87070;margin-top:10px;padding:9px 12px;background:rgba(232,112,112,0.07);border-radius:var(--radius);border:1px solid rgba(232,112,112,0.18);line-height:1.5;}
+    .submit-success{text-align:center;padding:16px 0;}
+    .submit-success .success-icon{font-size:2.2rem;margin-bottom:10px;display:block;}
+    .submit-success .success-h{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:6px;}
+    .submit-success .success-body{font-size:0.84rem;color:var(--cream-dim);line-height:1.6;margin-bottom:14px;}
+    .success-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .success-links a{font-size:0.74rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold);padding:6px 12px;border:1px solid rgba(201,168,76,0.25);border-radius:var(--radius);transition:border-color var(--tr);}
+    .success-links a:hover{border-color:rgba(201,168,76,0.5);}
+    /* ── End Team Submission Form ─────────────────────────────────────────── */
   </style>
 
   <link rel="canonical" href="https://fantasyrunforamillion.com/pick-your-team" />
@@ -633,11 +649,47 @@
                 </div>
               </div>
 
-              <div class="submit-area">
-                <button class="btn-submit" id="submitBtn" disabled aria-label="Submit team — coming soon, demo only">
-                  Submit Your Team
-                </button>
-                <p class="submit-notice">Demo only — no entries are collected. Contest entry opens before The Run For A Million.</p>
+              <div class="submit-area" id="submitArea">
+
+                <!-- Team entry form -->
+                <div id="submitForm">
+                  <div class="team-field-group">
+                    <label for="teamName" class="team-field-label">Team Name</label>
+                    <input type="text" id="teamName" class="team-input"
+                           placeholder="e.g. Dusty Spurs 2025"
+                           maxlength="60" autocomplete="off"
+                           aria-required="true" aria-describedby="submitNotice" />
+                  </div>
+                  <div class="team-field-group">
+                    <label for="teamEmail" class="team-field-label">Email — for your results</label>
+                    <input type="email" id="teamEmail" class="team-input"
+                           placeholder="you@example.com"
+                           autocomplete="email"
+                           aria-required="true" />
+                  </div>
+                  <button class="btn-submit" id="submitBtn" disabled
+                          aria-label="Submit your fantasy team"
+                          aria-disabled="true">
+                    Submit Your Team
+                  </button>
+                  <p class="submit-notice" id="submitNotice">
+                    Complete your roster to submit. Free entry — no payment required.
+                  </p>
+                  <div class="submit-error" id="submitError" hidden role="alert"></div>
+                </div>
+
+                <!-- Success state (shown after submission) -->
+                <div class="submit-success" id="submitSuccess" hidden role="status" aria-live="polite">
+                  <div class="success-icon" aria-hidden="true">🐴</div>
+                  <p class="success-h">Team Submitted!</p>
+                  <p class="success-body">Your fantasy team has been entered. Good luck at The Run For A Million.</p>
+                  <nav class="success-links" aria-label="Next steps">
+                    <a href="/leaderboard">View Leaderboard</a>
+                    <a href="/scoring-rules">Scoring Rules</a>
+                    <a href="/how-it-works">How It Works</a>
+                  </nav>
+                </div>
+
               </div>
             </div>
 
@@ -1064,40 +1116,23 @@
     /* ── Init ─────────────────────────────────────────────────── */
     refresh();
 
-    /* ── frfam:team_submit dispatch for analytics tracking ────────────────────
-       analytics.js listens for this event to fire team_submission_attempt.
-       Fires on submit button click regardless of roster completion state,
-       so analytics captures both complete and incomplete attempts.
-    ─────────────────────────────────────────────────────────────────────────── */
-    (function () {
-      var submitBtn = document.getElementById('submitBtn');
-      if (!submitBtn) return;
+    /* ── Expose team state for engine/team-submit.js ──────────────────────── */
+    window.FRFAM_TEAM_STATE = selected;
 
-      submitBtn.addEventListener('click', function () {
-        var r  = selected.reining.size;
-        var ch = selected['cow-horse'] ? selected['cow-horse'].size : 0;
-        var c  = selected.cutting.size;
-        var b  = selected.bonus.size;
-        var complete = (r >= 2 && ch >= 2 && c >= 2 && b >= 1);
+    /* ── Hook refresh() so team-submit.js can react to roster changes ─────── */
+    var _origRefreshFn = refresh;
+    window.FRFAM_REFRESH = function () {
+      _origRefreshFn();
+      if (typeof window.FRFAM_REFRESH_HOOK === 'function') {
+        window.FRFAM_REFRESH_HOOK();
+      }
+    };
 
-        try {
-          document.dispatchEvent(new CustomEvent('frfam:team_submit', {
-            detail: {
-              has_reining:   r  >= 2,
-              has_cow_horse: ch >= 2,
-              has_cutting:   c  >= 2,
-              has_bonus:     b  >= 1,
-              is_complete:   complete,
-              reining_count:   r,
-              cow_horse_count: ch,
-              cutting_count:   c,
-            }
-          }));
-        } catch (e) { /* non-critical */ }
-      });
-    })();
+    /* frfam:team_submit is handled by engine/team-submit.js */
   </script>
 
+  <script src="/engine/supabase-keys.js" onerror="void(0)"></script>
+  <script src="/engine/team-submit.js" defer></script>
   <script src="/engine/email-capture.js" defer></script>
   <script src="/engine/analytics.js" defer></script>
 </body>
