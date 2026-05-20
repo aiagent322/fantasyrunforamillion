@@ -1,12 +1,19 @@
 User-agent: *
 Allow: /
 
-# Non-public paths — disallow if/when created
-Disallow: /api/
+# Non-public paths
 Disallow: /admin/
 Disallow: /platform/
+Disallow: /api/
 
-# Static assets — crawlable and allowed
-# /data/, /engine/ contain JS/JSON support files, not HTML pages
+# 2026 event sub-pages — noindex until populated post-event
+# (robots noindex meta also set on these pages)
+Disallow: /events/run-for-a-million-2026/results/
+Disallow: /events/run-for-a-million-2026/leaderboard/
+Disallow: /events/run-for-a-million-2026/fantasy-recap/
+
+# Static support files — not HTML pages, no indexing needed
+Disallow: /engine/
+Disallow: /data/
 
 Sitemap: https://fantasyrunforamillion.com/sitemap.xml
