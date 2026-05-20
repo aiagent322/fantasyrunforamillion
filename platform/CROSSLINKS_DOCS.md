@@ -654,3 +654,94 @@ The rankings cluster is designed to:
 - **Person schema** on rider entries: each rider card already has name, location, discipline —
   adding `Person` schema (once decided) requires only a data attribute on the article element.
 - **BreadcrumbList** already implemented at 3 levels on all sub-pages.
+
+
+---
+
+## Fantasy Strategy Content Cluster — 2026-05-20
+
+### Routes added
+
+```
+/strategy                   <- Hub: topic cards + beginner guide
+/strategy/reining           <- How to Pick a Fantasy Reining Rider
+/strategy/cow-horse         <- How to Evaluate Cow Horse Riders for Fantasy
+/strategy/cutting           <- Cutting Horse Fantasy Strategy for Fantasy Fans
+/strategy/team-building     <- Building a Balanced Fantasy Western Sports Roster
+/strategy/scoring           <- Understanding Fantasy Scoring in Western Horse Sports
+```
+
+### Page architecture
+
+All five sub-pages use the article page design system exactly (article-header, article-layout,
+article-prose, article-sidebar, related-articles, back-nav). The hub uses a section-based layout.
+
+Body attributes on sub-pages:
+  data-page-type="article" data-article-slug="strategy-{topic}" data-article-category="fantasy-tips"
+This routes to handleArticle() in cross-links.js for dynamic sidebar injection.
+
+Hub body attribute:
+  data-page-type="category_hub" data-category="fantasy-tips"
+Routes to handleCategoryHub() for event + rider sidebar injection.
+
+### Content per page
+
+Page                    | Key Sections
+/strategy               | Topic card grid, beginner 5-step guide, quick links, discipline guides, articles
+/strategy/reining       | Intro, scoring explained, eval grid (4 factors), floor vs ceiling, rider profiles
+/strategy/cow-horse     | Intro, composite scoring, eval grid, cattle draw, two-pick strategy
+/strategy/cutting       | Intro, ceiling-floor framework, eval grid, cattle draw, roster interaction
+/strategy/team-building | Seven-slot format, floor-ceiling per discipline, bonus slot, common mistakes
+/strategy/scoring       | Placement-to-points, discipline winner bonus, multi-round format, roster implications
+
+### SEO cluster
+
+The strategy cluster targets:
+  /strategy              -> "fantasy western sports strategy hub"
+  /strategy/reining      -> "reining fantasy strategy", "how to pick reining fantasy rider"
+  /strategy/cow-horse    -> "cow horse fantasy strategy", "how to evaluate cow horse riders"
+  /strategy/cutting      -> "cutting horse fantasy strategy", "cutting fantasy for beginners"
+  /strategy/team-building -> "fantasy western sports roster building", "balanced fantasy team"
+  /strategy/scoring      -> "fantasy western sports scoring", "how fantasy horse sports points work"
+
+Hub links to all five sub-pages. Each sub-page links back via breadcrumb and back-nav.
+All pages link to discipline hubs, top-riders, rider profiles, pick-your-team, scoring rules.
+
+### cross-links.js update
+
+Fantasy Tools sidebar card on fantasy-tips articles now includes:
+  - Build Your Team (/pick-your-team)
+  - Strategy Hub (/strategy)      <- new
+  - How Scoring Works (/scoring-rules)
+  - Fantasy Leaderboard (/leaderboard)
+  - Top Riders by Discipline (/top-riders)  <- new
+
+### Sitemap
+
+6 new URLs added to sitemap.xml with lastmod 2026-05-20, priority 0.7-0.8.
+
+### Future strategy expansion opportunities
+
+1. Live scoring integration: when event results post, sub-pages can include a
+   Current Season Results section using riders.json fantasy_stats fields.
+
+2. Trend content: Riders to Watch or Form Guide sections as static updates or
+   as a standalone /strategy/picks route.
+
+3. Strategy article expansion: /strategy/international, /strategy/event-prep,
+   /strategy/sleepers as future standalone pages feeding the hub.
+
+4. Newsletter segmentation: all sub-pages use data-variant="strategy" on the
+   email capture strip for Supabase list segmentation.
+
+5. Sponsor placement: eval-grid, callout, and sidebar components are ready to
+   accept sponsor labels without layout changes.
+
+### Internal linking plan
+
+Every strategy page links to:
+  /pick-your-team, /scoring-rules, /leaderboard, /top-riders, /strategy (hub)
+  /top-riders/{disc}, /riders/{disc}, /disciplines/{disc}
+  Rider profiles mentioned in body text
+  Related articles from /news/ (related-articles section)
+  /events/run-for-a-million (body text references)
