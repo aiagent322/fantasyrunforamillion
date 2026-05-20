@@ -542,3 +542,115 @@ Pages are structured to support future additions:
 4. **EducationalOccupationalCredential / Course schema** — not applicable; however,
    the discipline hub content could feed a future `/learn` hub if a structured
    educational section is added.
+
+
+---
+
+## Top Riders Rankings System — 2026-05-20
+
+### Architecture
+
+Four static HTML pages form the rankings cluster:
+
+```
+/top-riders                  ← Hub: all-discipline overview (rebuilt)
+/top-riders/reining          ← Discipline page: 4 editorial categories, 14 riders
+/top-riders/cow-horse        ← Discipline page: 3 editorial categories, 11 riders
+/top-riders/cutting          ← Discipline page: 3 editorial categories, 13 riders
+```
+
+All four pages are fully static, use the shared design system, and include `cross-links.js` for
+runtime injection of additional related content.
+
+### Page structure (discipline ranking pages)
+
+```
+<header>         Eyebrow · 3-level breadcrumb · H1 · Page lead
+<section>        Editorial disclaimer + Intro text + Resources sidebar + Other disciplines sidebar
+<section alt>    Category sections (3–4 per discipline, each with rider-card grid)
+<section>        Fantasy CTA strip (Pick Your Team + Scoring Rules)
+<section alt>    Related Articles (3 cards per page)
+<section>        Related Events (2 event cards per discipline)
+```
+
+### Category system
+
+Each discipline page uses editorially defined categories that can be updated without a schema change:
+
+| Discipline | Categories |
+|------------|-----------|
+| Reining | Veteran Riders · Rising Riders · International Riders · Watch List |
+| Cow Horse | Three-Phase Elite · Fence Work Specialists · Fantasy Depth Picks |
+| Cutting | Fantasy Favorites · Sleeper & Value Picks · Depth Roster |
+
+Categories are editorial only. No fake statistical claims are made. Each rider bio
+describes competitive background in general terms without inventing records or rankings.
+
+### Rider card components
+
+The `rider-card` component includes:
+- Initials avatar + name + location + discipline tag
+- Rank number (watermark, decorative)
+- Fantasy bio (2–3 sentences, editorial)
+- Badge strip (3–4 editorial tags per rider)
+- Fantasy Profile link (profiled riders) or "Profile coming soon" (unprofe)
+
+### SEO improvements
+
+- New routes: `/top-riders/reining`, `/top-riders/cow-horse`, `/top-riders/cutting`
+- 3-level BreadcrumbList JSON-LD on all three sub-pages
+- `<link rel="canonical">` on all pages
+- Unique titles and meta descriptions per page
+- H2 sections per category for crawl depth
+- Sitemap updated with all four URLs + `lastmod: 2026-05-20`
+- Hub page updated: discipline preview cards replace flat rider lists
+
+### Internal linking from rankings pages
+
+Each discipline ranking page links to:
+- All profiled rider profiles in the discipline (via rider cards)
+- Rider discipline hub (`/riders/{disc}`)
+- Discipline educational hub (`/disciplines/{disc}`)
+- News category hub (`/news/{disc}`)
+- Scoring rules, leaderboard, pick-your-team
+- Two event pages per discipline
+- Three related articles per discipline
+- Both other discipline ranking pages (cross-discipline nav)
+- Top-riders hub (breadcrumb)
+
+### Rider authority strategy
+
+The rankings cluster is designed to:
+1. Create dedicated long-tail landing pages for "top {discipline} riders" searches
+2. Give each discipline a canonical authority page linking through to all profiled riders
+3. Establish editorial categories (Veteran, Rising, International, Sleeper) as recurring
+   content frames — so future updates can target these labels with articles and social content
+4. Support future live scoring integration by providing a pre-built UI structure that
+   can be updated to show real standings without a design change
+
+### Future ranking integration opportunities
+
+**Short-term (when event results are available):**
+- Replace editorial rank numbers with actual finish positions from results JSON
+- Add a "Last Event Finish" field to rider cards from fantasy_stats in riders.json
+- Sort categories dynamically by scoring output rather than static editorial order
+
+**Medium-term:**
+- Add a `/top-riders/{disc}/{season}` route for seasonal historical archives
+- Add a "Fantasy Points This Season" stat to each rider card when scoring is live
+- Leaderboard → top-riders cross-linking: show which selected riders are leading
+
+**Long-term:**
+- `SportsTeam` or custom `Person` JSON-LD on rider entries once Athlete schema is implemented
+- Sponsor integration slots: category header or card badge areas are designed to accept
+  sponsor labels without layout changes (badge strip component)
+- Regional rankings: `/top-riders/reining/international` sub-cluster already implied
+  by the International Riders category — can become a standalone page
+
+### Future schema opportunities
+
+- **ItemList schema** on category sections: each `<div class="cat-section">` maps to an
+  `ItemList` with `ListItem` entries per rider. Straightforward addition to the JSON-LD block.
+- **Person schema** on rider entries: each rider card already has name, location, discipline —
+  adding `Person` schema (once decided) requires only a data attribute on the article element.
+- **BreadcrumbList** already implemented at 3 levels on all sub-pages.
