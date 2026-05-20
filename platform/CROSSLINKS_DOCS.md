@@ -857,3 +857,104 @@ category hubs:
    link to scoring-rules and pick-your-team but not to /strategy. A light editorial
    pass adding "See the fantasy strategy guide" links to 3-5 of the most-trafficked
    articles would increase strategy cluster crawl depth further.
+
+
+---
+
+## High-Intent Strategy Cross-Linking Pass — 2026-05-20
+
+### Objective
+
+Strengthen the conversion path from education → fantasy entry by adding
+contextual inline links at the highest-intent moments on the site.
+
+### /pick-your-team strategy CTA
+
+A lightweight "Need help picking?" callout bar was added directly above the
+"Build Your Sample Team" section header — the highest-intent moment on the page,
+immediately before a user selects their riders.
+
+Format: inline flex bar with 💡 icon, 1-sentence description, and "Strategy Guide →" link.
+Location: before the Demo Team Builder H2, inside the existing builder section.
+ID: `pyt-strategy-cta` (for idempotency checks).
+
+Design: uses existing design tokens (var(--gold), var(--cream-dim), rgba gold border)
+with no new CSS classes — fully compatible with the existing page layout.
+
+### FAQ inline strategy links (4 answers updated)
+
+| Question | Link added | Anchor text |
+|----------|-----------|------------|
+| How do I build a fantasy team? | /strategy | "fantasy strategy guide" |
+| When does team entry open? | /strategy | "fantasy strategy guide" |
+| How are fantasy points calculated? | /strategy/scoring | "understanding scoring guide" |
+| Can I pick from multiple disciplines? | /strategy/team-building | "team building guide" |
+
+Links were added as natural sentence extensions — not appended as separate
+"See also" blocks. Each link fits the natural flow of the answer.
+
+### Editorial article inline links (5 articles updated)
+
+| Article | Link added | Placement |
+|---------|-----------|-----------|
+| how-to-build-balanced-fantasy-roster | /strategy/team-building | Within balanced roster paragraph |
+| how-fantasy-scoring-works-western-horse-sports | /strategy/scoring | Extending "scoring rules" reference |
+| fantasy-cow-horse-strategy-all-three-phases | /strategy/cow-horse | Within phase evaluation paragraph |
+| beginners-guide-reining-competition | /strategy/reining | Within closing reining strategy paragraph |
+| fantasy-sleeper-picks-run-for-a-million | /strategy | Within closing paragraph |
+
+### Anchor text used
+
+All anchor text is editorial and contextual — no keyword stuffing:
+- "fantasy strategy guide" (generic entry point)
+- "team building strategy guide" (specific sub-page)
+- "understanding scoring guide" (specific sub-page)
+- "reining strategy guide" (discipline-specific)
+- "cow horse fantasy strategy guide" (discipline-specific)
+
+### Conversion path now complete
+
+```
+/faq                  → /strategy, /strategy/scoring, /strategy/team-building
+/pick-your-team       → /strategy (CTA above builder)
+/news/{article}       → /strategy, /strategy/{disc}, /strategy/scoring, /strategy/team-building
+/news/{disc} hub      → /strategy/{disc}, /strategy (callout section, prior pass)
+Homepage              → /strategy, /strategy/team-building, /strategy/{disc}x4 (prior pass)
+Nav (all 92 pages)    → /strategy (prior pass)
+Footer (all 92 pages) → /strategy (prior pass)
+```
+
+### High-intent linking rationale
+
+| Page | Why high intent | Link type |
+|------|----------------|-----------|
+| /pick-your-team | User is actively selecting riders | CTA bar above builder |
+| /faq | User has a specific question — peak education intent | Inline answer extension |
+| Fantasy articles | User is in research mode | Inline prose link |
+| News category hubs | User is browsing discipline content | Callout section (prior pass) |
+
+### Future planned routes
+
+**`/strategy/event-prep`**
+Pre-event rider evaluation guide. Create when:
+- Event dates are confirmed
+- Competitive field is announced
+- Entry deadline is set
+Steps: duplicate existing strategy sub-page template, update body data attributes,
+add to /strategy hub topic card grid, add to sitemap.xml.
+
+**`/strategy/sleepers`**
+Value picks guide — updated seasonally. Create when:
+- First event of the season is within 30 days
+- Rider field is finalized
+Steps: same as event-prep. Consider linking from /strategy/team-building closing paragraph.
+
+**Additional conversion improvements (not yet done):**
+1. /how-it-works → /strategy link — the how-it-works page is a natural bridge
+   to strategy content; a "Ready to go deeper?" paragraph at the bottom would
+   close the loop.
+2. /leaderboard → /strategy — users checking the leaderboard may want to understand
+   why their picks scored as they did; a sidebar or bottom link to /strategy/scoring
+   would be the natural next page.
+3. /top-riders/{disc} → /strategy/{disc} — already has sidebar links but could
+   benefit from a body-text reference in the intro paragraph.
